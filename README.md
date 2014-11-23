@@ -24,7 +24,7 @@ Achou um absurdo? Vamos conversar sobre isto no GitHub Issues ou pelo Twitter. :
 
 ### Bugs, Sugestões e Funcionalidades
 
-- Relate sua questão ou pedido de funcionalidades no [GitHub Issues](https://github.com/viniciusbraga/basal-wordpress/issues).
+- Relate sua questão ou pedido de funcionalidades no [GitHub Issues](https://github.com/viniciusbraga/basalstyle-wordpress/issues).
 
 
 ### Pull requests
