@@ -1,6 +1,6 @@
-# Basal WordPress
+# BasalStyle WordPress
 
-Basal WordPress é um tema extremamente enxuto para WordPress. Usa o BasalStyle como sistema de layout.
+BasalStyle WordPress é um tema extremamente enxuto para WordPress. Usa o BasalStyle como sistema de layout.
 
 
 ## Autor
