@@ -37,7 +37,7 @@ function basalstyle_scripts_styles() {
 
     // Carrega as folhas de estilo principais.
     // wp_enqueue_style( 'basalstyle-style', get_stylesheet_uri(), array(), '20130224' );
-    wp_enqueue_style( 'basalstyle-style', get_template_directory_uri() . '/style.min.css', array(), '20140418' );
+    wp_enqueue_style( 'basalstyle-style', get_template_directory_uri() . '/basalstyle/style.min.css', array(), '20141123' );
     wp_enqueue_style( 'customized-style', get_template_directory_uri() . '/style.css', array(), '20140620' );
 
 }
