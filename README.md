@@ -1,6 +1,20 @@
-# BasalStyle WordPress
+# BasalStyle WordPress / Alpha
 
 BasalStyle WordPress é um tema extremamente enxuto para WordPress. Usa o BasalStyle como sistema de layout.
+
+## TODO
+
+O que falta para uma versão 1.0
+
+- Melhorar a relação do nome do site e descrição
+- Aplicar um menu de navegação no Header do Site
+- Remover as características de link (underline e cor azul) do título do post
+- Melhorar a relação de data do post e o título e seu layout
+- Definir o template da Busca e seu layout
+- Definir o layout do Sidebar
+- Testar algumas customizações no sidebar, para ver como ele se comporta
+- Aplicar o botão de Subir para o Topo no Rodapé.
+- Acrescentar JavaScript para fazer o scroll suave nos links com âncoras
 
 
 ## Autor
@@ -28,6 +42,7 @@ Achou um absurdo? Vamos conversar sobre isto no GitHub Issues ou pelo Twitter. :
 
 
 ### Pull requests
+
 - Descreva todos os "commits" em português.
 - Crie um "branch" com um tópico específico. Não misture funcionalidade e bugs no "branch".
 - Abra um "Pull Request" com um título e descrição claros. Eles devem representar as modificações no "branch".
