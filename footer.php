@@ -25,5 +25,9 @@
 
     <?php wp_footer(); ?>
 
+<!-- Remover ou esconder este código de debug quando não for mais preciso -->
+<label class="btnDebug" for="debug"> Grid <input type="checkbox" id="debug" onclick='var e=document.getElementsByTagName("body")[0],c="debug",re=new RegExp("(?:^|\\s)"+c+"(?!\\S)","g");if(e.className.match(re)){e.className=e.className.replace(re,"");}else{e.className+=" "+c;this.checked=true;}'></label>
+<!-- Fim do código de debug -->
+
 </body>
 </html>
