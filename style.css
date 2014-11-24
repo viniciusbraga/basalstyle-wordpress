@@ -7,6 +7,7 @@ Author: Vinicius Braga
 Version: 0.1
 */
 
+body { font-family: "Open Sans", sans-serif; }
 
 /**
  * Classes disponíveis no tag do BODY quando na seção / página da vez.
