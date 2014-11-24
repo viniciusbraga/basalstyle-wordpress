@@ -1,8 +1,66 @@
+@charset "UTF-8";
 /*
-Theme Name: BasalStyle
+Theme Name: BasalStyle WordPress
 Theme URI: https://github.com/viniciusbraga/basalstyle-wordpress
 Description: Tema enxuto do WordPress usando o BasalStyle CSS como base de layout.
 Author: Vinicius Braga
-Version: 0.1
+Version: 0.2
 */
+
+body { font-family: "Open Sans", sans-serif; }
+
+/**
+ * Classes disponíveis no tag do BODY quando na seção / página da vez.
+ * .body-single
+ * .body-page
+ * .body-category
+ * .body-home
+ */
+
+
+/**
+ * Cabeçalho (Header) do Site
+ *
+ */
+
+/**
+ * Corpo do Site
+ * Envolve o post, sidebar e tudo que tiver entre o Cabeçalho e o Rodapé.
+ *
+ */
+
+/**
+ * Conteúdo principal
+ * Somente a parte do Post
+ *
+ */
+
+.entry-metadata {
+    font-size: 1.3em;
+    line-height: 1em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0 3px;
+    position: absolute;
+}
+
+.entry-title a {
+    color: #000000;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+@media (max-width: 800px) {
+
+    .entry-metadata {
+        margin: 0 16px;
+    }
+
+}
+
+/**
+ * Rodapé (Footer) do Site
+ *
+ */
+
 
