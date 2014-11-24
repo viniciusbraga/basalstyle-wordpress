@@ -46,6 +46,7 @@ body { font-family: "Open Sans", sans-serif; }
 
 .entry-title a {
     color: #000000;
+    font-weight: 800;
     text-decoration: none;
 }
 
