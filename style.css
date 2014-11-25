@@ -96,3 +96,13 @@ body { font-family: "Open Sans", sans-serif; }
  */
 
 
+/**
+ * Navegação do Site
+ *
+ */
+
+ .nav-inline .current-menu-item > a {
+    color: #000000;
+    font-weight: 700;
+ }
+

@@ -20,6 +20,14 @@
                 <p class="copyright">&copy; <?php echo date( "Y" ); echo " "; bloginfo( 'name' ); ?></p>
             </div>
         </footer>
+
+        <nav id="footer-menu" class="nav-inline" role="navigation"><?php
+            // http://codex.wordpress.org/Navigation_Menus
+            wp_nav_menu( array( 'theme_location' => 'footer-menu' ) );
+
+        ?></nav>
+        <!-- #footer-menu -->
+
     </div>
 
 

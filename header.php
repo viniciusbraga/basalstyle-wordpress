@@ -58,6 +58,14 @@
             <p class="site-description"><?php esc_attr( bloginfo( 'description' ) ); ?></p>
 
             <?php } ?>
+
+            <nav id="header-menu" class="nav-inline" role="navigation"><?php
+                // http://codex.wordpress.org/Navigation_Menus
+                wp_nav_menu( array( 'theme_location' => 'header-menu' ) );
+
+            ?></nav>
+            <!-- #header-menu -->
+
         </header>
         <!-- header -->
 

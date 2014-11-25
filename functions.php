@@ -68,10 +68,26 @@ add_filter('body_class','basalstyle_class_names');
 
 
 /**
+ * Registra os menus de navegação distribuídos nos templates
+ * Leia mais em: http://codex.wordpress.org/Navigation_Menus
+ *
+ */
+function basalstyle_register_menus() {
+  register_nav_menus(
+    array(
+      'header-menu' => __( 'Menu Cabeçalho' ),
+      'footer-menu' => __( 'Menu Rodapé' )
+    )
+  );
+}
+
+add_action( 'init', 'basalstyle_register_menus' );
+
+
+/**
  * Registra sidebars.
  *
  */
-
 function basalstyle_widgets_init() {
     register_sidebar( array(
         'name' => __( 'Sidebar', 'basalstyle' ),
