@@ -6,10 +6,10 @@ BasalStyle WordPress é um tema extremamente enxuto para WordPress. Usa o BasalS
 
 O que falta para uma versão 1.0
 
-- Melhorar a relação do nome do site e descrição
+- --Melhorar a relação do nome do site e descrição--
 - Aplicar um menu de navegação no Header do Site
-- -Remover as características de link (underline e cor azul) do título do post-
-- -Melhorar a relação de data do post e o título e seu layout-
+- --Remover as características de link (underline e cor azul) do título do post--
+- --Melhorar a relação de data do post e o título e seu layout--
 - Definir o template da Busca e seu layout
 - Definir o layout do Sidebar
 - Testar algumas customizações no sidebar, para ver como ele se comporta

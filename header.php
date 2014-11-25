@@ -40,11 +40,11 @@
 
 <body <?php body_class();?> >
 
-    <div class="header-frame">
+    <div class="header-frame  min-h-5">
 
-        <header class="header desktop-12 container">
+        <header class="header leading-top-1 desktop-12 container">
             <?php
-                // Condicional que remove o link do logo do site quando na front-page
+                // Condicional que remove o link do logo do site quando na página de front-page
                 if ( is_front_page() ) { ?>
 
             <h1 class="site-name"><?php esc_attr( bloginfo( 'name' ) ); ?></h1>

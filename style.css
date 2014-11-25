@@ -23,11 +23,43 @@ body { font-family: "Open Sans", sans-serif; }
  *
  */
 
+.header {
+    text-transform: uppercase;
+}
+
+.header .site-name {
+    font-size: 2.5em;
+    line-height: 30px;
+    font-weight: 400;
+    margin: 0;
+    padding: 0 0;
+    min-height: 1em;
+}
+
+.header .site-description {
+    font-size: 1.2em;
+    line-height: 30px;
+    padding: 0 3px;
+}
+
+@media (max-width: 800px) {
+
+    .header .site-name {
+        margin: 0 15px;
+        padding: 0 0;
+    }
+
+}
+
 /**
  * Corpo do Site
  * Envolve o post, sidebar e tudo que tiver entre o Cabeçalho e o Rodapé.
  *
  */
+
+.main article + article {
+    margin-top: 60px;
+}
 
 /**
  * Conteúdo principal
