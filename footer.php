@@ -14,19 +14,30 @@
     </div>
     <!-- .content-frame -->
 
-    <div class="footer-frame">
+    <div class="footer-frame min-h-6">
         <footer id="colophon" class="footer desktop-12 container" role="contentinfo">
             <div class="site-info">
                 <p class="copyright">&copy; <?php echo date( "Y" ); echo " "; bloginfo( 'name' ); ?></p>
             </div>
         </footer>
 
-        <nav id="footer-menu" class="nav-inline" role="navigation"><?php
-            // http://codex.wordpress.org/Navigation_Menus
-            wp_nav_menu( array( 'theme_location' => 'footer-menu' ) );
+        <?php if ( has_nav_menu( 'footer-menu' ) ) { ?>
 
-        ?></nav>
-        <!-- #footer-menu -->
+            <nav id="footer-menu" class="desktop-12 container" role="navigation"><?php
+
+                // Acrescenta o botão de mobile do BaslStyle no menu principal
+                $mobile_trigger = '<a class="nav-mobile" href="javascript:void(0);"><i class="fa fa-bars"></i></a>';
+                // http://codex.wordpress.org/Navigation_Menus
+                wp_nav_menu( array(
+                   'theme_location'  => 'header-menu',
+                   'container_class' => 'nav-inline',
+                   'items_wrap'      => $mobile_trigger . '<ul id="%1$s" class="%2$s">%3$s</ul>', )
+                );
+
+            ?></nav>
+            <!-- #footer-menu -->
+
+         <?php } ?>
 
     </div>
 

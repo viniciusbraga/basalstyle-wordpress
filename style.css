@@ -28,7 +28,7 @@ body { font-family: "Open Sans", sans-serif; }
 }
 
 .header .site-name {
-    font-size: 2.5em;
+    font-size: 2.8em;
     line-height: 30px;
     font-weight: 400;
     margin: 0;
@@ -36,11 +36,17 @@ body { font-family: "Open Sans", sans-serif; }
     min-height: 1em;
 }
 
+.header .site-branding {
+    margin-top: 15px;
+}
+
 .header .site-description {
     font-size: 1.2em;
     line-height: 30px;
     padding: 0 3px;
 }
+
+
 
 @media (max-width: 800px) {
 
@@ -100,6 +106,10 @@ body { font-family: "Open Sans", sans-serif; }
  * Navegação do Site
  *
  */
+
+ .nav-inline .current-menu-item {
+    background: #f5f5f5;
+ }
 
  .nav-inline .current-menu-item > a {
     color: #000000;
