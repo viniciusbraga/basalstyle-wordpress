@@ -14,7 +14,7 @@
     </div>
     <!-- .content-frame -->
 
-    <div class="footer-frame min-h-6">
+    <div class="footer-frame min-h-6 leading-top-2">
         <footer id="colophon" class="footer desktop-12 container" role="contentinfo">
             <div class="site-info">
                 <p class="copyright">&copy; <?php echo date( "Y" ); echo " "; bloginfo( 'name' ); ?></p>
