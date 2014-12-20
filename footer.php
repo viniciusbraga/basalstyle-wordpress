@@ -30,8 +30,7 @@
                 // http://codex.wordpress.org/Navigation_Menus
                 wp_nav_menu( array(
                    'theme_location'  => 'header-menu',
-                   'container_class' => 'nav-inline',
-                   'items_wrap'      => $mobile_trigger . '<ul id="%1$s" class="%2$s">%3$s</ul>', )
+                   'container_class' => 'nav-inline' )
                 );
 
             ?></nav>
