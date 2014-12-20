@@ -40,11 +40,11 @@
 
 <body <?php body_class();?> >
 
-    <div class="header-frame  min-h-6">
+    <div class="header-frame  min-h-5">
 
-        <header class="header header-inline">
+        <header class="header header-inline min-h-3 row desktop-12 container">
 
-            <div class="site-branding min-h-3 desktop-12 container"><?php
+            <div class="site-branding site-logo"><?php
                 // Condicional que remove o link do logo do site quando na página de front-page
                 if ( is_front_page() ) { ?>
 
@@ -63,20 +63,17 @@
 
             <?php if ( has_nav_menu( 'header-menu' ) ) { ?>
 
-                <div class="nav-frame">
-                    <nav id="header-menu" class="desktop-12 container" role="navigation"><?php
-                        // Acrescenta o botão de mobile do BaslStyle no menu principal
-                        $mobile_trigger = '<a class="nav-mobile" href="javascript:void(0);"><i class="fa fa-bars"></i></a>';
-                        // http://codex.wordpress.org/Navigation_Menus
-                        wp_nav_menu( array(
-                           'theme_location'  => 'header-menu',
-                           'container_class' => 'nav-inline',
-                           'items_wrap'      => $mobile_trigger . '<ul id="%1$s" class="%2$s">%3$s</ul>', )
-                        );
-                    ?></nav>
-                    <!-- #header-menu -->
-                </div>
-                <!-- nav-frame -->
+                <nav id="header-menu" class="nav-inline" role="navigation"><?php
+                    // Acrescenta o botão de mobile do BaslStyle no menu principal
+                    $mobile_trigger = '<a class="nav-mobile" href="javascript:void(0);"><i class="fa fa-bars"></i></a>';
+                    // http://codex.wordpress.org/Navigation_Menus
+                    wp_nav_menu( array(
+                       'theme_location'  => 'header-menu',
+                       'container_class' => 'menu',
+                       'items_wrap'      => $mobile_trigger . '<ul id="%1$s" class="%2$s">%3$s</ul>', )
+                    );
+                ?></nav>
+                <!-- #header-menu -->
 
              <?php } ?>
 
