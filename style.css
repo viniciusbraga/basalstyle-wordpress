@@ -116,12 +116,4 @@ body { font-family: "Open Sans", sans-serif; }
  *
  */
 
- .nav-inline .current-menu-item {
-    background: #f5f5f5;
- }
-
- .nav-inline .current-menu-item > a {
-    color: #000000;
-    font-weight: 700;
- }
 
