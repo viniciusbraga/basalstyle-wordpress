@@ -121,16 +121,8 @@ add_filter('the_content_more_link', 'basalstyle_remove_more_jump_link');
  * Lista as funções carregadas no wp_header()
  *
  */
-remove_action('wp_head', 'feed_links_extra');
+// remove_action('wp_head', 'feed_links_extra');
 remove_action('wp_head', 'rsd_link');
 remove_action('wp_head', 'wlwmanifest_link');
-remove_action('wp_head', 'index_rel_link');
-remove_action('wp_head', 'parent_post_rel_link');
-remove_action('wp_head', 'start_post_rel_link');
-remove_action('wp_head', 'adjacent_posts_rel_link');
-remove_action('wp_head', 'locale_stylesheet');
-remove_action('wp_head', 'noindex');
-remove_action('wp_head', 'wp_print_styles');
-remove_action('wp_head', 'wp_print_head_scripts');
 remove_action('wp_head', 'wp_generator');
 
