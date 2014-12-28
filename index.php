@@ -9,11 +9,12 @@
 
 get_header(); ?>
 
-<div class="main desktop-8 leading-top-1">
+<div class="main row padding-top-1">
+
 
     <?php if ( ! have_posts() ) :
         // Caso não tenha um post referente a URL, ele aplica este conteúdo. ?>
-        <div id="post-0" class="post error404 not-found desktop-4">
+        <div id="post-0" class="post error404 not-found row">
             <h1 class="entry-title"><?php _e( 'Not Found', 'basalstyle' ); ?></h1>
             <div class="entry-content">
                 <p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.' );
@@ -25,9 +26,9 @@ get_header(); ?>
         <!-- #post-0 -->
     <?php endif; ?>
 
+    <?php while ( have_posts() ) :  the_post();  ?>
 
-    <?php while ( have_posts() ) : the_post(); ?>
-        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+        <article id="post-<?php the_ID(); ?>" <?php post_class("padding-bottom-1"); ?>>
 
             <header>
                 <div class="entry-metadata">

@@ -42,9 +42,9 @@
 
     <div class="header-frame  min-h-5">
 
-        <header class="header header-inline min-h-3 row desktop-12 container">
+        <header class="header header-inline min-h-3 row desktop-8 container">
 
-            <div class="site-branding site-logo"><?php
+            <div class="site-logo"><?php
                 // Condicional que remove o link do logo do site quando na página de front-page
                 if ( is_front_page() ) { ?>
 
@@ -87,7 +87,9 @@
                     ?></nav>
                     <!-- #header-menu -->
 
-             <?php } ?>
+            <?php } ?>
+
+
 
         </header>
         <!-- header -->
@@ -97,5 +99,5 @@
 
     <div class="content-frame row">
 
-        <div id="content" class="content desktop-12 container">
+        <div id="content" class="content desktop-8 container">
 
