@@ -50,7 +50,26 @@ get_header(); ?>
 
     <?php endwhile; // Fim do loop básico do WordPress ?>
 
-    <div class="row">
+    <?php // Caso o index tenha mais do que 1 página, acrescenta a paginação. ?>
+    <?php if (  $wp_query->max_num_pages > 1 ) : ?>
+
+        <div class="pagination">
+            <div class="nav-inline">
+                <?php
+                    $args = array(
+                            'prev_text'    => __('Previous'),
+                            'next_text'    => __('Next'),
+                            'type'         => 'list'
+                            );
+
+                    echo paginate_links( $args );
+                ?>
+            </div><!-- #nav-below -->
+        </div>
+
+    <?php endif; ?>
+
+    <div class="row padding-bottom-1">
         <?php comments_template( '', true ); ?>
     </div>
 
