@@ -9,9 +9,9 @@
 
 get_header(); ?>
 
-<div id="content" class="content desktop-8 container">
+<div id="content" class="content desktop-12 container">
 
-    <div class="main row padding-top-1">
+    <div class="main padding-top-1 row desktop-7 col-left-2 gutter-right">
 
 
         <?php if ( ! have_posts() ) :
@@ -43,6 +43,7 @@ get_header(); ?>
                             the_category( ', ' ); ?></span>
                         <?php edit_post_link( __( 'Edit' ), '', '' ); ?>
                     </div>
+
 
                     <h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_permalink() ?>" rel="bookmark"><?php
                         the_title();
@@ -84,11 +85,9 @@ get_header(); ?>
     </div>
     <!-- .main -->
 
-    <?php // get_sidebar(); ?>
-
+    <?php get_sidebar(); ?>
 
 </div>
 <!-- #content -->
-
 
 <?php get_footer(); ?>

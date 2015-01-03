@@ -7,7 +7,20 @@ Author: Vinicius Braga
 Version: 0.2
 */
 
-body { font-family: "Open Sans", sans-serif; }
+/**
+ * Tipografia
+ *
+ */
+
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic,300italic,700italic);
+
+body { font-family: 'Source Sans Pro', sans-serif; font-weight: 300; }
+
+p, li, dt, dd, th, td, caption { font-size: 1.9em; }
+
+a { text-decoration: none; }
+
+a:hover { text-decoration: underline; }
 
 /**
  * Classes disponíveis no tag do BODY quando na seção / página da vez.
@@ -27,36 +40,21 @@ body { font-family: "Open Sans", sans-serif; }
     text-transform: uppercase;
 }
 
-.header-inline .site-logo {
-    display: inline-block;
-    width: 300px;
-}
 
+.site-logo h1,
 .site-logo h1 a {
-    font-size: 1em;
-    height: auto;
-    line-height: 30px;
-}
-
-.header .site-name {
-    font-size: 2.8em;
-    line-height: 30px;
-    font-weight: 400;
+    color: #000;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 3.41em;
+    letter-spacing: 1px;
     margin: 0;
-    padding: 0 0;
+    padding: 0;
+    height: 50px;
     min-height: 1em;
+    display: block;
+    overflow: hidden;
 }
-
-.header .site-branding {
-}
-
-.header .site-description {
-    font-size: 1.2em;
-    line-height: 30px;
-    padding: 0 3px;
-}
-
-
 
 @media (max-width: 800px) {
 
@@ -72,9 +70,6 @@ body { font-family: "Open Sans", sans-serif; }
  *
  */
 
-.main article + article {
-    margin-top: 60px;
-}
 
 /**
  * Conteúdo principal
@@ -83,37 +78,192 @@ body { font-family: "Open Sans", sans-serif; }
  */
 
 .entry-metadata {
-    font-size: 1.3em;
+    font-size: 1.1em;
+    font-weight: normal;
     line-height: 1em;
-    letter-spacing: 1px;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
+    text-decoration: none;
     margin: 0 3px;
     position: absolute;
 }
 
+.entry-metadata a { color: #38383b; }
+
+.entry-metadata .post-date,
+.entry-metadata .author,
+.entry-metadata .categories {
+    margin: 0 1em 0 0;
+}
+
+
+.entry-title,
 .entry-title a {
     color: #000000;
-    font-weight: 800;
-    text-decoration: none;
+    font-weight: 300;
 }
+
+.entry-title a:hover { text-decoration: none; }
+
+.entry-title {
+    max-width: 90%;
+}
+
+.entry-content {
+    color: #38383B ;
+    font-weight: normal;
+}
+
 
 @media (max-width: 800px) {
 
     .entry-metadata {
+        line-height: 1.5em;
         margin: 0 16px;
+        position: relative;
+    }
+    .entry-metadata .post-date,
+    .entry-metadata .author,
+    .entry-metadata .categories {
+        display: block;
+        position: relative;
     }
 
 }
+
+/**
+ * Widget do Site
+ *
+ */
+
+.widget {
+    margin: 3em 0;
+    min-height: 90px;
+}
+
+#secondary .widget {
+}
+
+.widget-title {
+    font-size: 1.4em;
+    font-weight: 400;
+    line-height: 1em;
+    text-transform: uppercase;
+    min-height: 30px;
+    padding: 0 0;
+}
+
+.widget ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.widget ul li a {
+    text-decoration: none;
+}
+
 
 /**
  * Rodapé (Footer) do Site
  *
  */
 
+.footer-frame {
+     background-color: #f5f5f5;
+}
+
+.copyright { font-size: 1.2em;}
 
 /**
  * Navegação do Site
  *
  */
 
+.pagination {
+    text-align: center;
+}
 
+.pagination .nav-inline li a,
+.pagination .dots,
+.pagination .current {
+    font-size: 1.6em;
+    font-weight: 700;
+    line-height: 45px;
+    display: block;
+    margin: 0;
+    padding: 0 0.6em;
+    min-width: 45px;
+}
+
+.pagination .nav-inline li {
+    margin: 0 1em 0 0;
+}
+
+.pagination .nav-inline li a:hover {
+    background-color: #E6E6E6;
+}
+
+.pagination .current {
+    font-size: 2em;
+    background-color: #f5f5f5;
+}
+
+/**
+ * Formulário de Busca
+ *
+ */
+
+.searchform {
+    min-height: 60px;
+}
+.searchform  > div {
+    line-height: 60px;
+}
+.searchform .screen-reader-text {
+    display: none;
+}
+.searchform input[type=text] {
+    font-size: 1.8em;
+    line-height: 28px;
+    padding: 3px 9px;
+    width: 96%;
+    max-width: 285px;
+    vertical-align: middle;
+}
+.searchform input[type=submit] {
+    line-height: 36px;
+    margin: 0 0.5em;
+    padding: 0 0.6em;
+    min-height: 30px;
+    vertical-align: middle;
+    display: none;
+}
+
+
+@media (max-width: 800px) {
+
+    .searchform  > div {
+        padding: 1.5em;
+    }
+
+}
+
+@media (max-width: 400px) {
+
+    .searchform input[type=text] {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .searchform input[type=submit] {
+        display: block;
+        margin: 1em auto 0.5em;
+    }
+
+}
+
+
+/*.debug:after { background-position: left top !important; width: 761px; margin: 0 auto;}*/
+
+/* Fim */

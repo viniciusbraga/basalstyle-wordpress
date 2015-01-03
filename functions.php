@@ -28,17 +28,13 @@ function basalstyle_scripts_styles() {
     // Registra a lib do JQuery existente no Google's CDN
     wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js', array(), '1.9.1', false );
 
-
     // Adiciona o Font-Awesome com ícones. Sempre útil
-    wp_enqueue_style( 'font-awesome', 'http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css' );
-    wp_enqueue_style( 'font-open-sans', 'http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700,700italic,800' );
-    wp_enqueue_style( 'font-exo-2', 'http://fonts.googleapis.com/css?family=Exo+2:300,600,700' );
-
+    wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' );
 
     // Carrega as folhas de estilo principais.
     // wp_enqueue_style( 'basalstyle-style', get_stylesheet_uri(), array(), '20130224' );
-    wp_enqueue_style( 'basalstyle-style', get_template_directory_uri() . '/basalstyle/style.min.css', array(), '20141123' );
-    wp_enqueue_style( 'customized-style', get_template_directory_uri() . '/style.css', array(), '20140620' );
+    wp_enqueue_style( 'basalstyle', get_template_directory_uri() . '/basalstyle/style.min.css', array(), '20141224' );
+    wp_enqueue_style( 'basalstyle-wordpress', get_template_directory_uri() . '/style.css', array(), '20140620' );
 
 }
 
@@ -125,16 +121,8 @@ add_filter('the_content_more_link', 'basalstyle_remove_more_jump_link');
  * Lista as funções carregadas no wp_header()
  *
  */
-remove_action('wp_head', 'feed_links_extra');
+// remove_action('wp_head', 'feed_links_extra');
 remove_action('wp_head', 'rsd_link');
 remove_action('wp_head', 'wlwmanifest_link');
-remove_action('wp_head', 'index_rel_link');
-remove_action('wp_head', 'parent_post_rel_link');
-remove_action('wp_head', 'start_post_rel_link');
-remove_action('wp_head', 'adjacent_posts_rel_link');
-remove_action('wp_head', 'locale_stylesheet');
-remove_action('wp_head', 'noindex');
-remove_action('wp_head', 'wp_print_styles');
-remove_action('wp_head', 'wp_print_head_scripts');
 remove_action('wp_head', 'wp_generator');
 

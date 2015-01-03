@@ -9,37 +9,19 @@
  */
 ?>
 
-        </div>
-        <!-- #content -->
+
     </div>
     <!-- .content-frame -->
 
-    <div class="footer-frame min-h-6 leading-top-2">
-        <footer id="colophon" class="footer desktop-12 container" role="contentinfo">
+    <div class="footer-frame min-h-4 padding-top-1">
+        <footer id="colophon" class="footer desktop-8 container" role="contentinfo">
+
             <div class="site-info">
-                <p class="copyright">&copy; <?php echo date( "Y" ); echo " "; bloginfo( 'name' ); ?></p>
+                <p class="copyright">&copy; <?php echo date( "Y" ); echo " "; bloginfo( 'name' ); ?>. <?php _e( 'Powered by' ); ?> <a href="http://wordpress.org" title="WordPress.org">WordPress</a>.</p>
             </div>
+
         </footer>
-
-        <?php if ( has_nav_menu( 'footer-menu' ) ) { ?>
-
-            <nav id="footer-menu" class="desktop-12 container" role="navigation"><?php
-
-                // Acrescenta o botão de mobile do BaslStyle no menu principal
-                $mobile_trigger = '<a class="nav-mobile" href="javascript:void(0);"><i class="fa fa-bars"></i></a>';
-                // http://codex.wordpress.org/Navigation_Menus
-                wp_nav_menu( array(
-                   'theme_location'  => 'header-menu',
-                   'container_class' => 'nav-inline' )
-                );
-
-            ?></nav>
-            <!-- #footer-menu -->
-
-         <?php } ?>
-
     </div>
-
 
     <?php wp_footer(); ?>
 

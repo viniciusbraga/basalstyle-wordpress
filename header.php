@@ -40,11 +40,11 @@
 
 <body <?php body_class();?> >
 
-    <div class="header-frame  min-h-5">
+    <div class="header-frame  min-h-8 padding-top-1">
 
-        <header class="header header-inline min-h-3 row desktop-12 container">
+        <header class="header header-inline min-h-3 row desktop-8 container">
 
-            <div class="site-branding site-logo"><?php
+            <div class="site-logo"><?php
                 // Condicional que remove o link do logo do site quando na página de front-page
                 if ( is_front_page() ) { ?>
 
@@ -87,7 +87,7 @@
                     ?></nav>
                     <!-- #header-menu -->
 
-             <?php } ?>
+            <?php } ?>
 
         </header>
         <!-- header -->
@@ -96,6 +96,4 @@
     <!-- frame-header -->
 
     <div class="content-frame row">
-
-        <div id="content" class="content desktop-12 container">
 
