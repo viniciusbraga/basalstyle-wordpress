@@ -214,54 +214,81 @@ a:hover { text-decoration: underline; }
  *
  */
 
-.searchform {
-    min-height: 60px;
+.search-form {
+    min-height: 120px;
+    position: relative;
 }
-.searchform  > div {
+.search-form  > div {
     line-height: 60px;
 }
-.searchform .screen-reader-text {
-    display: none;
-}
-.searchform input[type=text] {
-    font-size: 1.8em;
+.search-form .search-label {
+    font-size: 2.8em;
     line-height: 28px;
     padding: 3px 9px;
-    width: 96%;
-    max-width: 285px;
-    vertical-align: middle;
+    height: 90px;
+    display: inline-block;
+    margin-top: 0;
+    -webkit-transition: -webkit-padding 0.3s;
+    transition: padding 0.3s;
 }
-.searchform input[type=submit] {
-    line-height: 36px;
-    margin: 0 0.5em;
-    padding: 0 0.6em;
-    min-height: 30px;
+.search-form .search-input {
+    font-size: 2.8em;
+    line-height: 40px;
+    padding: 3px 9px;
+    width: 100%;
     vertical-align: middle;
-    display: none;
+    border: 2px solid #38383b;
+    border-left: none;
+    border-right: none;
+    background: transparent;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    z-index: 5;
+}
+
+.search-form .search-input[value=""] + .search-label {
+    padding: 50px 9px;
+}
+
+.search-form .search-input:focus + .search-label {
+    padding: 3px 9px;
+}
+
+.widget .search-form .search-input {
+    width: 100%;
+}
+
+.search-form .search-submit {
+    font-size: 2.8em;
+    line-height: 44px;
+    margin: 0 0 0 0;
+    padding: 0 0.6em;
+    height: 50px;
+    width: 50px;
+    vertical-align: middle;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    z-index: 10;
+    border: none;
+    background-color: transparent;
+    cursor: pointer ;
 }
 
 
 @media (max-width: 800px) {
 
-    .searchform  > div {
+    .search-form  > div {
         padding: 1.5em;
     }
-
-}
-
-@media (max-width: 400px) {
-
-    .searchform input[type=text] {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .searchform input[type=submit] {
-        display: block;
-        margin: 1em auto 0.5em;
+    .search-form .search-input {
+        width: 96%;
     }
 
 }
+
+@media (max-width: 400px) { }
 
 
 /*.debug:after { background-position: left top !important; width: 761px; margin: 0 auto;}*/

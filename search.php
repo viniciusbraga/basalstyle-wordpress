@@ -1,6 +1,6 @@
 <?php
 /**
- * Index e template de conteúdo do tema
+ * Index de resultado de busca
  *
  *
  * @package BasalStyle
@@ -9,9 +9,9 @@
 
 get_header(); ?>
 
-<div id="content" class="content desktop-8 container">
+<div id="content" class="content desktop-12 container">
 
-    <div class="main row padding-top-1">
+    <div class="main padding-top-1 row desktop-7 col-left-2 gutter-right">
 
 
         <?php if ( ! have_posts() ) :
@@ -44,6 +44,7 @@ get_header(); ?>
                         <?php edit_post_link( __( 'Edit' ), '', '' ); ?>
                     </div>
 
+
                     <h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_permalink() ?>" rel="bookmark"><?php
                         the_title();
                         ?></a></h1>
@@ -58,23 +59,24 @@ get_header(); ?>
 
         <?php endwhile; // Fim do loop básico do WordPress ?>
 
-        <?php // Caso o index tenha mais do que 1 página, acrescenta a paginação.
-            if (  $wp_query->max_num_pages > 1 ) : ?>
-                <div class="pagination">
-                    <div class="nav-inline">
-                        <?php
-                            $args = array(
-                                    'prev_text'    => __('Previous'),
-                                    'next_text'    => __('Next'),
-                                    'type'         => 'list'
-                                    );
+        <?php // Caso o index tenha mais do que 1 página, acrescenta a paginação. ?>
+        <?php if (  $wp_query->max_num_pages > 1 ) : ?>
 
-                            echo paginate_links( $args );
-                        ?>
-                    </div><!-- #nav-below -->
-                </div>
+            <div class="pagination">
+                <div class="nav-inline">
+                    <?php
+                        $args = array(
+                                'prev_text'    => __('Previous'),
+                                'next_text'    => __('Next'),
+                                'type'         => 'list'
+                                );
 
-        <?php endif; // Fim da paginação ?>
+                        echo paginate_links( $args );
+                    ?>
+                </div><!-- #nav-below -->
+            </div>
+
+        <?php endif; ?>
 
         <div class="row padding-bottom-1">
             <?php comments_template( '', true ); ?>
@@ -83,17 +85,9 @@ get_header(); ?>
     </div>
     <!-- .main -->
 
-    <?php // get_sidebar(); ?>
-
+    <?php get_sidebar(); ?>
 
 </div>
 <!-- #content -->
-
-<div class="row min-h-5">
-    <div class="content desktop-8 container">
-        <?php get_search_form(); ?>
-    </div>
-</div>
-
 
 <?php get_footer(); ?>
