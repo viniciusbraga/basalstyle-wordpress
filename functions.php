@@ -14,7 +14,10 @@ function basalstyle_scripts_styles() {
     wp_deregister_script( 'jquery' );
 
     // Registra a lib do JQuery existente no Google's CDN
-    wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js', array(), '1.9.1', false );
+    wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js', array(), '2.2.3', false );
+
+    // Aplica o script do template
+    wp_enqueue_script( 'basalstyle-script', get_template_directory_uri() . '/js/script.js', array('jquery'), '0.1', false  );
 
     // Adiciona o Font-Awesome com ícones. Sempre útil
     wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' );
