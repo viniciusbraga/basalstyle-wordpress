@@ -9,9 +9,17 @@
 
 get_header(); ?>
 
+<div class="row min-h-6">
+    <div class="desktop-12 container">
+        <div class="content desktop-7 col-left-2">
+            <?php get_search_form(); ?>
+        </div>
+    </div>
+</div>
+
 <div id="content" class="content desktop-12 container">
 
-    <div class="main padding-top-1 row desktop-7 col-left-2 gutter-right">
+    <div class="main row desktop-7 col-left-2 gutter-right">
 
 
         <?php if ( have_posts() ) : ?>
