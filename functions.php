@@ -4,18 +4,6 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Caso o arquivo seja acessado diretamente,
 
 
 /**
- * Adiciona a capacidade de fazer a tradução do tema
- * O arquivo de tradução deve se colocado na pasta /languages/
- *
- */
-function basalstyle_setup() {
-    load_theme_textdomain( 'basalstyle', TEMPLATEPATH . '/languages' );
-}
-
-add_action( 'after_setup_theme', 'basalstyle_setup' );
-
-
-/**
  * Registra as libs e folhas de estilo do HEAD do HTML
  *
  */
