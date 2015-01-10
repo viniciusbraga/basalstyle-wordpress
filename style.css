@@ -20,7 +20,7 @@ p, li, dt, dd, th, td, caption { font-size: 1.9em; }
 
 a { text-decoration: none; }
 
-a:hover { text-decoration: underline; }
+a:hover { color: #000; }
 
 /**
  * Classes disponíveis no tag do BODY quando na seção / página da vez.
@@ -28,6 +28,7 @@ a:hover { text-decoration: underline; }
  * .body-page
  * .body-category
  * .body-home
+
  */
 
 
@@ -54,6 +55,7 @@ a:hover { text-decoration: underline; }
     min-height: 1em;
     display: block;
     overflow: hidden;
+    border: none;
 }
 
 @media (max-width: 800px) {
@@ -101,6 +103,7 @@ a:hover { text-decoration: underline; }
 .entry-title a {
     color: #000000;
     font-weight: 300;
+    border: 0;
 }
 
 .entry-title a:hover { text-decoration: none; }
@@ -110,8 +113,13 @@ a:hover { text-decoration: underline; }
 }
 
 .entry-content {
-    color: #38383B ;
+    color: #666666 ;
     font-weight: normal;
+}
+
+.entry-content a {
+    color: #333;
+    border-bottom: 1px solid #CCCCCC;
 }
 
 
