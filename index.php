@@ -9,6 +9,15 @@
 
 get_header(); ?>
 
+<div class="row min-h-4">
+    <div class="desktop-12 container">
+        <div class="content desktop-8 col-left-2">
+            <?php get_search_form(); ?>
+        </div>
+    </div>
+</div>
+
+
 <div id="content" class="content desktop-8 container">
 
     <div class="main row padding-top-1">
@@ -88,12 +97,6 @@ get_header(); ?>
 
 </div>
 <!-- #content -->
-
-<div class="row min-h-5">
-    <div class="content desktop-8 container">
-        <?php get_search_form(); ?>
-    </div>
-</div>
 
 
 <?php get_footer(); ?>
