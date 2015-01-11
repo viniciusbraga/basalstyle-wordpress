@@ -185,7 +185,7 @@ a { text-decoration: none; }
 .copyright { font-size: 1.2em;}
 
 .toTop {
-    color: #38383b;
+    color: #606066;
     font-size: 30px;
     line-height: 50px;
     text-align: center;
@@ -198,14 +198,12 @@ a { text-decoration: none; }
     outline: none;
     cursor: pointer;
     border-radius: 45px;
-    border: 2px solid #38383b;
-    background: #FFF;
-    opacity: 0.4;
+    background: #E6E6E6;
     -webkit-transition: -webkit-opacity 0.3s;
     transition: opacity 0.3s;
 }
-.toTop:visited { color: #999999; }
-.toTop:hover { opacity: 1 }
+.toTop:visited { color: #606066; }
+.toTop:hover { color: #000000; }
 
 /**
  * Navegação do Site
