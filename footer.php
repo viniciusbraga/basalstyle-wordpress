@@ -30,7 +30,7 @@
 <!-- Fim do código de debug -->
 
 
-<a href="#top" class="toTop fa fa-chevron-up" style="display: none;"><span class="screen-reader-only">Topo da Página</span></a>
+<a href="#header-frame" class="toTop fa fa-chevron-up" style="display: none;"><span class="screen-reader-only">Topo da Página</span></a>
 
 
 </body>
