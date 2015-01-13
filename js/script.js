@@ -2,7 +2,8 @@
 
 $(document).ready(function(){
 
-    // BackToTop: you can change the speed of the scroll below
+    // Controla a interação do botão Seguir para o Topo
+
     jQuery(window).load(function() {
         jQuery("#backtotop").hide().removeAttr("href");
         if (jQuery(window).scrollTop() != "0")
