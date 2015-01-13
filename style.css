@@ -4,7 +4,7 @@ Theme Name: BasalStyle WordPress
 Theme URI: https://github.com/viniciusbraga/basalstyle-wordpress
 Description: Tema enxuto do WordPress usando o BasalStyle CSS como base de layout.
 Author: Vinicius Braga
-Version: 0.2
+Version: 0.5
 */
 
 /**
@@ -99,6 +99,18 @@ a { text-decoration: none; }
     margin: 0 1em 0 0;
 }
 
+.entry-metadata .post-edit-link {
+    color: #333;
+    margin: 0 10px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    background-color: #E6E6E6;
+}
+
+.entry-metadata .post-edit-link:hover {
+    color: #ffffff;
+    background-color: #808080;
+}
 
 .entry-title,
 .entry-title a {
@@ -138,6 +150,80 @@ a { text-decoration: none; }
         position: relative;
     }
 
+}
+
+/**
+ * Comentários do WordPress
+ *
+ */
+
+#comment-640, #comment-485 { display: none; }
+
+.commentlist {
+    list-style: none;
+    padding: 0;
+}
+
+.comment {
+
+}
+
+.comment-body {
+    padding: 0.5em 0;
+}
+
+.comment-body .comment-autor { }
+
+.comment-body .comment-author .avatar {
+    vertical-align: text-top;
+    height: 40px;
+    width: 40px;
+    margin: 0 5px 0 0;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 3px solid rgba(153,153,153,0.3);
+}
+.comment-body .comment-author .fn {
+    font-size: 18px;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-style: normal;
+}
+
+.comment-body .comment-meta {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin: -15px 0 10px;
+    padding: 0 0 0 50px;
+}
+
+.comment-body p {
+    font-size: 1em;
+    line-height: 1.45em;
+    padding: 0 0 0 50px;
+}
+
+.comment-body .reply {
+    font-size: 0.75em;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin: 0 0 0 50px;
+}
+
+.children {
+    padding: 0 0 0 67px;
+    list-style: none;
+}
+
+.depth-1 > .children {
+    padding: 0 0 0 50px;
+}
+
+.children .comment-body {
+    padding-left: 10px;
+    border-left: 12px solid #E6E6E6;
 }
 
 /**
@@ -184,8 +270,8 @@ a { text-decoration: none; }
 
 .copyright { font-size: 1.2em;}
 
-.toTop {
-    color: #38383b;
+#backtotop {
+    color: #606066;
     font-size: 30px;
     line-height: 50px;
     text-align: center;
@@ -198,14 +284,12 @@ a { text-decoration: none; }
     outline: none;
     cursor: pointer;
     border-radius: 45px;
-    border: 2px solid #38383b;
-    background: #FFF;
-    opacity: 0.4;
+    background: #E6E6E6;
     -webkit-transition: -webkit-opacity 0.3s;
     transition: opacity 0.3s;
 }
-.toTop:visited { color: #999999; }
-.toTop:hover { opacity: 1 }
+#backtotop:visited { color: #606066; }
+#backtotop:hover { color: #000000; }
 
 /**
  * Navegação do Site
@@ -275,8 +359,8 @@ a { text-decoration: none; }
     background: rgba(0,0,0,0.05);
     position: absolute;
     right: 0;
-    -webkit-transition: -webkit-padding 0.3s, -webkit-opacity 0.3s, width 0.3s;
-    transition: padding 0.3s, opacity 0.3s,  width 0.3s;
+    -webkit-transition: -webkit-padding 0.5s ease-out, -webkit-opacity 0.5s ease-out, width 0.5s ease-out;
+    transition: padding 0.5s ease-out, opacity 0.5s ease-out,  width 0.5s ease-out;
 }
 
 .search-form .search-label span { opacity: 1; }
@@ -349,7 +433,23 @@ a { text-decoration: none; }
     }
 }
 
+/**
+ * CSS para plugins conhecidos
+ *
+ */
 
-/*.debug:after { background-position: left top !important; width: 761px; margin: 0 auto;}*/
+/**
+ * Crayon Syntax Highlighter
+ */
+
+.crayon-table td {
+    font-size: 1.2em;
+    line-height: 21px;
+}
+
+.crayon-num,
+.crayon-line {
+    min-height: 20px;
+}
 
 /* Fim */

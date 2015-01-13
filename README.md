@@ -14,7 +14,7 @@ O que falta para uma versão 1.0
 - ~~Definir o layout do Sidebar~~
 - ~~Aplicar o botão de Subir para o Topo no Rodapé~~.
 - ~~Acrescentar JavaScript para fazer o scroll suave nos links com âncoras~~
-- Aplicar o CSS dos comentários
+- ~~Aplicar o CSS dos comentários~~
 - Testar algumas customizações no sidebar, para ver como ele se comporta
 
 

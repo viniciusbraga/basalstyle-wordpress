@@ -40,7 +40,7 @@
 
 <body <?php body_class();?> >
 
-    <div class="header-frame  min-h-5 padding-top-1">
+    <div id="header-frame" class="header-frame  min-h-5 padding-top-1">
 
         <div class="row desktop-8 container">
             <header class="header header-inline min-h-3 row desktop-8">

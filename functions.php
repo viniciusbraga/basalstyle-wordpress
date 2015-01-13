@@ -17,6 +17,7 @@ function basalstyle_scripts_styles() {
     wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js', array(), '2.2.3', false );
 
     // Aplica o script do template
+    wp_enqueue_script( 'jquery-ui', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js', array('jquery'), '1.11.2', false  );
     wp_enqueue_script( 'basalstyle-script', get_template_directory_uri() . '/js/script.js', array('jquery'), '0.1', false  );
 
     // Adiciona o Font-Awesome com ícones. Sempre útil
