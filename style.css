@@ -4,10 +4,24 @@ Theme Name: BasalStyle WordPress
 Theme URI: https://github.com/viniciusbraga/basalstyle-wordpress
 Description: Tema enxuto do WordPress usando o BasalStyle CSS como base de layout.
 Author: Vinicius Braga
-Version: 0.2
+Version: 0.3
 */
 
-body { font-family: "Open Sans", sans-serif; }
+/**
+ * Tipografia
+ *
+ */
+
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic,300italic,700italic);
+
+html { background-color: #f5f5f5; }
+
+body { font-family: 'Source Sans Pro', sans-serif; font-weight: 300; background-color: #ffffff; }
+
+p, li, dt, dd, th, td, caption { font-size: 1.9em; }
+
+a { text-decoration: none; }
+
 
 /**
  * Classes disponíveis no tag do BODY quando na seção / página da vez.
@@ -15,6 +29,7 @@ body { font-family: "Open Sans", sans-serif; }
  * .body-page
  * .body-category
  * .body-home
+
  */
 
 
@@ -23,11 +38,41 @@ body { font-family: "Open Sans", sans-serif; }
  *
  */
 
+.header {
+    text-transform: uppercase;
+}
+
+
+.site-logo h1,
+.site-logo h1 a {
+    color: #000;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 3.41em;
+    letter-spacing: 1px;
+    margin: 0;
+    padding: 0;
+    height: 50px;
+    min-height: 1em;
+    display: block;
+    overflow: hidden;
+    border: none;
+}
+
+@media (max-width: 800px) {
+
+    .header .site-name {
+        padding: 0 0;
+    }
+
+}
+
 /**
  * Corpo do Site
  * Envolve o post, sidebar e tudo que tiver entre o Cabeçalho e o Rodapé.
  *
  */
+
 
 /**
  * Conteúdo principal
@@ -36,31 +81,413 @@ body { font-family: "Open Sans", sans-serif; }
  */
 
 .entry-metadata {
-    font-size: 1.3em;
+    font-size: 1.1em;
+    font-weight: normal;
     line-height: 1em;
-    letter-spacing: 1px;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
+    text-decoration: none;
     margin: 0 3px;
     position: absolute;
 }
 
+.entry-metadata a { color: #38383b; }
+
+.entry-metadata .post-date,
+.entry-metadata .author,
+.entry-metadata .categories {
+    margin: 0 1em 0 0;
+}
+
+.entry-metadata .post-edit-link {
+    color: #333;
+    margin: 0 10px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    background-color: #E6E6E6;
+}
+
+.entry-metadata .post-edit-link:hover {
+    color: #ffffff;
+    background-color: #808080;
+}
+
+.entry-title,
 .entry-title a {
     color: #000000;
-    font-weight: 800;
-    text-decoration: none;
+    font-weight: 300;
+    border: 0;
 }
+
+.entry-title a:hover { text-decoration: none; }
+
+.entry-title {
+    max-width: 90%;
+}
+
+.entry-content {
+    color: #666666 ;
+    font-weight: normal;
+}
+
+.entry-content a {
+    color: #333;
+    border-bottom: 1px solid #CCCCCC;
+}
+
 
 @media (max-width: 800px) {
 
     .entry-metadata {
+        line-height: 1.5em;
         margin: 0 16px;
+        position: relative;
+    }
+    .entry-metadata .post-date,
+    .entry-metadata .author,
+    .entry-metadata .categories {
+        display: block;
+        position: relative;
     }
 
 }
+
+/**
+ * Comentários do WordPress
+ *
+ */
+
+.commentlist {
+    list-style: none;
+    padding: 0;
+}
+
+.comment {
+
+}
+
+.comment-body {
+    padding: 0.5em 0;
+}
+
+.comment-body .comment-autor { }
+
+.comment-body .comment-author .avatar {
+    vertical-align: text-top;
+    height: 40px;
+    width: 40px;
+    margin: 0 5px 0 0;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 3px solid rgba(153,153,153,0.3);
+}
+.comment-body .comment-author .fn {
+    font-size: 18px;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-style: normal;
+}
+
+.comment-body .comment-meta {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin: -15px 0 10px;
+    padding: 0 0 0 50px;
+}
+
+.comment-body p {
+    font-size: 1em;
+    line-height: 1.45em;
+    padding: 0 0 0 50px;
+}
+
+.comment-body .reply {
+    font-size: 0.75em;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin: 0 0 0 50px;
+}
+
+.children {
+    padding: 0 0 0 67px;
+    list-style: none;
+}
+
+.depth-1 > .children {
+    padding: 0 0 0 50px;
+}
+
+.children .comment-body {
+    padding-left: 10px;
+    border-left: 12px solid #E6E6E6;
+}
+
+
+#commentform  input[type="text"] {
+    font-size: 1.3em;
+    vertical-align: text-top;
+    padding: 6px 0.5em;
+    margin-left: 0;
+    border: none;
+    background-color: #E6E6E6;
+}
+
+#commentform  label {
+    font-size: 1em;
+    line-height: 1em;
+    text-transform: uppercase;
+    vertical-align: text-top;
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+#commentform  textarea {
+    font-size: 1.3em;
+    margin-left: 0;
+    padding-top: 0.3em;
+}
+
+@media (max-width: 800px) {
+
+    #commentform  input[type="text"],
+    #commentform  label {
+        width: 96%;
+        display: block;
+    }
+
+    #commentform  textarea {
+        width: 96%;
+    }
+
+}
+
+/**
+ * Widget do Site
+ *
+ */
+
+.widget {
+    margin: 3em 0;
+    min-height: 90px;
+}
+
+#secondary .widget {
+}
+
+.widget-title {
+    font-size: 1.4em;
+    font-weight: 400;
+    line-height: 1em;
+    text-transform: uppercase;
+    min-height: 30px;
+    padding: 0 0;
+}
+
+.widget ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.widget ul li a {
+    text-decoration: none;
+}
+
 
 /**
  * Rodapé (Footer) do Site
  *
  */
 
+.footer-frame {
+     background-color: #f5f5f5;
+}
 
+.copyright { font-size: 1.2em;}
+
+#backtotop {
+    color: #606066;
+    font-size: 30px;
+    line-height: 50px;
+    text-align: center;
+    height: 60px;
+    width: 60px;
+    padding: 0;
+    position: fixed;
+    right: 30px;
+    bottom: 35px;
+    outline: none;
+    cursor: pointer;
+    border-radius: 45px;
+    background: #E6E6E6;
+    -webkit-transition: -webkit-opacity 0.3s;
+    transition: opacity 0.3s;
+}
+#backtotop:visited { color: #606066; }
+#backtotop:hover { color: #000000; }
+
+/**
+ * Navegação do Site
+ *
+ */
+
+.pagination {
+    text-align: center;
+}
+
+.pagination .nav-inline li a,
+.pagination .dots,
+.pagination .current {
+    font-size: 1.6em;
+    font-weight: 700;
+    line-height: 45px;
+    display: block;
+    margin: 0;
+    padding: 0 0.6em;
+    min-width: 45px;
+}
+
+.pagination .nav-inline li {
+    margin: 0 1em 0 0;
+}
+
+.pagination .nav-inline li a:hover {
+    background-color: #E6E6E6;
+}
+
+.pagination .current {
+    font-size: 2em;
+    background-color: #f5f5f5;
+}
+
+/**
+ * Formulário de Busca
+ *
+ */
+
+.search-form { position: relative; }
+
+.search-form .search-input {
+    font-size: 3.1em;
+    line-height: 56px;
+    vertical-align: middle;
+    text-align: center;
+    padding: 3px 3px 3px 3px;
+    width: 100%;
+    border: 0;
+    background: transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.search-form .search-label {
+    font-size: 1.6em;
+    line-height: 30px;
+    text-transform: uppercase;
+    padding: 16px 15px;
+    height: 60px;
+    width: 100%;
+    display: inline-block;
+    margin-top: 0;
+    background: rgba(0,0,0,0.05);
+    position: absolute;
+    right: 0;
+    -webkit-transition: -webkit-padding 0.5s ease-out, -webkit-opacity 0.5s ease-out, width 0.5s ease-out;
+    transition: padding 0.5s ease-out, opacity 0.5s ease-out,  width 0.5s ease-out;
+}
+
+.search-form .search-label span { opacity: 1; }
+
+.search-form .search-submit {
+    font-size: 2.8em;
+    line-height: 58px;
+    margin: 0 0 0 0;
+    padding: 0 0.6em;
+    height: 60px;
+    width: 60px;
+    vertical-align: middle;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 5;
+    border: none;
+    background-color: transparent;
+    cursor: pointer ;
+}
+
+.search-form .search-input[value=""] { width: 60px; }
+
+.search-form .search-input:focus { width: 100%; }
+
+.search-form .search-input[value=""] + .search-label {
+    width: 60px;
+    opacity: 0;
+}
+
+.search-form .search-input:focus + .search-label {
+    width: 100%;
+    opacity: 1;
+}
+
+.search-form .search-input:focus ~ .search-submit,
+.search-form .search-submit:hover {
+    z-index: 15;
+}
+
+.widget .search-form .search-input {
+    padding: 3px 10px;
+    text-align: left;
+}
+
+.widget .search-form .search-input:focus + .search-label span {
+    display: none;
+}
+
+@media (max-width: 800px) {
+
+    .search-form  > div {
+        padding: 1.5em;
+    }
+    .search-form {
+        margin: 0 auto;
+        width: 94%;
+    }
+
+}
+
+@media (max-width: 400px) {
+
+    .search-form .search-input {
+        padding: 3px 10px;
+        text-align: left;
+    }
+    .search-form .search-label span {
+        display: none;
+    }
+}
+
+/**
+ * CSS para plugins conhecidos
+ *
+ */
+
+/**
+ * Crayon Syntax Highlighter
+ */
+
+.crayon-table td {
+    font-size: 1.2em;
+    line-height: 21px;
+}
+
+.crayon-num,
+.crayon-line {
+    min-height: 20px;
+}
+
+/* Fim */

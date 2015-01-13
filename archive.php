@@ -9,18 +9,9 @@
 
 get_header(); ?>
 
-<div class="row min-h-4">
-    <div class="desktop-12 container">
-        <div class="content desktop-8 col-left-2">
-            <?php get_search_form(); ?>
-        </div>
-    </div>
-</div>
+<div id="content" class="content desktop-12 container">
 
-
-<div id="content" class="content desktop-8 container">
-
-    <div class="main row padding-top-1">
+    <div class="main padding-top-1 row desktop-7 col-left-2 gutter-right">
 
 
         <?php if ( ! have_posts() ) :
@@ -50,9 +41,9 @@ get_header(); ?>
                         <span class="categories"><?php
                             // http://codex.wordpress.org/Function_Reference/the_category
                             the_category( ', ' ); ?></span>
-                        <?php comments_number( '', '<i class="comment-counter fa fa-comment"> 1</i>', '<i class="comment-counter  fa fa-comment"> %</i>' ); ?>
-                        <?php edit_post_link( '<i class="fa fa-pencil"></i> ' . __( 'Edit' ) ); ?>
+                        <?php edit_post_link( __( 'Edit' ), '', '' ); ?>
                     </div>
+
 
                     <h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_permalink() ?>" rel="bookmark"><?php
                         the_title();
@@ -68,23 +59,24 @@ get_header(); ?>
 
         <?php endwhile; // Fim do loop básico do WordPress ?>
 
-        <?php // Caso o index tenha mais do que 1 página, acrescenta a paginação.
-            if (  $wp_query->max_num_pages > 1 ) : ?>
-                <div class="pagination">
-                    <div class="nav-inline">
-                        <?php
-                            $args = array(
-                                    'prev_text'    => __('Previous'),
-                                    'next_text'    => __('Next'),
-                                    'type'         => 'list'
-                                    );
+        <?php // Caso o index tenha mais do que 1 página, acrescenta a paginação. ?>
+        <?php if (  $wp_query->max_num_pages > 1 ) : ?>
 
-                            echo paginate_links( $args );
-                        ?>
-                    </div><!-- #nav-below -->
-                </div>
+            <div class="pagination">
+                <div class="nav-inline">
+                    <?php
+                        $args = array(
+                                'prev_text'    => __('Previous'),
+                                'next_text'    => __('Next'),
+                                'type'         => 'list'
+                                );
 
-        <?php endif; // Fim da paginação ?>
+                        echo paginate_links( $args );
+                    ?>
+                </div><!-- #nav-below -->
+            </div>
+
+        <?php endif; ?>
 
         <div class="row padding-bottom-1">
             <?php comments_template( '', true ); ?>
@@ -93,11 +85,9 @@ get_header(); ?>
     </div>
     <!-- .main -->
 
-    <?php // get_sidebar(); ?>
-
+    <?php get_sidebar(); ?>
 
 </div>
 <!-- #content -->
-
 
 <?php get_footer(); ?>
