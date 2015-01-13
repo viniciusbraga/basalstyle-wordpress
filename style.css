@@ -153,6 +153,80 @@ a { text-decoration: none; }
 }
 
 /**
+ * Comentários do WordPress
+ *
+ */
+
+#comment-640, #comment-485 { display: none; }
+
+.commentlist {
+    list-style: none;
+    padding: 0;
+}
+
+.comment {
+
+}
+
+.comment-body {
+    padding: 0.5em 0;
+}
+
+.comment-body .comment-autor { }
+
+.comment-body .comment-author .avatar {
+    vertical-align: text-top;
+    height: 40px;
+    width: 40px;
+    margin: 0 5px 0 0;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 3px solid rgba(153,153,153,0.3);
+}
+.comment-body .comment-author .fn {
+    font-size: 18px;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-style: normal;
+}
+
+.comment-body .comment-meta {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin: -15px 0 10px;
+    padding: 0 0 0 50px;
+}
+
+.comment-body p {
+    font-size: 1em;
+    line-height: 1.45em;
+    padding: 0 0 0 50px;
+}
+
+.comment-body .reply {
+    font-size: 0.75em;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin: 0 0 0 50px;
+}
+
+.children {
+    padding: 0 0 0 67px;
+    list-style: none;
+}
+
+.depth-1 > .children {
+    padding: 0 0 0 50px;
+}
+
+.children .comment-body {
+    padding-left: 10px;
+    border-left: 12px solid #E6E6E6;
+}
+
+/**
  * Widget do Site
  *
  */
@@ -359,7 +433,23 @@ a { text-decoration: none; }
     }
 }
 
+/**
+ * CSS para plugins conhecidos
+ *
+ */
 
-/*.debug:after { background-position: left top !important; width: 761px; margin: 0 auto;}*/
+/**
+ * Crayon Syntax Highlighter
+ */
+
+.crayon-table td {
+    font-size: 1.2em;
+    line-height: 21px;
+}
+
+.crayon-num,
+.crayon-line {
+    min-height: 20px;
+}
 
 /* Fim */
