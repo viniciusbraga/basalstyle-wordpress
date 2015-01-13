@@ -51,6 +51,7 @@ get_header(); ?>
                             // http://codex.wordpress.org/Function_Reference/the_category
                             the_category( ', ' ); ?></span>
                         <?php edit_post_link( __( 'Edit' ), '', '' ); ?>
+                        <?php edit_post_link( '<i class="fa fa-pencil"></i> ' . __( 'Edit' ) ); ?>
                     </div>
 
                     <h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_permalink() ?>" rel="bookmark"><?php
