@@ -157,8 +157,6 @@ a { text-decoration: none; }
  *
  */
 
-#comment-640, #comment-485 { display: none; }
-
 .commentlist {
     list-style: none;
     padding: 0;
@@ -224,6 +222,46 @@ a { text-decoration: none; }
 .children .comment-body {
     padding-left: 10px;
     border-left: 12px solid #E6E6E6;
+}
+
+
+#commentform  input[type="text"] {
+    font-size: 1.3em;
+    vertical-align: text-top;
+    padding: 6px 0.5em;
+    margin-left: 0;
+    border: none;
+    background-color: #E6E6E6;
+}
+
+#commentform  label {
+    font-size: 1em;
+    line-height: 1em;
+    text-transform: uppercase;
+    vertical-align: text-top;
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+#commentform  textarea {
+    font-size: 1.3em;
+    margin-left: 0;
+    padding-top: 0.3em;
+}
+
+@media (max-width: 800px) {
+
+    #commentform  input[type="text"],
+    #commentform  label {
+        width: 96%;
+        display: block;
+    }
+
+    #commentform  textarea {
+        width: 96%;
+    }
+
 }
 
 /**
