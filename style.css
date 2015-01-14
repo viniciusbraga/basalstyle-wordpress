@@ -211,7 +211,7 @@ a { text-decoration: none; }
 
 .children .comment-body {
     padding-left: 10px;
-    border-left: 12px solid #E6E6E6;
+    border-left: 8px solid #E6E6E6;
 }
 
 #commentform  p {
