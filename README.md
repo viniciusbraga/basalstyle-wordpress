@@ -7,7 +7,6 @@ BasalStyle WordPress é um tema extremamente enxuto para WordPress. Usa o BasalS
 O que falta para uma versão 1.0
 
 - Aplicar via javascript no texto principal a etiqueta de <figure> nas imagens com min-h adequado
-- Plugin: Adequar o contador do DISQUS no contatdo de comentários do WP
 - Plugin: Testar algumas customizações no sidebar, para ver como ele se comporta
 - Usar o Master do BasalStyle. Hoje está sendo usado o Develop.
 
