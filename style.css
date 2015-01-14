@@ -170,6 +170,7 @@ a { text-decoration: none; }
     border-radius: 20px;
     border: 3px solid rgba(153,153,153,0.3);
 }
+
 .comment-body .comment-author .fn {
     font-size: 18px;
     font-weight: normal;
@@ -215,18 +216,22 @@ a { text-decoration: none; }
 
 #commentform  p {
     font-size: 1em;
+    line-height: 1em;
+    vertical-align: top;
     padding: 0 0;
-    min-height: 60px
+    margin: 0 0 0 0;
+    min-height: 60px;
 }
 
 #commentform  input[type="text"] {
     font-size: 1.9em;
+    line-height: 1em;
     vertical-align: text-top;
     min-width: 380px;
-    padding: 8px 0.5em;
-    margin-left: 0;
+    padding: 24px 0.5em 9px;
+    margin: 0;
     border: none;
-    background-color: #E6E6E6;
+    background-color: #F2F2F2;
 }
 
 #commentform  label {
@@ -234,8 +239,9 @@ a { text-decoration: none; }
     line-height: 1em;
     text-transform: uppercase;
     vertical-align: text-top;
-    padding: 0;
-    margin: 0;
+    padding: 0 0 0 9px;
+    margin: -53px 0 0 0;
+    display: block;
     border: none;
 }
 
@@ -250,7 +256,6 @@ a { text-decoration: none; }
     #commentform  input[type="text"],
     #commentform  label {
         width: 96%;
-        display: block;
     }
 
     #commentform  textarea {
@@ -390,7 +395,7 @@ a { text-decoration: none; }
     width: 100%;
     display: inline-block;
     margin-top: 0;
-    background: rgba(0,0,0,0.05);
+    background: #F2F2F2;
     position: absolute;
     right: 0;
     -webkit-transition: -webkit-padding 0.5s ease-out, -webkit-opacity 0.5s ease-out, width 0.5s ease-out;
