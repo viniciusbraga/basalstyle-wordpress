@@ -187,6 +187,8 @@ a { text-decoration: none; }
     padding: 0 0 0 50px;
 }
 
+.pingback .comment-meta { margin: 0 0 10px;}
+
 .comment-body p {
     font-size: 1em;
     line-height: 1.45em;
@@ -211,7 +213,7 @@ a { text-decoration: none; }
 
 .children .comment-body {
     padding-left: 10px;
-    border-left: 12px solid #E6E6E6;
+    border-left: 8px solid #E6E6E6;
 }
 
 #commentform  p {
@@ -293,6 +295,7 @@ a { text-decoration: none; }
 }
 
 .widget ul li a {
+    font-weight: 400;
     text-decoration: none;
 }
 
