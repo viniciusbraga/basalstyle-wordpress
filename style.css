@@ -187,6 +187,8 @@ a { text-decoration: none; }
     padding: 0 0 0 50px;
 }
 
+.pingback .comment-meta { margin: 0 0 10px;}
+
 .comment-body p {
     font-size: 1em;
     line-height: 1.45em;
