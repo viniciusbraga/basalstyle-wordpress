@@ -87,15 +87,17 @@ a { text-decoration: none; }
 
 .post a:visited { border-bottom: 1px solid #B17ACC; }
 
+.post-edit-link,
 .post .post-edit-link {
     color: #333;
+    border: none;
     margin: 0 10px;
     padding: 2px 6px;
     border-radius: 3px;
     background-color: #E6E6E6;
 }
 
-.post .post-edit-link:hover {
+.post-edit-link:hover {
     color: #ffffff;
     background-color: #808080;
 }
