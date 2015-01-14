@@ -224,18 +224,24 @@ a { text-decoration: none; }
     border-left: 12px solid #E6E6E6;
 }
 
+#commentform  p {
+    font-size: 1em;
+    padding: 0 0;
+    min-height: 60px
+}
 
 #commentform  input[type="text"] {
-    font-size: 1.3em;
+    font-size: 1.9em;
     vertical-align: text-top;
-    padding: 6px 0.5em;
+    min-width: 380px;
+    padding: 8px 0.5em;
     margin-left: 0;
     border: none;
     background-color: #E6E6E6;
 }
 
 #commentform  label {
-    font-size: 1em;
+    font-size: 1.6em;
     line-height: 1em;
     text-transform: uppercase;
     vertical-align: text-top;
@@ -245,7 +251,7 @@ a { text-decoration: none; }
 }
 
 #commentform  textarea {
-    font-size: 1.3em;
+    font-size: 1.9em;
     margin-left: 0;
     padding-top: 0.3em;
 }
