@@ -157,15 +157,9 @@ a { text-decoration: none; }
     padding: 0;
 }
 
-.comment {
-
-}
-
 .comment-body {
     padding: 0.5em 0;
 }
-
-.comment-body .comment-autor { }
 
 .comment-body .comment-author .avatar {
     vertical-align: text-top;
