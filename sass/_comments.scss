@@ -1,18 +1,12 @@
 
- :root {
-   --basal-leading   : 30px;
-   --basal-padding   : 15px;
-   --basal-col-fixed : 95px;
- }
-
  .comments-counter {
      padding: 0 0 0 2em;
  }
 
  .comments-area {
-     padding: calc(var(--basal-leading) * 2) 0;
-     max-width: calc(var(--basal-col-fixed) * 7);
-     margin: 0 0 0 calc(var(--basal-col-fixed) * 0);
+     padding: $basal-leading * 2 0;
+     max-width: $basal-col-fixed * 7;
+     margin: 0;
  }
 
  .comments-title {
@@ -25,7 +19,7 @@
  }
 
  .comment-list {
-     padding: 0 var(--basal-padding) 0 60px;
+     padding: 0 $basal-padding 0 60px;
      list-style: none;
  }
 

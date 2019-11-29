@@ -151,20 +151,14 @@ a {
  * Comentários do WordPress
  *
  */
-:root {
-  --basal-leading: 30px;
-  --basal-padding: 15px;
-  --basal-col-fixed: 95px;
-}
-
 .comments-counter {
   padding: 0 0 0 2em;
 }
 
 .comments-area {
-  padding: calc(var(--basal-leading) * 2) 0;
-  max-width: calc(var(--basal-col-fixed) * 7);
-  margin: 0 0 0 calc(var(--basal-col-fixed) * 0);
+  padding: 60px 0;
+  max-width: 665px;
+  margin: 0;
 }
 
 .comments-title {
@@ -177,7 +171,7 @@ a {
 }
 
 .comment-list {
-  padding: 0 var(--basal-padding) 0 60px;
+  padding: 0 15px 0 60px;
   list-style: none;
 }
 
