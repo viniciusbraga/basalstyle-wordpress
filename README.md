@@ -8,7 +8,6 @@ O que falta para uma versão 1.0
 
 - Aplicar via javascript no texto principal a etiqueta de <figure> nas imagens com min-h adequado
 - Plugin: Testar algumas customizações no sidebar, para ver como ele se comporta
-- Usar o Master do BasalStyle. Hoje está sendo usado o Develop.
 
 
 ## Autor
