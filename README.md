@@ -2,17 +2,10 @@
 
 BasalStyle WordPress é um tema extremamente enxuto para WordPress. Usa o BasalStyle como sistema de layout.
 
-## TODO
-
-O que falta para uma versão 1.0
-
-- Aplicar via javascript no texto principal a etiqueta de <figure> nas imagens com min-h adequado
-- Plugin: Testar algumas customizações no sidebar, para ver como ele se comporta
-
 
 ## Autor
 
-Vinicius Braga ( @basaldizain / viniciusbraga.info )
+Vinicius Braga ( @basaldizain / viniciusbraga.com )
 
 
 ## Contribuição
