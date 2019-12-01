@@ -2,29 +2,26 @@
 /*
  * Imagens
  *
- * Exemplo de aplicação:
- * <div class="img max-h-8">
- *   <img src="nome_da_image.png" height="530" width="800">
- * </div>
- * <figure class="max-h-8">
- *   <img src="nome_da_image.png" height="530" width="800">
- * </figure>
- *
  */
 
-.img img,
-figure img {
+ // Exemplo de aplicação:
+ // <div class="img max-h-8">
+ //   <img src="nome_da_image.png" height="530" width="800">
+ // </div>
+ // <figure class="max-h-8">
+ //   <img src="nome_da_image.png" height="530" width="800">
+ // </figure>
+
+.img {
+    position: relative;
+}
+
+.img img {
     width: 100%;
     height: auto;
 }
 
-.img,
-figure {
-    position: relative;
-}
-
-.img:after,
-figure:after {
+.img:after {
     content: "";
     top: 0;
     left: 0;
@@ -34,7 +31,7 @@ figure:after {
     z-index: -1;
 }
 
-figcaption,
+.img figcaption,
 .img-legend {
     font-size: 1em;
     line-height: 1em;
@@ -48,39 +45,42 @@ figcaption,
     bottom: 0;
 }
 
-figcaption a,
+.img figcaption a,
 .img-legend a { text-decoration: none; }
 
+.img .img-normal {
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
 
-/*
- * img-align-text
- *
- * A caixa da entidade HTML (DIV ou FIGURE), que envolve a imagem,
- * recebe uma propriedade extra no padding-top,
- * empurando a imagem para o alinhamento visual com o texto das colunas ao lado.
- *
- * Exemplo de aplicação:
- * <figure class="img-align-text max-h-8">
- *   <img src="nome_da_image.png" height="530" width="800">
- * </figure>
- *
- */
+
+// img-align-text
+//
+// A caixa da entidade HTML (DIV ou FIGURE), que envolve a imagem,
+// recebe uma propriedade extra no padding-top,
+// empurando a imagem para o alinhamento visual com o texto das colunas ao lado.
+//
+// Exemplo de aplicação:
+// <figure class="img-align-text max-h-8">
+// <img src="nome_da_image.png" height="530" width="800">
+// </figure>
+
 
 .img-align-text { padding-top: 1.4em; }
 
 
 /*
- * Primeiro ajuste de layout
- * Quando menor que o tamanho máximo de colunas + 10 pixels
+ * Quebra de layout no limite da largura máxima de colunas
  *
  */
 
-@media (max-width: ($basal-max-width + 10)) {
+@media all and (max-width: $basal-media-inbound) {
 
-    .img,
-    figure { padding: ($basal-leading / 2) 0; }
+    .img { padding: ($basal-leading / 2) 0; }
 
-    figcaption,
+    .img figcaption,
     .img-legend { position: relative; }
 
     .img-align-text {
@@ -88,22 +88,25 @@ figcaption a,
         margin-bottom: 0;
     }
 
-}
-/* Fim do primeiro ajuste de layout */
+    .img .img-normal {
+        width: 100%;
+        height: auto;
+    }
+
+
+} /* FIM da quebra de layout */
 
 
 /*
- * Segundo ajuste de layout (Tablet)
+ * Quebra de layout para Tablet
  *
  */
 
-@media (max-width: 800px) {
+@media all and (max-width: $basal-media-tablet) {
 
-    .img,
-    figure { padding: ($basal-leading / 2) $basal-padding; }
+    .img { padding: ($basal-leading / 2) $basal-padding; }
 
-}
-/* Fim do segundo ajuste de layout */
+} /* Fim da Quebra de layout para Tablet */
 
 /* FIM Imagens */
 
