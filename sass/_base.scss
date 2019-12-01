@@ -68,32 +68,7 @@ a { text-decoration: none; }
  *
  */
 
-.widget {
-    margin: 3em 0;
-    min-height: 90px;
-}
-
-#secondary .widget {}
-
-.widget-title {
-    font-size: 1.4em;
-    font-weight: 400;
-    line-height: 1em;
-    text-transform: uppercase;
-    min-height: 30px;
-    padding: 0 0;
-}
-
-.widget ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.widget ul li a {
-    font-weight: 400;
-    text-decoration: none;
-}
+@import "widget";
 
 
 /**
