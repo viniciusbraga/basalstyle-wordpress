@@ -38,34 +38,7 @@ a { text-decoration: none; }
  *
  */
 
-.header {
-    text-transform: uppercase;
-}
-
-
-.site-logo h1,
-.site-logo h1 a {
-    color: #000;
-    font-size: 17px;
-    font-weight: 700;
-    line-height: 3.41em;
-    letter-spacing: 1px;
-    margin: 0;
-    padding: 0;
-    height: 50px;
-    min-height: 1em;
-    display: block;
-    overflow: hidden;
-    border: none;
-}
-
-@media (max-width: 800px) {
-
-    .header .site-name {
-        padding: 0 0;
-    }
-
-}
+@import "header";
 
 /**
  * Corpo do Site
