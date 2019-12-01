@@ -45,20 +45,25 @@ a {
   text-transform: uppercase;
 }
 
+.site-logo {
+  margin: 30px 0 0 0;
+}
+
 .site-logo h1,
 .site-logo h1 a {
   color: #000;
   font-size: 17px;
   font-weight: 700;
-  line-height: 3.41em;
+  line-height: 30px;
   letter-spacing: 1px;
   margin: 0;
   padding: 0;
-  height: 50px;
+  height: 30px;
   min-height: 1em;
   display: block;
   overflow: hidden;
   border: none;
+  background-image: none;
 }
 
 @media (max-width: 800px) {
@@ -122,6 +127,7 @@ a {
   color: #000000;
   font-weight: 300;
   border: 0;
+  padding: 15px 0 15px;
 }
 
 .entry-title {
@@ -299,23 +305,36 @@ a {
  *
  */
 .widget {
-  margin: 3em 0;
+  margin: 3em 0 0;
   min-height: 90px;
 }
 
-.widget-title {
-  font-size: 1.4em;
+.widget + .widget {
+  margin: 0;
+}
+
+.widget_calendar {
+  min-height: 210px;
+}
+
+.widget-area .widget-title {
+  font-size: 1.6em;
   font-weight: 400;
   line-height: 1em;
   text-transform: uppercase;
   min-height: 30px;
-  padding: 0 0;
+  padding: 1em 0 0;
 }
 
 .widget ul {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.widget ul li {
+  line-height: 1.3em;
+  padding-bottom: 10px;
 }
 
 .widget ul li a {

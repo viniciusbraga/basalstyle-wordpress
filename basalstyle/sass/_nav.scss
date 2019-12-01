@@ -1,5 +1,5 @@
 
-/* Menu navInline */
+/* Menu de navegação inline */
 
 .nav-inline {
     vertical-align: middle;
@@ -35,7 +35,6 @@
 
 .nav-inline li a {
     font-size: 1.4em;
-    font-weight: 400;
     line-height: 45px;
     font-weight: 700;
     text-decoration: none;
@@ -65,11 +64,14 @@
 .nav-mobile, .nav-close { display: none; }
 
 
-/* Submenu de links do Menu nav-inline */
+// Submenu de links do Menu nav-inline
+//
+// Esta "media query" aplica as propriedades a partir da largura
+// especificada para uma quebra de tablet até ao infinito (sentido de dentro para fora).
+// Quando a janela for menor que a quebra de uma tablet,
+// as propriedades cessam de existir.
 
-/* @media (max-width: 1000px) */
-
-@media (min-width: 1000px) {
+@media all and (min-width: $basal-media-tablet) {
 
     .submenu { position: relative; overflow: hidden; }
 
@@ -152,12 +154,15 @@
     }
 
 
-}
+} /* Fim da quebra de layout */
 
 
-/* @media (max-width: 1000px) */
+/*
+ * Quebra de layout para Tablet
+ *
+ */
 
-@media (max-width: 1000px) {
+@media all and (max-width: $basal-media-tablet) {
 
     .nav-inline {
         display: block;
@@ -165,12 +170,15 @@
 
     .nav-mobile {
         color: $grey-base;
-        font-size: 28px;
-        line-height: 30px;
         margin: 0 0 0 auto;
         padding: 5px 8px;
         width: 40px;
         display: block;
+    }
+
+    .nav-mobile i {
+        font-size: 28px;
+        line-height: 30px;
     }
 
     .nav-mobile:hover {
@@ -227,6 +235,7 @@
     }
 
 
-} /* FIM @media (max-width: 800px) */
+} /* Fim da Quebra de layout para Tablet */
+
 
 /* FIM Menu nav-inline */
