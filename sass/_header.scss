@@ -3,21 +3,25 @@
     text-transform: uppercase;
 }
 
+.site-logo {
+    margin: $basal-leading 0 0 0;
+}
 
 .site-logo h1,
 .site-logo h1 a {
     color: #000;
     font-size: 17px;
     font-weight: 700;
-    line-height: 3.41em;
+    line-height: $basal-leading;
     letter-spacing: 1px;
     margin: 0;
     padding: 0;
-    height: 50px;
+    height: $basal-leading;
     min-height: 1em;
     display: block;
     overflow: hidden;
     border: none;
+    background-image: none;
 }
 
 @media (max-width: 800px) {
