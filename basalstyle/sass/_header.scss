@@ -7,19 +7,20 @@
 
 .site-logo {
     vertical-align: middle;
-    margin: 15px 0 0;
+    margin: 30px 0 0;
     padding: 0;
 }
 
 .site-logo h1,
- .site-logo h1 a {
+.site-logo h1 a {
     color: #000;
     font-size: 30px;
-    line-height: 1.8em;
+    line-height: 3em;
     margin: 0;
     padding: 0;
     display: block;
-    height: 50px;
+    height: 30px;
+    width: 190px;
     min-height: 1em;
     overflow: hidden;
 }
@@ -100,16 +101,37 @@
     margin: 0 0 0 1.4em;
 }
 
+.header-inline .nav-inline li a {
+    color: $grey-darker;
+}
+
+.nav-inline li a:hover {
+    color: #000;
+}
+
+.header-inline .nav-inline .current > a,
+.header-inline .nav-inline .current-menu-item > a,
+.header-inline .nav-inline .current_page_item > a,
+.header-inline .nav-inline .current-post-ancestor > a,
+.header-inline .nav-inline .current-menu-ancestor > a,
+.header-inline .nav-inline .current-menu-parent > a,
+.header-inline .nav-inline .current-custom-parent > a {
+    color: #000;
+    font-weight: 700;
+}
+
 .header-inline .submenu ul li {
       margin: 0;
       padding: 0;
 }
 
 
+/*
+ * Quebra de layout no limite da largura máxima de colunas
+ *
+ */
 
-/* Primeiro ajuste de layout, quando menos que o tamanho máximo + 10 pixels */
-
-@media (max-width: ($basal-max-width + 10)) {
+@media all and (max-width: $basal-media-inbound) {
 
     .header-inline .header-search {
           position: relative;
@@ -118,19 +140,22 @@
           display: block;
           padding-bottom: 20px;
     }
-}
-/* FIM do primeiro ajuste de layout */
 
 
-/* @media (max-width: 1000px) */
+} /* FIM da quebra de layout */
 
-@media (max-width: 1000px) {
+
+/*
+ * Quebra de layout para Tablet
+ *
+ */
+
+@media all and (max-width: $basal-media-tablet) {
 
     /* Cabeçalho do Site e Navegação */
 
     .header {
       position: relative;
-      min-height: 13.5em;
     }
 
     .site-logo {
@@ -221,6 +246,6 @@
     }
 
 
-} /* FIM @media (max-width: 1000px) */
+} /* Fim da Quebra de layout para Tablet */
 
 /* FIM Cabeçalho do Site e Navegação */

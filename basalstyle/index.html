@@ -6,12 +6,11 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>BasalStyle - Formulários</title>
+    <title>BasalStyle - CSS e HTML para prototipação rápida de Sites e Formulários.</title>
 
     <meta name="author" content="Vinicius Braga">
 
     <meta name="description" content="Conjunto básico de CSS para prototipação rápida de Sites e Formulários.">
-
 
     <!-- Adivinha! JavaScript para fazer os IEs entenderem os novos tags HTML5. -->
     <!--[if IE]>
@@ -21,18 +20,14 @@
     <!-- Carrega a folha de estilo BasalStyle -->
     <link rel="stylesheet" href="style.min.css">
 
-    <!-- Carrega a folha de estilo de customização -->
-    <link rel="stylesheet" href="style.customize.css">
-
     <!-- Carrega CSS Externos -->
-    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,300,800,700' rel='stylesheet' type='text/css'>
-
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,300,800,700' rel='stylesheet' type='text/css'>
 
 </head>
 <body>
 
-    <div class="row min-h-4">
+    <div class="header-frame row min-h-4">
 
         <header class="header header-inline min-h-3 row desktop-12 container" role="banner">
 
@@ -48,7 +43,7 @@
                     <li class="current"><a href="#TextAndImages">Texto e Imagens</a></li>
                     <li><a href="#Menus">menus</a></li>
                     <li class="submenu">
-                        <a href="#Form">Formulários</a>
+                        <a href="#Form">Formulários <i class="fa fa-chevron-down"></i> </a>
                         <ul>
                             <li><a href="#FormInput">Input Text</a></li>
                             <li><a href="#FormRadio">Radio Buttons</a></li>
@@ -118,8 +113,9 @@
 
                     <h3>Tipografia Moderna e Futurismo/ Ação e Perspectiva/ H3</h3>
 
-                    <!-- Abaixo, um exemplo de linha e colunas flexíveis sem respeito ao grid
-                         Cada coluna divide a linha em 50%, sem se preocupar com o grid -->
+                    <!-- Abaixo, um exemplo de linha e colunas flexíveis sem respeito
+                         ao grid. Cada coluna divide a linha em 50%,
+                         sem se preocupar com o grid -->
 
                     <div class="row">
                         <div class="col-50 gutter-right">
@@ -143,6 +139,25 @@
                     <p>Na maioria dos casos, uma composição tipográfica deve ser especialmente legível e visualmente envolvente, sem desconsiderar o contexto em que é lido e os objetivos da sua publicação. Em trabalhos de design gráfico experimental (ou de vanguarda) os objetivos formais extrapolam a funcionalidade do texto, portanto questões como legibilidade, nesses casos, podem acabar sendo relativas.</p>
 
                     <h5>Tipografia Moderna e Futurismo/ Ação e Perspectiva/ H5</h5>
+
+                    <!-- Abaixo, um exemplo de linha e colunas flexíveis sem respeito
+                         ao grid, mas mantendo o layout de colunas na tablet e mobile.
+                         Somente em uma tela menor que 360px, o layout em coluna se desfaz. -->
+
+                    <div class="row">
+                        <div class="col-50 tablet-2 mobile-2 gutter-right">
+                            <figure class="img max-h-8">
+                                <img src="images/abstrato.png" height="530" width="800" alt="Imagem com figura abstrata.">
+                            </figure>
+                        </div>
+
+                        <div class="col-50 tablet-2 mobile-2 gutter-left">
+                            <figure class="img max-h-8">
+                                <img src="images/abstrato.png" height="530" width="800" alt="Imagem com figura abstrata.">
+                            </figure>
+                        </div>
+
+                    </div>
 
                     <p>Na maioria dos casos, uma composição tipográfica deve ser especialmente legível e visualmente envolvente, sem desconsiderar o contexto em que é lido e os objetivos da sua publicação. Em trabalhos de design gráfico experimental (ou de vanguarda) os objetivos formais extrapolam a funcionalidade do texto, portanto questões como legibilidade, nesses casos, podem acabar sendo relativas.</p>
 
@@ -183,7 +198,7 @@
 
                 <div class="desktop-4 gutter-left text-small">
 
-                    <figure class="max-h-6 img-align-text">
+                    <figure class="img max-h-6 img-align-text">
                         <img src="images/abstrato.png" height="530" width="800" alt="Imagem com figura abstrata.">
                         <figcaption>Imagem abstrata. Original por <a href="#">Vinicius Braga</a></figcaption>
                     </figure>
@@ -243,7 +258,7 @@
                             <li class="current"><a href="#TextAndImages">Texto e Imagens</a></li>
                             <li><a href="#Menus">menus</a></li>
                             <li class="submenu">
-                                <a href="#Form">Formulários</a>
+                                <a href="#Form">Formulários <i class="fa fa-chevron-down"></i></a>
                                 <ul>
                                     <li><a href="#FormInput">Input Text</a></li>
                                     <li><a href="#FormRadio">Radio Buttons</a></li>
@@ -318,7 +333,30 @@
                             <input type="text" id="id-03" name="zipcode">
                         </div>
 
-                        <div id="FormRadio" class="row">
+                        <!-- Inicia exemplos de formulários com colunas -->
+                        <!-- Exemplo com 3 colunas de tamanhos diferentes, somando 100% -->
+                        <div class="form-row label-block input-text">
+                            <fieldset>
+                                <legend>Telefone</legend>
+                                <div class="row">
+                                    <div class="col-20 gutter-right">
+                                        <input type="tel" id="id-22" name="phone_0">
+                                        <label for="id-22">DDI</label>
+                                    </div>
+                                    <div class="col-30 gutter-right">
+                                        <input type="tel" id="id-23" name="phone_1">
+                                        <label for="id-23">DDD</label>
+                                    </div>
+                                    <div class="col-50">
+                                        <input type="tel" id="id-24" name="phone_2">
+                                        <label for="id-24">Telefone</label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <!-- Exemplo com 2 colunas de 50% cada -->
+                        <div id="FormRadio" class="row min-h-7">
                             <div class="col-50">
                                 <div class="form-row input-radio form-label-desc">
                                     <fieldset>
@@ -344,8 +382,8 @@
                                     </fieldset>
                                 </div>
                             </div>
-
                         </div>
+                        <!-- Fim do exemplo de formulários com colunas -->
 
                         <div id="FormPulldown" class="form-row label-block select-dropdown">
                             <label for="id-11">Estado (UF)</label>
@@ -358,11 +396,11 @@
                             </select>
                         </div>
 
-                        <div class="form-row label-block input-text min-h-10">
+                        <div class="form-row label-block input-text min-h-6">
                             <label>Observações</label> <textarea name=""></textarea>
                         </div>
 
-                        <div class="padding-top-1 min-h-5">
+                        <div class="min-h-3">
                             <p class="btn-row "><button type="submit" class="btn-basic btn-icon-right">Entrar <i class="fa fa-chevron-right"></i></button>  ou <a href="#">Cancelar</a></p>
                         </div>
 
@@ -378,8 +416,20 @@
                 <h2 id="FormError">Erros no Formulário</h2>
             </header>
 
-            <form action="/" class="min-h-13">
-                <div class="form-row label-block input-text">
+            <form action="/" class="min-h-35">
+                <h3>Erro abaixo do campo</h3>
+
+                <div class="form-row label-block input-text error-input">
+                    <label for="id-12_01">Nome Completo</label>
+                    <input type="text" id="id-12_01" name="full_name" value="">
+                    <ul class="errorlist">
+                        <li>Este campo é obrigatório.</li>
+                    </ul>
+                </div>
+
+                <h3>Erro entre o label e o campo</h3>
+
+                <div class="form-row label-block input-text error-input">
                     <label for="id-12">Email</label>
                     <ul class="errorlist">
                         <li>Este campo é obrigatório.</li>
@@ -388,7 +438,36 @@
                     <input type="text" id="id-12" name="name" value="">
                 </div>
 
-                <div class="form-row input-radio form-label-desc">
+                <h3>Erros com múltiplos campos de texto organizados num Fieldset</h3>
+
+                <div class="form-row label-block input-text error-input">
+                    <fieldset>
+                        <legend>Telefone</legend>
+                        <ul class="errorlist">
+                            <li>Este campo é obrigatório.</li>
+                            <li>Um exemplo de uma segunda ou mais linhas de erro no mesmo campo.</li>
+                        </ul>
+                        <div class="row">
+                            <div class="col-20 gutter-right">
+                                <input type="tel" id="id-22" name="phone_0">
+                                <label for="id-22">DDI</label>
+                            </div>
+                            <div class="col-30 gutter-right">
+                                <input type="tel" id="id-23" name="phone_1">
+                                <label for="id-23">DDD</label>
+                            </div>
+                            <div class="col-50">
+                                <input type="tel" id="id-24" name="phone_2">
+                                <label for="id-24">Telefone</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+
+                <h3>Erros com Fieldset e Radios</h3>
+
+                <div class="form-row input-radio form-label-desc error-input">
                     <fieldset>
                         <legend>Estado Civil</legend>
                         <ul class="errorlist">
@@ -405,9 +484,13 @@
                 </div>
             </form>
 
+        </section>
+
+        <section>
+
             <h3>Erros agregados no topo do formulário</h3>
 
-            <form action="/" accept-charset="utf-8" class="min-h-15">
+            <form action="/" accept-charset="utf-8" class="min-h-16">
 
                 <div class="errorlist">
                     <p>O fomulário contêm erros nos campos, são eles:</p>
@@ -427,7 +510,12 @@
 
                 <div class="form-row label-block input-text error-input">
                     <label for="id-19">Email</label>
-                    <input type="text" id="id-19" name="address">
+                    <input type="email" id="id-19" name="email">
+                </div>
+
+                <div class="form-row label-block input-text error-input">
+                    <label for="id-20">Senha</label>
+                    <input type="password" id="id-20" name="pass">
                 </div>
             </form>
 
@@ -444,10 +532,10 @@
                 <p class="btn-row"><a href="" class="btn-basic">btn-basic</a></p>
 
                 <p class="btn-row">
-                    <a href="" class="btn-basic btn-green">btnGreen</a>
-                    <a href="" class="btn-basic btn-blue">btnBlue</a>
-                    <a href="" class="btn-basic btn-orange">btnOrange</a>
-                    <a href="" class="btn-basic btn-red btn-icon-right">btnRed <i class="fa fa-chevron-right"></i></a>
+                    <a href="" class="btn-basic btn-green">btn-green</a>
+                    <a href="" class="btn-basic btn-blue">btn-blue</a>
+                    <a href="" class="btn-basic btn-orange">btn-orange</a>
+                    <a href="" class="btn-basic btn-red btn-icon-right">btn-red <i class="fa fa-chevron-right"></i></a>
                 </p>
 
                 <p>Classes específicas para compensar visualmente a posição de ícones nos botões.</p>
@@ -474,11 +562,11 @@
 
     <hr class="hide">
 
-    <div class="ruler-top">
+    <div class="footer-frame ruler-top  min-h-5">
         <footer class="footer desktop-12 container">
-            <div class="padding-top-1">
-                <p>basalStyle</p>
-                <p>CSS e HTML para prototipação rápida de Sites, WebApps e Formulários.</p>
+            <div class="site-logo">
+                <h1><a href="#" rel="home">BasalStyle</a></h1>
+                <p class="site-description">CSS e HTML para prototipação rápida de Sites e Formulários.</p>
             </div>
         </footer>
         <!-- END footer -->

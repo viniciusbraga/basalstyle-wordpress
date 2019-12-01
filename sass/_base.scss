@@ -38,34 +38,7 @@ a { text-decoration: none; }
  *
  */
 
-.header {
-    text-transform: uppercase;
-}
-
-
-.site-logo h1,
-.site-logo h1 a {
-    color: #000;
-    font-size: 17px;
-    font-weight: 700;
-    line-height: 3.41em;
-    letter-spacing: 1px;
-    margin: 0;
-    padding: 0;
-    height: 50px;
-    min-height: 1em;
-    display: block;
-    overflow: hidden;
-    border: none;
-}
-
-@media (max-width: 800px) {
-
-    .header .site-name {
-        padding: 0 0;
-    }
-
-}
+@import "header";
 
 /**
  * Corpo do Site
@@ -80,74 +53,8 @@ a { text-decoration: none; }
  *
  */
 
-.post a {
-    color: #191D33;
-    border-bottom: 1px solid #7AB1CC;
-}
+@import "post";
 
-.post a:visited { border-bottom: 1px solid #B17ACC; }
-
-.post-edit-link,
-.post .post-edit-link {
-    color: #333;
-    border: none;
-    margin: 0 10px;
-    padding: 2px 6px;
-    border-radius: 3px;
-    background-color: #E6E6E6;
-}
-
-.post-edit-link:hover {
-    color: #ffffff;
-    background-color: #808080;
-}
-
-.entry-metadata {
-    font-size: 1.1em;
-    font-weight: normal;
-    line-height: 1em;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    text-decoration: none;
-    margin: 0 3px;
-    position: absolute;
-}
-
-.entry-metadata .post-date,
-.entry-metadata .author,
-.entry-metadata .categories {
-    margin: 0 1em 0 0;
-}
-
-.entry-title,
-.entry-title a {
-    color: #000000;
-    font-weight: 300;
-    border: 0;
-}
-
-.entry-title { max-width: 90%; }
-
-.entry-content {
-    color: #2E2E33 ;
-    font-weight: 400;
-}
-
-@media (max-width: 800px) {
-
-    .entry-metadata {
-        line-height: 1.5em;
-        margin: 0 16px;
-        position: relative;
-    }
-    .entry-metadata .post-date,
-    .entry-metadata .author,
-    .entry-metadata .categories {
-        display: block;
-        position: relative;
-    }
-
-}
 
 /**
  * Comentários do WordPress
@@ -161,32 +68,7 @@ a { text-decoration: none; }
  *
  */
 
-.widget {
-    margin: 3em 0;
-    min-height: 90px;
-}
-
-#secondary .widget {}
-
-.widget-title {
-    font-size: 1.4em;
-    font-weight: 400;
-    line-height: 1em;
-    text-transform: uppercase;
-    min-height: 30px;
-    padding: 0 0;
-}
-
-.widget ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.widget ul li a {
-    font-weight: 400;
-    text-decoration: none;
-}
+@import "widget";
 
 
 /**

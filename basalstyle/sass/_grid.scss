@@ -1,9 +1,7 @@
-﻿/*
- * Estruturas de Colunas fixas
- *
- */
+﻿
+/* Estruturas de Colunas fixas */
 
-._basal-desktop {
+%_basal-desktop {
     float: left;
     width: 100%;
 }
@@ -12,18 +10,14 @@
 
     .desktop-#{$i} {
         max-width: $basal-col-fixed * $i;
-        @extend ._basal-desktop;
+        @extend %_basal-desktop;
     }
 }
 
 
+/* Colunas usando porcentagem */
 
-/*
- * Colunas usando porcentagem
- *
- */
-
-._basal-col {
+%_basal-col {
     float: left;
 }
 
@@ -31,7 +25,7 @@
 
     .col-#{$i} {
         width: $i * 1%;
-        @extend ._basal-col;
+        @extend %_basal-col;
     }
 }
 
@@ -39,18 +33,12 @@
 .col { overflow: hidden; }
 
 
-/*
- * Anula o float e centraliza o <div> da coluna.
- *
- */
+/* Anula o float e centraliza o <div> da coluna. */
 
 .container { margin: 0 auto; float: none; }
 
 
-/*
- * Esconde o elemento HTML em diferente modos de apresentação
- *
- */
+/* Esconde o elemento HTML em diferente modos de apresentação */
 
 .hide,
 .hide-desktop { display: none; }
@@ -58,7 +46,7 @@
 
 
 /*
- * Aplica o espaço de entrelinha no Padding ou na Margin da caixa
+ * Aplica o espaço de entrelinha no Padding ou na Margin da caixa.
  * Deve ser aplicado em caixas (<div>,<header>,<section>,<articles>)
  *
  */
@@ -129,7 +117,7 @@
 
 
 /*
- * Altura mínima do elemento HTML
+ * Altura mínima do elemento HTML.
  *
  * Uso: Tem momentos que você precisa de uma altura mínima no elemento HTML.
  * Esta classe especifica a altura mínima com valor múltiplo da entrelinha,
@@ -146,7 +134,7 @@
 }
 
 /*
- * Altura máxima do bloco HTML
+ * Altura máxima do bloco HTML.
  *
  * Uso: Aplíca-se para conter a altura da imagem dentro do grid.
  * Esta classe especifica a altura máxima do bloco HTML com valor múltiplo da entrelinha.
@@ -155,7 +143,7 @@
  *
  */
 
-._basal-max-h {
+%_basal-max-h {
     min-height: 1em;
     overflow: hidden;
 }
@@ -164,18 +152,14 @@
 
     .max-h-#{$i} {
         height: $basal-leading * $i;
-        @extend ._basal-max-h;
+        @extend %_basal-max-h;
     }
 }
 
 
-/*
- * Primeiro ajuste de layout
- * Quando menor que o tamanho máximo de colunas + ($basal-col-fixed / 2)
- *
- */
+/* Quebra de layout no limite da largura máxima de colunas */
 
-@media screen and  (max-width: ( $basal-max-width + floor($basal-col-fixed / 2) )) {
+@media all and (max-width: $basal-media-inbound) {
 
     @for $i from 1 through $basal-col-number {
 
@@ -202,33 +186,15 @@
         }
     }
 
-
-    ._basal-max-h-tablet {
-        height: auto;
-        min-height: 1em;
-        overflow: hidden;
-    }
-
-    @for $i from 1 through 20 {
-
-        .max-h-#{$i} {
-            @extend ._basal-max-h-tablet;
-        }
-    }
-
-
 }
-/* Fim do primeiro ajuste de layout */
+// Fim do primeiro ajuste de layout
 
 
-/*
- * Segundo ajuste de layout (Tablet)
- *
- */
+/* Quebra de layout para Tablet */
 
-@media screen and  (max-width: 800px){
+@media all and (max-width: $basal-media-tablet) {
 
-    ._basal-desktop-tablet {
+    %_basal-desktop-tablet {
         width: 100%;
         float: none;
         max-width: none;
@@ -237,7 +203,24 @@
     @for $i from 1 through $basal-col-number {
 
         .desktop-#{$i} {
-            @extend ._basal-desktop-tablet;
+            @extend %_basal-desktop-tablet;
+        }
+    }
+
+    @for $i from 1 through $basal-col-number - 1 {
+
+        .col-left-#{$i} {
+            @extend %_basal-col-left-mobile;
+        }
+    }
+
+
+    %_basal-col-right-mobile { margin-right: 0; }
+
+    @for $i from 1 through $basal-col-number - 1 {
+
+        .col-left-#{$i} {
+            @extend %_basal-col-right-mobile;
         }
     }
 
@@ -245,18 +228,15 @@
     .tablet-2 { width: 50%; float: left; }
     .tablet-3 { width: 75%; float: left; }
 
-    .gutter, .gutter-left, .gutter-right { padding: 0; }
+    %_basal-col-left-mobile { margin-left: 0; }
 
 }
-/* Fim do segundo ajuste de layout */
+// Fim do segundo ajuste de layout
 
 
-/*
- * Terceiro ajuste de layout (Mobile < 700)
- *
- */
+/* Quebra de layout para Mobile */
 
-@media screen and (max-width: 700px) {
+@media all and (max-width: $basal-media-mobile) {
 
     .col {
         overflow: visible;
@@ -267,79 +247,78 @@
 
     .hide-mobile  { display: none; }
 
-    .mobile-2 {
-        width: 50%;
-        float: left;
-    }
-
-
-    ._basal-col-mobile {
+    %_basal-col-mobile {
         width: 100%;
         float: none;
     }
 
     .tablet-1,
     .tablet-2,
-    .tablet-3 { @extend ._basal-col-mobile; }
+    .tablet-3 { @extend %_basal-col-mobile; }
 
     @each $i in $basal-col-flex {
 
         .col-#{$i} {
-            @extend ._basal-col-mobile;
+            @extend %_basal-col-mobile;
         }
     }
 
-
-    ._basal-col-left-mobile { margin-left: 0; }
-
-    @for $i from 1 through $basal-col-number - 1 {
-
-        .col-left-#{$i} {
-            @extend ._basal-col-left-mobile;
-        }
+    .mobile-2 {
+        width: 50%;
+        float: left;
     }
 
+    %_basal-padding-top-mobile { padding-top: 1em; }
 
-    ._basal-col-right-mobile { margin-right: 0; }
+    %_basal-padding-bottom-mobile { padding-bottom: 1em; }
 
-    @for $i from 1 through $basal-col-number - 1 {
+    %_basal-margin-top-mobile { margin-top: 1em; }
 
-        .col-left-#{$i} {
-            @extend ._basal-col-right-mobile;
-        }
-    }
-
-
-    ._basal-padding-top-mobile { padding-top: 1em; }
-
-    ._basal-padding-bottom-mobile { padding-bottom: 1em; }
-
-    ._basal-margin-top-mobile { margin-top: 1em; }
-
-    ._basal-margin-bottom-mobile { margin-bottom: 1em; }
+    %_basal-margin-bottom-mobile { margin-bottom: 1em; }
 
     @for $i from 1 through 5 {
 
         .padding-top-#{$i} {
-            @extend ._basal-padding-top-mobile;
+            @extend %_basal-padding-top-mobile;
         }
 
         .padding-bottom-#{$i} {
-            @extend ._basal-padding-bottom-mobile;
+            @extend %_basal-padding-bottom-mobile;
         }
 
         .margin-top-#{$i} {
-            @extend ._basal-margin-top-mobile;
+            @extend %_basal-margin-top-mobile;
         }
 
         .margin-bottom-#{$i} {
-            @extend ._basal-margin-bottom-mobile;
+            @extend %_basal-margin-bottom-mobile;
         }
     }
 
-}
+    %_basal-max-h-mobile {
+        height: auto;
+        min-height: 1em;
+        overflow: hidden;
+    }
 
-@media screen and (max-width: 360px) {
+    @for $i from 1 through 20 {
+
+        .max-h-#{$i} {
+            @extend %_basal-max-h-mobile;
+        }
+    }
+
+    .gutter,
+    .gutter-left,
+    .gutter-right { padding: 0; }
+
+}
+// Fim do segundo ajuste de layout
+
+
+/* Quebra de layout para Mobile */
+
+@media all and (max-width: $basal-media-tiny) {
 
     .mobile-2 {
         width: 100%;
@@ -350,7 +329,9 @@
 
 
 /* Nicolas Gallagher's micro clearfix */
+
 .row {
+    line-height: 1em; // Adicionado para remover interferência de espaçamneto
     *zoom: 1;
 }
 .row:before,
@@ -363,16 +344,15 @@
 }
 
 
-/*
- * Grid de DEBUG de alinhamento
- *
- * Uso: Basta aplicar na página/template o <label> abaixo.
- *      Certifique-se que a imagem com o grid esteja disponível.
- *
- * <label class="btnDebug" for="debug"> Grid <input type="checkbox" id="debug" onclick='var e=document.getElementsByTagName("body")[0],c="debug",re=new RegExp("(?:^|\\s)"+c+"(?!\\S)","g");if(e.className.match(re)){e.className=e.className.replace(re,"");}else{e.className+=" "+c;this.checked=true;}'></label>
- *
- *
- */
+
+ // Grid de DEBUG de alinhamento
+ //
+ // Uso: Basta aplicar na página/template o <label> abaixo.
+ // Certifique-se que a imagem com o grid esteja disponível.
+ //
+ // <label class="btnDebug" for="debug"> Grid <input type="checkbox" id="debug" onclick='var e=document.getElementsByTagName("body")[0],c="debug",re=new RegExp("(?:^|\\s)"+c+"(?!\\S)","g");if(e.className.match(re)){e.className=e.className.replace(re,"");}else{e.className+=" "+c;this.checked=true;}'></label>
+ //
+
 
 
 .debug {
@@ -416,4 +396,4 @@
 
 }
 
-/* FIM Grid */
+// FIM Grid
