@@ -41,7 +41,7 @@ get_header(); ?>
                         <span class="categories"><?php
                             // http://codex.wordpress.org/Function_Reference/the_category
                             the_category( ', ' ); ?></span>
-                        <?php edit_post_link( __( 'Edit' ), '', '' ); ?>
+                        <?php edit_post_link( '<i class="fa fa-pencil"></i> ' . __( 'Edit' ) ); ?>
                     </div>
 
 
