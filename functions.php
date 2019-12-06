@@ -4,6 +4,63 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Caso o arquivo seja acessado diretamente,
 
 
 /**
+ * Especifica padrões do tema e registra as funcionalidades compatíveis do tema com WordPress.
+ *
+ * Observe que esta funcão é acoplada (hooked) dentro da função after_setup_theme (hook),
+ * a qual roda antes da função init (hook). A função init se dá muito depois da necessidade
+ * de algumas funcionalidades, como a indicação de compatibilidade por thumbnails nos posts.
+ */
+
+function basalstyle_theme_support() {
+
+    /*
+     * Deixa para o WordPress organizar o título do documento
+     */
+    add_theme_support( 'title-tag' );
+
+
+    /*
+     * Modifica a marcação HTML original do WordPress para HTML5
+     * nos tópicos de formulário de busca e comentários.
+     */
+    add_theme_support(
+        'html5',
+        array(
+            'search-form',
+            'comment-form',
+            'comment-list',
+            'gallery',
+            'caption',
+            'script',
+            'style',
+        )
+    );
+
+    /*
+     * Adiciona compatibilidade para Formatos de Posts
+     *
+     * Veja em: https://codex.wordpress.org/Post_Formats
+     */
+    add_theme_support(
+        'post-formats',
+        array(
+            'aside',
+            'image',
+            'video',
+            'quote',
+            'link',
+            'gallery',
+            'status',
+            'audio',
+            'chat',
+        )
+    );
+
+}
+
+add_action( 'after_setup_theme', 'basalstyle_theme_support' );
+
+/**
  * Registra as libs e folhas de estilo do HEAD do HTML
  *
  */
