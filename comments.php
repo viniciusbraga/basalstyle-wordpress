@@ -48,7 +48,7 @@
                      array(
                          'style'       => 'ol',
                          'short_ping'  => true,
-                         'avatar_size' => 48,
+                         'avatar_size' => basalstyle_get_avatar_size(),
                      )
                  );
              ?>

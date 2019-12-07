@@ -62,7 +62,13 @@ get_header(); ?>
                 </header>
 
                 <div class="entry-content">
-                    <?php the_content( __( 'Read more...' ) ); ?>
+                    <?php
+                        the_content( __( 'Read more...' ) );
+
+                        if ( is_singular() && '' !== get_the_author_meta( 'description' ) ) {
+                            get_template_part( 'template-parts/biography' );
+                        }
+                    ?>
                 </div>
 
             </article>

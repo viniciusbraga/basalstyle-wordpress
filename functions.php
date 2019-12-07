@@ -171,6 +171,14 @@ add_filter('the_content_more_link', 'basalstyle_remove_more_jump_link');
 
 
 /**
+ * Returns the size for avatars used in the theme.
+ */
+function basalstyle_get_avatar_size() {
+	return 60;
+}
+
+
+/**
  * Lista as funções carregadas no wp_header()
  *
  */
