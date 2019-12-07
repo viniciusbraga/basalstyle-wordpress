@@ -1,143 +1,166 @@
+/**
+ * Comentários */
 
- .comments-counter {
-     padding: 0 0 0 2em;
- }
+.comments-counter {
+    padding: 0 0 0 2em;
+}
 
- .comments-area {
-     padding: $basal-leading * 2 0;
-     max-width: $basal-col-fixed * 7;
-     margin: 0;
- }
+.comments-area {
+    padding: $basal-leading * 1 0;
+    max-width: $basal-col-fixed * 7;
+    margin: 0 0 0 0;
+}
 
- .comments-title {
-     font-size: 1.13em;
-     font-weight: 800;
-     letter-spacing: 0.05em;
-     text-transform: uppercase;
-     padding-top: 0;
-     min-height: 1em;
- }
+.comments-title {
+    font-size: 1.13em;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0;
+    min-height: $basal-leading * 2;
+}
 
- .comment-list {
-     padding: 0 $basal-padding 0 60px;
-     list-style: none;
- }
+.comment-list {
+    padding: 0 $basal-padding 0 100px;
+    list-style: none;
+}
 
- .comments-area .children {
-     list-style: none;
-     padding: 0 0 0 3.5em;
- }
+.comments-area .children {
+    list-style: none;
+    padding: 0 0 0 4em;
+}
 
- .comment-body {
-     font-size: 0.8em;
-     font-weight: 400;
-     padding: 1em 0 1em 0;
-     margin: 0;
- }
+.comment-body {
+    font-size: 0.95em;
+    font-weight: 400;
+    padding: 0 0 1em 0;
+    margin: 0;
+}
 
- .comment-body .reply a,
- .comment-respond small a {
-     font-size: 0.75em;
-     font-weight: 400;
-     text-transform: uppercase;
-     letter-spacing: 0.06em;
-     border: 2px solid #ccc;
-     border-radius: 6px;
-     padding: 0.3em 1em;
- }
+.comment-body .reply a,
+.comment-respond small a {
+    font-size: 0.75em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    padding: 0.3em 1em;
+}
 
- .comment-author {
-     font-size: 1em;
-     text-transform: uppercase;
-     margin: 0;
- }
+.comment-author {
+    font-size: 1em;
+    line-height: 1em;
+    text-transform: uppercase;
+    margin: 0;
+}
 
- .comment-author img {
-     border-radius: 49%;
-     margin: 0 0 0 -3.8em;
-     float: left;
- }
+.comment-author img {
+    border-radius: 49%;
+    margin: 0 0 0 -5.4em;
+    float: left;
+}
 
- .comment-author .fn {
-     font-style: normal;
-     font-weight: 800;
-     letter-spacing: 0.06em;
-     word-spacing: 0.15em;
-     padding: 0.6em 0.5em 0.1em 0.1em;
-     display: inline-block;
- }
+.comment-author .fn {
+    font-style: normal;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    word-spacing: 0.15em;
+    padding: 0.7em 0.5em 0.1em 0.1em;
+    display: inline-block;
+}
 
- .comment-meta {
-     font-size: 0.8em;
-     font-style: normal;
-     text-transform: uppercase;
-     padding: 0;
- }
+.comment-meta {
+    font-size: 0.8em;
+    font-style: normal;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0 0 0 0;
+    min-height: $basal-leading * 2;
+}
 
- .comment-meta .edit-link{
-     padding: 0 1em;
- }
+.comment-meta .edit-link{
+    padding: 0 1em;
+}
 
- .comment-respond {
-     padding: 1em;
-     border-radius: 6px;
-     box-shadow: 0;
-     background: rgb(255, 255, 255);
- }
+.comment-respond {
+    padding: 0 1em 1em;
+    border-radius: 6px;
+    background: rgb(255, 255, 255);
+}
 
- .comment-respond .comment-reply-title {
-     font-size: 1.8em;
-     line-height: 1em;
-     text-transform: uppercase;
-     padding-bottom: 0;
-     min-height: 1em;
- }
+.comment-respond .comment-reply-title {
+    font-size: 1.8em;
+    text-transform: uppercase;
+    padding: 0;
+    min-height: $basal-leading * 1;
+}
 
- .comment-respond small {
-     float: right;
- }
+.comment-respond small {
+    float: right;
+    position: relative;
+    top: 0.6em;
+}
 
- .comment-respond .comment-notes {
-     font-size: 2em;
- }
+.comment-respond .comment-notes {
+    font-size: 1.6em;
+    font-weight: 400;
+}
 
- .comment-form label {
-     color: rgba(0, 0, 0, 0.6);
-     font-size: 0.8em;
-     letter-spacing: 0.12em;
-     text-transform: uppercase;
-     padding: 0;
-     margin: 0;
-     display: block;
-     position: absolute;
- }
+.comment-form label {
+    color: rgba(0, 0, 0, 1);
+    font-size: 0.8em;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+    display: block;
+}
 
- .comment-form textarea,
- .comment-form input {
-     color: rgba(0, 0, 0, 1);
-     font-size: 1.2em;
-     width: 98%;
-     padding: 30px 0 0.15em 0;
-     margin: 0;
-     border: none;
-     border-bottom: 2px solid rgba(0, 0, 0, 0.15);
-     outline: none;
-     transition: border 1s, background 1.5s;
- }
+.comment-form textarea,
+.comment-form input[type="text"],
+.comment-form input[type="email"],
+.comment-form input[type="url"] {
+    color: rgba(0, 0, 0, 1);
+    font-size: 1.2em;
+    width: 98%;
+    padding: 0 0 0.15em 0;
+    border: none;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+}
 
-  .comment-form textarea:focus,
-  .comment-form input:focus {
-     border-bottom: 2px solid rgba(0, 0, 0, 0.8);
-     background: rgba(0, 0, 0, 0.05);
- }
+.comment-form textarea {
+    margin: 0 auto;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+}
 
- .comment-form .submit {
-     color: rgba(0, 0, 0, 1);
-     font-size: 1.2em;
-     width: 80%;
-     padding: 0.25em 1em;
-     margin: 0 auto;
-     display: block;
-     border: none;
-     border-bottom: 2px solid rgba(0, 0, 0, 0.15);
- }
+li .comment-respond .comment-reply-title,
+li .comment-respond .comment-notes {
+    font-size: 1em;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2019-8-19 8:57:57
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation fade-in
+ * ----------------------------------------
+ */
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.comment-respond {
+    animation: fade-in 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}

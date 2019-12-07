@@ -1,0 +1,126 @@
+
+.post-edit-link,
+.post .post-edit-link {
+    color: #333;
+    border: none;
+    margin: 0 10px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    background-color: #E6E6E6;
+}
+
+.post-edit-link:hover {
+    color: #ffffff;
+    background-color: #808080;
+}
+
+.entry-metadata {
+    font-size: 1.1em;
+    font-weight: normal;
+    line-height: 1em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin: 0 3px;
+    position: absolute;
+}
+
+.entry-metadata .post-date,
+.entry-metadata .author,
+.entry-metadata .categories {
+    margin: 0 1em 0 0;
+}
+
+.entry-footer .entry-tags {
+    padding: 7px 0 21px;
+}
+.entry-footer .entry-tags .tags-links,
+.entry-footer .entry-tags a {
+    font-size: 0.75em;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.entry-footer .entry-tags .tags-links::after {
+    content: ": ";
+}
+
+.author-info {
+    padding: $basal-padding 0 0 $basal-padding / 2;
+    min-height: $basal-leading * 3;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    display: flex;
+}
+
+.author-info-card {
+    max-width: $basal-col-fixed * 4;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 1);
+    position: relative;
+    z-index: 5;
+}
+
+.author-info .author-avatar img {
+    border-radius: 49%;
+}
+
+.author-info .author-description {
+    padding: 0 $basal-padding;
+}
+
+.author-info .author-description h2 {
+    font-size: 1.6em;
+    font-weight: 600;
+    line-height: 1em;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0 0 0.3em;
+    min-height: 1em;
+}
+
+.author-info .author-description p {
+    font-size: 1.6em;
+    line-height: 1.2em;
+    padding: 0 0;
+}
+
+.author-info .author-description .author-link {
+    font-size: 0.8em;
+    font-weight: 600;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+
+@media (max-width: $basal-media-tablet) {
+
+    .entry-metadata {
+        line-height: 1.5em;
+        margin: 0 16px;
+        position: relative;
+    }
+    .entry-metadata .post-date,
+    .entry-metadata .author,
+    .entry-metadata .categories {
+        display: block;
+        position: relative;
+    }
+
+    .author-info {
+        max-width: 90%;
+        display: block;
+        margin: 0 auto;
+    }
+    .author-info .author-avatar {
+        padding: 15px;
+    }
+    .author-info .author-description {
+        padding: 0 0;
+    }
+}

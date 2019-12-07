@@ -4,6 +4,63 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Caso o arquivo seja acessado diretamente,
 
 
 /**
+ * Especifica padrões do tema e registra as funcionalidades compatíveis do tema com WordPress.
+ *
+ * Observe que esta funcão é acoplada (hooked) dentro da função after_setup_theme (hook),
+ * a qual roda antes da função init (hook). A função init se dá muito depois da necessidade
+ * de algumas funcionalidades, como a indicação de compatibilidade por thumbnails nos posts.
+ */
+
+function basalstyle_theme_support() {
+
+    /*
+     * Deixa para o WordPress organizar o título do documento
+     */
+    add_theme_support( 'title-tag' );
+
+
+    /*
+     * Modifica a marcação HTML original do WordPress para HTML5
+     * nos tópicos de formulário de busca e comentários.
+     */
+    add_theme_support(
+        'html5',
+        array(
+            'search-form',
+            'comment-form',
+            'comment-list',
+            'gallery',
+            'caption',
+            'script',
+            'style',
+        )
+    );
+
+    /*
+     * Adiciona compatibilidade para Formatos de Posts
+     *
+     * Veja em: https://codex.wordpress.org/Post_Formats
+     */
+    add_theme_support(
+        'post-formats',
+        array(
+            'aside',
+            'image',
+            'video',
+            'quote',
+            'link',
+            'gallery',
+            'status',
+            'audio',
+            'chat',
+        )
+    );
+
+}
+
+add_action( 'after_setup_theme', 'basalstyle_theme_support' );
+
+/**
  * Registra as libs e folhas de estilo do HEAD do HTML
  *
  */
@@ -25,8 +82,12 @@ function basalstyle_scripts_styles() {
 
     // Carrega as folhas de estilo principais.
     // wp_enqueue_style( 'basalstyle-style', get_stylesheet_uri(), array(), '20130224' );
-    wp_enqueue_style( 'basalstyle', get_template_directory_uri() . '/basalstyle/style.min.css', array(), '20141224' );
+    wp_enqueue_style( 'basalstyle', get_template_directory_uri() . '/basalstyle/style.min.css', array(), '1.6.1' );
     wp_enqueue_style( 'basalstyle-wordpress', get_template_directory_uri() . '/style.css', array(), '20191129' );
+
+    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+        wp_enqueue_script( 'comment-reply' );
+    }
 
     if (WP_DEBUG) {
         wp_enqueue_script('live-js' , get_stylesheet_directory_uri() . '/js/_live.js'  , [], microtime(), true);
@@ -111,6 +172,34 @@ function basalstyle_remove_more_jump_link( $link ) {
 }
 
 add_filter('the_content_more_link', 'basalstyle_remove_more_jump_link');
+
+
+/**
+ * Returns the size for avatars used in the theme.
+ */
+function basalstyle_get_avatar_size() {
+	return 60;
+}
+
+
+/**
+ * Modifica o campo de comentário no formulário
+ */
+function basalstyle_comment_form_defaults( $defaults ) {
+	$comment_field = $defaults['comment_field'];
+
+	// Adjust height of comment form.
+	$defaults['comment_field'] = preg_replace( '/rows="\d+"/', 'rows="5"', $comment_field );
+
+	return $defaults;
+}
+add_filter( 'comment_form_defaults', 'basalstyle_comment_form_defaults' );
+
+
+/**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/inc/template-tags.php';
 
 
 /**
