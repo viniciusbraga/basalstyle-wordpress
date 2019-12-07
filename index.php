@@ -20,7 +20,7 @@ get_header(); ?>
 <div id="content" class="content desktop-8 container">
 
 <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
-    <div class="main desktop-6 gutter-right padding-top-1">
+    <div class="main desktop-6 gutter padding-top-1">
 <?php else : ?>
     <div class="main row gutter padding-top-1">
 <?php endif;?>
@@ -40,7 +40,7 @@ get_header(); ?>
 
         <?php while ( have_posts() ) :  the_post();  ?>
 
-            <article id="post-<?php the_ID(); ?>" <?php post_class("padding-bottom-1"); ?>>
+            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
                 <header>
                     <div class="entry-metadata">
@@ -62,8 +62,20 @@ get_header(); ?>
                 </header>
 
                 <div class="entry-content">
-                    <?php the_content( __( 'Read more...' ) ); ?>
+                    <?php
+                        the_content( __( 'Read more...' ) );
+
+                        if ( is_singular() && '' !== get_the_author_meta( 'description' ) ) {
+                            get_template_part( 'template-parts/biography' );
+                        }
+                    ?>
                 </div>
+
+                <?php if (  is_singular() ) : ?>
+                <footer class="entry-footer">
+                    <?php basalstyle_entry_meta(); ?>
+                </footer><!-- .entry-footer -->
+                <?php endif; ?>
 
             </article>
             <!-- #post-<?php the_ID(); ?> -->
@@ -88,11 +100,11 @@ get_header(); ?>
 
         <?php endif; // Fim da paginação
 
-    	/**
-    	 *  Output comments wrapper if it's a post, or if comments are open,
-    	 * or if there's a comment number – and check for password.
-    	 * */
-    	if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
+        /**
+         *  Output comments wrapper if it's a post, or if comments are open,
+         * or if there's a comment number – and check for password.
+         * */
+        if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
 
         ?>
         <div class="row padding-bottom-1">

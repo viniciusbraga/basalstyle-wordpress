@@ -11,7 +11,7 @@ get_header(); ?>
 
 <div id="content" class="content desktop-12 container">
 
-    <div class="main padding-top-1 row desktop-7 col-left-2 gutter-right">
+    <div class="main padding-top-1 row gutter desktop-8 container">
 
 
         <?php if ( ! have_posts() ) :
@@ -41,7 +41,7 @@ get_header(); ?>
                         <span class="categories"><?php
                             // http://codex.wordpress.org/Function_Reference/the_category
                             the_category( ', ' ); ?></span>
-                        <?php edit_post_link( __( 'Edit' ), '', '' ); ?>
+                        <?php edit_post_link( '<i class="fa fa-pencil"></i> ' . __( 'Edit' ) ); ?>
                     </div>
 
 

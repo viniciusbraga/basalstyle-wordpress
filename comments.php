@@ -8,70 +8,52 @@
  * @since 1.0.0
  */
  if ( post_password_required() ) {
-     return;
- }
- ?>
+    return;
+}
 
- <div id="comments" class="comments-area">
+?>
 
-     <?php if ( have_comments() ) : ?>
-         <h2 class="comments-title">
-             <?php
-                 $comments_number = get_comments_number();
-             if ( '1' === $comments_number ) {
-                 /* translators: %s: post title */
-                 printf( _x( 'One thought on &ldquo;%s&rdquo;', 'comments title', 'twentysixteen' ),
-                 get_the_title()
-             );
-             } else {
-                 printf(
-                     /* translators: 1: number of comments, 2: post title */
-                     _nx(
-                         '%1$s thought on &ldquo;%2$s&rdquo;',
-                         '%1$s thoughts on &ldquo;%2$s&rdquo;',
-                         $comments_number,
-                         'comments title',
-                         'twentysixteen'
-                     ),
-                     number_format_i18n( $comments_number ),
-                     get_the_title()
-                 );
-             }
-             ?>
-         </h2>
+<div id="comments" class="comments-area">
 
-         <?php the_comments_navigation(); ?>
+    <?php if ( have_comments() ) : ?>
+        <h2 class="comments-title">
+            <?php
+                if ( have_comments() ) {
+                    _e( 'Join the Conversation', 'basalstyle' );
+                } else {
+                    _e( 'Leave a comment', 'basalstyle' );
+                }
+            ?>
+        </h2>
 
-         <ol class="comment-list">
-             <?php
-                 wp_list_comments(
-                     array(
-                         'style'       => 'ol',
-                         'short_ping'  => true,
-                         'avatar_size' => 48,
-                     )
-                 );
-             ?>
-         </ol><!-- .comment-list -->
+        <?php the_comments_navigation(); ?>
 
-         <?php the_comments_navigation(); ?>
+        <ol class="comment-list">
+            <?php
+                wp_list_comments(
+                    array(
+                        'style'       => 'ol',
+                        'short_ping'  => true,
+                        'avatar_size' => basalstyle_get_avatar_size(),
+                    )
+                );
+            ?>
+        </ol><!-- .comment-list -->
 
-     <?php endif; // Check for have_comments(). ?>
+        <?php the_comments_navigation(); ?>
 
-     <?php
-         // If comments are closed and there are comments, let's leave a little note, shall we?
-     if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
-         ?>
-     <p class="no-comments"><?php _e( 'Comments are closed.', 'twentysixteen' ); ?></p>
-     <?php endif; ?>
+    <?php endif; // Check for have_comments(). ?>
 
-     <?php
-         comment_form(
-             array(
-                 'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title">',
-                 'title_reply_after'  => '</h2>',
-             )
-         );
-         ?>
+    <?php
+        // If comments are closed and there are comments, let's leave a little note, shall we?
+    if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
+        printf (
+            '<p class="no-comments">%s</p>',
+            _e( 'Comments are closed.', 'basalstyle' )
+        );
+    endif;
+    ?>
 
- </div><!-- .comments-area -->
+    <?php basalstyle_comment_form( true ); ?>
+
+</div><!-- .comments-area -->
