@@ -77,3 +77,19 @@ if ( ! function_exists( 'basalstyle_entry_tags' ) ) :
 
 endif;
 
+if ( ! function_exists( 'basalstyle_comment_form' ) ) :
+    /**
+    * Documentation for function.
+    */
+    function basalstyle_comment_form( $order ) {
+        if ( true === $order || strtolower( $order ) === strtolower( get_option( 'comment_order', 'asc' ) ) ) {
+
+            comment_form(
+                array(
+                    'logged_in_as' => null,
+                    // 'title_reply'  => null,
+                )
+            );
+        }
+    }
+endif;
