@@ -4,7 +4,7 @@
  }
 
  .comments-area {
-     padding: $basal-leading * 2 0;
+     padding: $basal-leading 0;
      max-width: $basal-col-fixed * 7;
      margin: 0;
  }
@@ -54,7 +54,7 @@
 
  .comment-author img {
      border-radius: 49%;
-     margin: 0 0 0 -3.8em;
+     margin: 0 0 0 -5em;
      float: left;
  }
 

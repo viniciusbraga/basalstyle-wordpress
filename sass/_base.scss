@@ -4,7 +4,7 @@
     Theme URI: https://github.com/viniciusbraga/basalstyle-wordpress
     Description: Tema enxuto do WordPress usando o BasalStyle CSS como base de layout.
     Author: Vinicius Braga
-    Version: 0.7
+    Version: 0.8
 */
 
 /**
@@ -54,6 +54,20 @@ a { text-decoration: none; }
  */
 
 @import "post";
+
+
+/**
+ * Conteúdo de Metadata
+ */
+
+@import "metadata";
+
+
+/**
+ * Conteúdo de Imagens
+ */
+
+@import "images";
 
 
 /**
