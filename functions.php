@@ -179,6 +179,12 @@ function basalstyle_get_avatar_size() {
 
 
 /**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/inc/template-tags.php';
+
+
+/**
  * Lista as funções carregadas no wp_header()
  *
  */
