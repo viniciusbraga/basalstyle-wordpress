@@ -13,7 +13,6 @@ get_header(); ?>
 
     <div class="main padding-top-1 padding-bottom-2 row gutter desktop-8 container">
 
-
         <?php if ( ! have_posts() ) :
             // Caso não tenha um post referente a URL, ele aplica este conteúdo. ?>
             <div id="post-0" class="post error404 not-found row">
@@ -25,6 +24,16 @@ get_header(); ?>
                 <!-- .entry-content -->
             </div>
             <!-- #post-0 -->
+        <?php endif; ?>
+
+        <?php if ( have_posts() ) : ?>
+
+            <header class="page-header">
+                <?php
+                    the_archive_title( '<h1 class="page-title">', '</h1>' );
+                    the_archive_description( '<div class="taxonomy-description">', '</div>' );
+                ?>
+            </header><!-- .page-header -->
         <?php endif; ?>
 
         <?php while ( have_posts() ) :  the_post();  ?>
@@ -41,6 +50,7 @@ get_header(); ?>
                         <span class="categories"><?php
                             // http://codex.wordpress.org/Function_Reference/the_category
                             the_category( ', ' ); ?></span>
+                        <?php comments_number( '', '<i class="comment-counter fa fa-comment"> 1</i>', '<i class="comment-counter  fa fa-comment"> %</i>' ); ?>
                         <?php edit_post_link( '<i class="fa fa-pencil"></i> ' . __( 'Edit' ) ); ?>
                     </div>
 
