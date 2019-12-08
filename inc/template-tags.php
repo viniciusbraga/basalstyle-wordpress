@@ -68,7 +68,7 @@ if ( ! function_exists( 'basalstyle_entry_tags' ) ) :
 
         if ( $tags_list && ! is_wp_error( $tags_list ) ) {
             return sprintf(
-                '<span class="tags-links">%1$s</span> %2$s',
+                '<span class="screen-reader-text">%1$s</span> %2$s',
                 _x( 'Tags', 'Used before tag names.', 'twentytwenty' ),
                 $tags_list
             );

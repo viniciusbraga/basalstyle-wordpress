@@ -154,15 +154,18 @@ a {
 }
 
 .entry-footer .entry-tags {
+  color: #ffffff;
   padding: 7px 0 21px;
 }
 
 .entry-footer .entry-tags .tags-links,
 .entry-footer .entry-tags a {
-  font-size: 0.75em;
+  font-size: 0.65em;
   font-weight: 400;
   letter-spacing: 0.02em;
   text-transform: uppercase;
+  background-color: #F2F5F5;
+  padding: 0.25em 0.4em;
 }
 
 .entry-footer .entry-tags .tags-links::after {
@@ -171,9 +174,8 @@ a {
 
 .author-info {
   padding: 15px 0 0 7.5px;
-  min-height: 90px;
+  min-height: 120px;
   border-top: 1px solid rgba(0, 0, 0, 0.2);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   display: flex;
 }
 
@@ -216,8 +218,7 @@ a {
 .author-info .author-description .author-link {
   font-size: 0.8em;
   font-weight: 600;
-  white-space: nowrap;
-  display: inline-block;
+  display: table-cell;
 }
 
 @media (max-width: 900px) {
