@@ -19,9 +19,9 @@
         <h2 class="comments-title">
             <?php
                 if ( have_comments() ) {
-                    _e( 'Join the Conversation', 'basalstyle' );
+                    _e( 'Join the Conversation', 'twentynineteen' );
                 } else {
-                    _e( 'Leave a comment', 'basalstyle' );
+                    _e( 'Leave a comment', 'twentytwenty' );
                 }
             ?>
         </h2>
@@ -49,7 +49,7 @@
     if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
         printf (
             '<p class="no-comments">%s</p>',
-            _e( 'Comments are closed.', 'basalstyle' )
+            _e( 'Comments are closed.', 'twentytwenty' )
         );
     endif;
     ?>

@@ -82,7 +82,7 @@ function basalstyle_scripts_styles() {
 
     // Carrega as folhas de estilo principais.
     // wp_enqueue_style( 'basalstyle-style', get_stylesheet_uri(), array(), '20130224' );
-    wp_enqueue_style( 'basalstyle', get_template_directory_uri() . '/basalstyle/style.min.css', array(), '1.6.1' );
+    wp_enqueue_style( 'twentytwenty', get_template_directory_uri() . '/basalstyle/style.min.css', array(), '1.6.1' );
     wp_enqueue_style( 'basalstyle-wordpress', get_template_directory_uri() . '/style.css', array(), '20191129' );
 
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -144,7 +144,7 @@ add_action( 'init', 'basalstyle_register_menus' );
  */
 function basalstyle_widgets_init() {
     register_sidebar( array(
-        'name' => __( 'Sidebar', 'basalstyle' ),
+        'name' => __( 'Sidebar', 'twentytwenty' ),
         'id' => 'sidebar-1',
         'description' => '',
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
