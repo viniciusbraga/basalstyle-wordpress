@@ -11,7 +11,7 @@ get_header(); ?>
 
 <div id="content" class="content desktop-12 container">
 
-    <div class="main padding-top-1 row gutter desktop-8 container">
+    <div class="main padding-top-1 padding-bottom-2 row gutter desktop-8 container">
 
 
         <?php if ( ! have_posts() ) :

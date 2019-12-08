@@ -17,7 +17,7 @@ get_header(); ?>
     </div>
 </div>
 
-<div id="content" class="content desktop-8 container">
+<div id="content" class="content padding-bottom-2 desktop-8 container">
 
 <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
     <div class="main desktop-6 gutter padding-top-1">

@@ -33,6 +33,8 @@
 
 .entry-footer .entry-tags {
     color: #ffffff;
+    margin-top: $basal-leading;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
     padding: 7px 0 21px;
 }
 .entry-footer .entry-tags .tags-links,
