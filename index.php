@@ -17,7 +17,7 @@ get_header(); ?>
     </div>
 </div>
 
-<div id="content" class="content desktop-8 container">
+<div id="content" class="content padding-bottom-2 desktop-8 container">
 
 <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
     <div class="main desktop-6 gutter padding-top-1">
@@ -28,9 +28,9 @@ get_header(); ?>
         <?php if ( ! have_posts() ) :
             // Caso não tenha um post referente a URL, ele aplica este conteúdo. ?>
             <div id="post-0" class="post error404 not-found row">
-                <h1 class="entry-title"><?php _e( 'Not Found' ); ?></h1>
+                <h1 class="entry-title"><?php _e( 'Page Not Found', 'twentytwenty'); ?></h1>
                 <div class="entry-content">
-                    <p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.' );
+                    <p><?php _e( 'The page you were looking for could not be found. It might have been removed, renamed, or did not exist in the first place.', 'twentytwenty' );
                     ?></p>
                 </div>
                 <!-- .entry-content -->

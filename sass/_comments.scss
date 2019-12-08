@@ -21,13 +21,13 @@
 }
 
 .comment-list {
-    padding: 0 $basal-padding 0 100px;
+    padding: 0 $basal-padding 0 60px;
     list-style: none;
 }
 
 .comments-area .children {
     list-style: none;
-    padding: 0 0 0 4em;
+    padding: 0 0 0 3.25em;
 }
 
 .comment-body {
@@ -57,8 +57,10 @@
 
 .comment-author img {
     border-radius: 49%;
-    margin: 0 0 0 -5.4em;
+    margin: 0 0 0 -4.0em;
     float: left;
+    width: 46px;
+    height: auto;
 }
 
 .comment-author .fn {
@@ -66,7 +68,7 @@
     font-weight: 800;
     letter-spacing: 0.06em;
     word-spacing: 0.15em;
-    padding: 0.7em 0.5em 0.1em 0.1em;
+    padding: 0.45em 0.5em 0.1em 0.1em;
     display: inline-block;
 }
 
