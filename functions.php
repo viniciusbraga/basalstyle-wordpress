@@ -46,7 +46,7 @@ function basalstyle_theme_support() {
     set_post_thumbnail_size( 9999, 150 );
 
     // Add custom image size used in Cover Template.
-	add_image_size( 'basalstyle-featured', 770, 9999 );
+    add_image_size( 'basalstyle-featured', 770, 9999 );
 
 
     /*
