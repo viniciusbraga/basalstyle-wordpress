@@ -60,6 +60,8 @@ get_header(); ?>
                         ?></a></h1>
                 </header>
 
+                <?php basalstyle_post_thumbnail() ?>
+
                 <div class="entry-content">
                     <?php the_content( __( 'Read more...' ) ); ?>
                 </div>

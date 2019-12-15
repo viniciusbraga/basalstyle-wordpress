@@ -93,3 +93,25 @@ if ( ! function_exists( 'basalstyle_comment_form' ) ) :
         }
     }
 endif;
+
+if ( ! function_exists( 'basalstyle_post_thumbnail' ) ) :
+    /**
+    * Aplica o thumbnail diferenciando entre o post e o index.
+    */
+    function basalstyle_post_thumbnail() {
+        if ( has_post_thumbnail() ) {
+            if ( is_single() ) :
+                printf(
+                    '<figure>%1$s</figure>',
+                    get_the_post_thumbnail( get_the_ID(), 'basalstyle-featured')
+                );
+            else :
+                printf(
+                    '<figure>%1$s</figure>',
+                    get_the_post_thumbnail( get_the_ID() )
+                );
+            endif;
+        }
+    }
+endif;
+
