@@ -25,19 +25,10 @@ get_header(); ?>
 
         <?php if ( ! have_posts() ) :
             // Caso não tenha um post referente a URL, ele aplica este conteúdo. ?>
-            <div id="post-0" class="post error404 not-found row">
-                <h1 class="entry-title"><?php _e( 'Not Found' ); ?></h1>
-                <div class="entry-content">
-                    <p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.' );
-                    ?></p>
-                </div>
-                <!-- .entry-content -->
-            </div>
-            <!-- #post-0 -->
+            <?php get_template_part( 'template-parts/content', '404' ); ?>
         <?php endif; ?>
 
         <?php if ( have_posts() ) : ?>
-
             <header class="page-header">
                 <?php
                     the_archive_title( '<h1 class="page-title">', '</h1>' );

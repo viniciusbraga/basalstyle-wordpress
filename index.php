@@ -28,15 +28,7 @@ get_header(); ?>
 
         <?php if ( ! have_posts() ) :
             // Caso não tenha um post referente a URL, ele aplica este conteúdo. ?>
-            <div id="post-0" class="post error404 not-found row">
-                <h1 class="entry-title"><?php _e( 'Page Not Found', 'twentytwenty'); ?></h1>
-                <div class="entry-content">
-                    <p><?php _e( 'The page you were looking for could not be found. It might have been removed, renamed, or did not exist in the first place.', 'twentytwenty' );
-                    ?></p>
-                </div>
-                <!-- .entry-content -->
-            </div>
-            <!-- #post-0 -->
+            <?php get_template_part( 'template-parts/content', '404' ); ?>
         <?php endif; ?>
 
         <?php while ( have_posts() ) :  the_post();  ?>
@@ -56,7 +48,6 @@ get_header(); ?>
                         <?php comments_number( '', '<i class="comment-counter fa fa-comment"> 1</i>', '<i class="comment-counter  fa fa-comment"> %</i>' ); ?>
                         <?php edit_post_link( '<i class="fa fa-pencil"></i> ' . __( 'Edit' ) ); ?>
                     </div>
-
                     <h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_permalink() ?>" rel="bookmark"><?php
                         the_title();
                         ?></a></h1>
