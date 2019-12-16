@@ -64,7 +64,7 @@ get_header(); ?>
                 <?php basalstyle_post_thumbnail() ?>
 
                 <div class="entry-content">
-                    <?php the_content( __( 'Read more...' ) ); ?>
+                    <?php the_excerpt( __( 'Read more...' ) ); ?>
                 </div>
 
             </article>

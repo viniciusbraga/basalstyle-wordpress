@@ -188,6 +188,25 @@ add_filter('the_content_more_link', 'basalstyle_remove_more_jump_link');
 
 
 /**
+* Muda o excerpt para o tamanho de um 25 palavras.
+*/
+function new_excerpt_length($length) {
+    return 25;
+}
+
+add_filter('excerpt_length', 'new_excerpt_length');
+
+
+/**
+* Muda o excerpt para o tamanho de um 25 palavras.
+*/
+function new_excerpt_more($more) {
+    return '...';
+}
+
+add_filter('excerpt_more', 'new_excerpt_more');
+
+/**
  * Returns the size for avatars used in the theme.
  */
 function basalstyle_get_avatar_size() {
