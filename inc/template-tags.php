@@ -115,3 +115,19 @@ if ( ! function_exists( 'basalstyle_post_thumbnail' ) ) :
     }
 endif;
 
+if ( ! function_exists( 'basalstyle_archive_title' ) ) :
+    /**
+    *
+    */
+    function basalstyle_archive_title() {
+
+        $pattern = '/^(\w+)\:\s?(.+)$/ui';
+        $replacement = '${1}: <strong>$2</strong>';
+        printf(
+            '<h1 class="page-title">%1$s</h1>',
+            preg_replace( $pattern, $replacement, get_the_archive_title())
+        );
+
+    }
+endif;
+
