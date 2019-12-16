@@ -102,7 +102,7 @@ if ( ! function_exists( 'basalstyle_post_thumbnail' ) ) :
         if ( has_post_thumbnail() ) {
             if ( is_single() || is_home() ) :
                 printf(
-                    '<figure>%1$s</figure>',
+                    '<figure class="img">%1$s</figure>',
                     get_the_post_thumbnail( get_the_ID(), 'basalstyle-featured')
                 );
             else :
