@@ -9,13 +9,14 @@
 
 get_header(); ?>
 
-<div class="row min-h-4">
-    <div class="desktop-12 container">
-        <div class="content desktop-8 col-left-2">
-            <?php get_search_form(); ?>
-        </div>
-    </div>
-</div>
+<?php
+    /**
+     * Adiciona o bloco da Busca utilizando uma função existente desde do WordPress 3.0.
+     *
+     * @link https://developer.wordpress.org/reference/functions/get_template_part/
+     */
+    get_template_part( 'template-parts/content', 'search' );
+?>
 
 <div id="content" class="content padding-bottom-2 desktop-8 container">
 

@@ -9,6 +9,16 @@
 
 get_header(); ?>
 
+<?php
+    /**
+     * Adiciona o bloco do grid de busca utilizando uma função do WordPress.
+     *
+     * @link https://developer.wordpress.org/reference/functions/get_template_part/
+     */
+    get_template_part( 'template-parts/search' );
+
+?>
+
 <div id="content" class="content desktop-12 container">
 
     <div class="main padding-top-1 padding-bottom-2 row gutter desktop-8 container">
