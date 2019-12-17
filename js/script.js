@@ -21,5 +21,9 @@ $(document).ready(function(){
         $('body,html').animate({scrollTop:0},2500,"easeOutQuart");
     });
 
+    $( "article figure" ).each(function() {
+        height_int = Math.ceil( $( this ).height() / 30);
+        $( this ).addClass( 'min-h-' + height_int );
+    });
 
 });
