@@ -21,7 +21,7 @@ get_header(); ?>
 
 <div id="content" class="content desktop-12 container">
 
-    <div class="main padding-bottom-2 row gutter desktop-8 container">
+    <div class="main padding-bottom-2 row desktop-8 container">
 
         <?php if ( ! have_posts() ) :
             // Caso não tenha um post referente a URL, ele aplica este conteúdo. ?>
@@ -29,7 +29,7 @@ get_header(); ?>
         <?php endif; ?>
 
         <?php if ( have_posts() ) : ?>
-            <header class="page-header">
+            <header class="page-header gutter">
                 <?php
                     basalstyle_archive_title();
                     the_archive_description( '<div class="taxonomy-description">', '</div>' );
@@ -41,7 +41,7 @@ get_header(); ?>
 
             <article id="post-<?php the_ID(); ?>" <?php post_class("padding-bottom-1"); ?>>
 
-                <header>
+                <header class="gutter">
                     <div class="entry-metadata">
                         <time class="post-date"><?php
                             the_time( get_option( 'date_format' ) ); ?></time>
@@ -61,10 +61,13 @@ get_header(); ?>
                         ?></a></h1>
                 </header>
 
-                <?php basalstyle_post_thumbnail() ?>
-
-                <div class="entry-content">
-                    <?php the_excerpt( __( 'Read more...' ) ); ?>
+                <div class="entry-content row">
+                    <div class="desktop-6 tablet-2 gutter">
+                        <?php the_excerpt(); ?>
+                    </div>
+                    <div class="desktop-2 tablet-2 gutter-left">
+                        <?php basalstyle_post_thumbnail() ?>
+                    </div>
                 </div>
 
             </article>

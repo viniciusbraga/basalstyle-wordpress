@@ -114,10 +114,6 @@ a {
   visibility: hidden;
 }
 
-.post + .post {
-  padding-top: 60px;
-}
-
 .page-title {
   font-size: 2em;
   line-height: 30px;
@@ -134,6 +130,11 @@ a {
 /**
  * Conteúdo de Metadata
  */
+.post > header {
+  position: relative;
+  padding-bottom: 30px;
+}
+
 .post-edit-link,
 .post .post-edit-link {
   color: #333;
@@ -158,6 +159,7 @@ a {
   text-decoration: none;
   margin: 0 3px;
   position: absolute;
+  bottom: 10px;
 }
 
 .entry-metadata .post-date,
@@ -237,10 +239,17 @@ a {
 }
 
 @media (max-width: 900px) {
-  .entry-metadata {
-    line-height: 1.5em;
-    margin: 0 16px;
+  .post > header {
     position: relative;
+    padding-bottom: 75px;
+  }
+
+  .entry-metadata {
+    font-size: 1.4em;
+    line-height: 1.6em;
+    margin: 0 0 5px 15px;
+    width: 91%;
+    position: absolute;
   }
 
   .entry-metadata .post-date,
@@ -248,6 +257,18 @@ a {
   .entry-metadata .categories {
     display: block;
     position: relative;
+  }
+
+  .entry-metadata .categories {
+    display: block;
+  }
+
+  .post-edit-link,
+  .post .post-edit-link {
+    margin-right: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 
   .author-info {
@@ -272,6 +293,25 @@ a {
   margin-bottom: 0;
 }
 
+.post > figure {
+  max-width: 300px;
+  display: inline-block;
+}
+
+@media (max-width: 900px) {
+  .post > figure {
+    margin: 0 auto;
+    width: 92%;
+    padding: 15px 0;
+    display: block;
+    max-width: none;
+  }
+
+  .post > figure img {
+    width: 100%;
+    height: auto;
+  }
+}
 /**
  * Comentários do WordPress
  *

@@ -23,9 +23,6 @@
 
 .screen-reader-text { position: absolute; visibility: hidden; }
 
-.post + .post {
-    padding-top: $basal-leading * 2;
-}
 
 .page-title {
     font-size: 2em;

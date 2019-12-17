@@ -3,3 +3,25 @@
     max-width: 100%;
     margin-bottom: 0;
 }
+
+.post > figure {
+    max-width: $basal-col-fixed * 3;
+    display: inline-block;
+}
+
+
+@media (max-width: $basal-media-tablet) {
+
+    .post > figure {
+        margin: 0 auto;
+        width: 92%;
+        padding: ($basal-leading / 2) 0;
+        display: block;
+        max-width: none;
+    }
+    .post > figure img {
+        width: 100%;
+        height: auto;
+    }
+
+}

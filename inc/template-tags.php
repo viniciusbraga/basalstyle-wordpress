@@ -100,14 +100,14 @@ if ( ! function_exists( 'basalstyle_post_thumbnail' ) ) :
     */
     function basalstyle_post_thumbnail() {
         if ( has_post_thumbnail() ) {
-            if ( is_single() || is_home() ) :
+            if ( is_single() || is_home() || is_search() ) :
                 printf(
-                    '<figure class="img">%1$s</figure>',
+                    '<figure>%1$s</figure>',
                     get_the_post_thumbnail( get_the_ID(), 'basalstyle-featured')
                 );
             else :
                 printf(
-                    '<figure>%1$s</figure>',
+                    '<figure class="img-align-text">%1$s</figure>',
                     get_the_post_thumbnail( get_the_ID() )
                 );
             endif;
