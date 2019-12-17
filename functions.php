@@ -37,13 +37,18 @@ function basalstyle_theme_support() {
     );
 
 
-    /*
+    /**
      * Adiciona a funcionalidade de Post Thumbnails para posts e páginas.
+     * set_post_thumbnail_size( int $width, int $height, bool|array $crop = false )
      *
      * @link https://developer.wordpress.org/reference/functions/add_theme_support/#post-thumbnails
      */
     add_theme_support( 'post-thumbnails' );
-    set_post_thumbnail_size( 9999, 150 );
+
+    // Width = 170 = Duas coluna menos duas margens.
+    // Heigth = 105 = 3.5 linhas**
+    // A metade de uma linha é o alinhamento da imagem com o topo do texto
+    set_post_thumbnail_size( 170, 105, array( 'center', 'center') );
 
     // Add custom image size used in Cover Template.
     add_image_size( 'basalstyle-featured', 770, 9999 );
