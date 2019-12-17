@@ -4,10 +4,6 @@
     margin-bottom: 0;
 }
 
-.post > figure {
-    max-width: $basal-col-fixed * 3;
-    display: inline-block;
-}
 
 
 @media (max-width: $basal-media-tablet) {
@@ -19,6 +15,11 @@
         display: block;
         max-width: none;
     }
+
+    .post figure {
+        text-align: center;
+    }
+
     .post > figure img {
         width: 100%;
         height: auto;

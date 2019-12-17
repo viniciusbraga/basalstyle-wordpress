@@ -293,11 +293,6 @@ a {
   margin-bottom: 0;
 }
 
-.post > figure {
-  max-width: 300px;
-  display: inline-block;
-}
-
 @media (max-width: 900px) {
   .post > figure {
     margin: 0 auto;
@@ -305,6 +300,10 @@ a {
     padding: 15px 0;
     display: block;
     max-width: none;
+  }
+
+  .post figure {
+    text-align: center;
   }
 
   .post > figure img {
@@ -754,3 +753,5 @@ li .comment-respond .comment-notes {
 }
 
 /* Fim */
+
+/*# sourceMappingURL=style.css.map */

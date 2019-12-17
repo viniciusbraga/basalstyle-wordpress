@@ -23,7 +23,8 @@ $(document).ready(function(){
 
     $( "article figure" ).each(function() {
         height_int = Math.ceil( $( this ).height() / 30);
-        $( this ).addClass( 'min-h-' + height_int );
+        $( this ).addClass( 'max-h-' + height_int );
     });
+
 
 });
