@@ -3,3 +3,26 @@
     max-width: 100%;
     margin-bottom: 0;
 }
+
+
+
+@media (max-width: $basal-media-tablet) {
+
+    .post > figure {
+        margin: 0 auto;
+        width: 92%;
+        padding: ($basal-leading / 2) 0;
+        display: block;
+        max-width: none;
+    }
+
+    .post figure {
+        text-align: center;
+    }
+
+    .post > figure img {
+        width: 100%;
+        height: auto;
+    }
+
+}

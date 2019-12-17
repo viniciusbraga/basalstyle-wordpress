@@ -1,3 +1,7 @@
+.post > header {
+    position: relative;
+    padding-bottom: $basal-leading;
+}
 
 .post-edit-link,
 .post .post-edit-link {
@@ -23,6 +27,7 @@
     text-decoration: none;
     margin: 0 3px;
     position: absolute;
+    bottom: $basal-leading / 3;
 }
 
 .entry-metadata .post-date,
@@ -104,11 +109,19 @@
 
 @media (max-width: $basal-media-tablet) {
 
-    .entry-metadata {
-        line-height: 1.5em;
-        margin: 0 16px;
+    .post > header {
         position: relative;
+        padding-bottom: $basal-leading * 2.5;
     }
+
+    .entry-metadata {
+        font-size: 1.4em;
+        line-height: 1.6em;
+        margin: 0 0 5px $basal-padding;
+        width: 91%;
+        position: absolute;
+    }
+
     .entry-metadata .post-date,
     .entry-metadata .author,
     .entry-metadata .categories {
@@ -116,15 +129,30 @@
         position: relative;
     }
 
+    .entry-metadata .categories {
+        display: block;
+    }
+
+    .post-edit-link,
+    .post .post-edit-link {
+        margin-right: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
     .author-info {
         max-width: 90%;
         display: block;
         margin: 0 auto;
     }
+
     .author-info .author-avatar {
         padding: 15px;
     }
+
     .author-info .author-description {
         padding: 0 0;
     }
+
 }

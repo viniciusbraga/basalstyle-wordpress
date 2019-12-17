@@ -23,6 +23,17 @@
 
 .screen-reader-text { position: absolute; visibility: hidden; }
 
-.post + .post {
-    padding-top: $basal-leading * 2;
+
+.page-title {
+    font-size: 2em;
+    line-height: $basal-leading;
+    text-transform: uppercase;
+    vertical-align: text-top;
+    padding: 0 0;
 }
+
+.page-title strong {
+    font-size: 2em;
+    display: block;
+}
+

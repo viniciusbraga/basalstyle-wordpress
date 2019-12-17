@@ -93,3 +93,45 @@ if ( ! function_exists( 'basalstyle_comment_form' ) ) :
         }
     }
 endif;
+
+if ( ! function_exists( 'basalstyle_post_thumbnail' ) ) :
+    /**
+    * Aplica o thumbnail diferenciando entre o post e o index.
+    */
+    function basalstyle_post_thumbnail() {
+        if ( has_post_thumbnail() ) {
+            if ( is_single() || is_home() || is_search() ) :
+                $img_thumb = get_the_post_thumbnail( get_the_ID(), 'basalstyle-featured');
+                // preg_match('/\sheight=\"(\d*)\"\s/', $img_thumb, $matches);
+                // $img_lines = ceil( $matches[1] /  30 );
+                // $img_h = $img_lines * 30;
+                printf(
+                    '<figure>%1$s</figure>',
+                    $img_thumb
+                );
+            else :
+                printf(
+                    '<figure class="img-align-text">%1$s</figure>',
+                    get_the_post_thumbnail( get_the_ID() )
+                );
+            endif;
+        }
+    }
+endif;
+
+if ( ! function_exists( 'basalstyle_archive_title' ) ) :
+    /**
+    *
+    */
+    function basalstyle_archive_title() {
+
+        $pattern = '/^(\w+)\:\s?(.+)$/ui';
+        $replacement = '${1}: <strong>$2</strong>';
+        printf(
+            '<h1 class="page-title">%1$s</h1>',
+            preg_replace( $pattern, $replacement, get_the_archive_title())
+        );
+
+    }
+endif;
+
