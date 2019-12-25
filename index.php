@@ -36,6 +36,7 @@ get_header(); ?>
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
                 <header>
+                <?php if ( ! is_page() ) : ?>
                     <div class="entry-metadata">
                         <time class="post-date"><?php
                             the_time( get_option( 'date_format' ) ); ?></time>
@@ -48,6 +49,7 @@ get_header(); ?>
                         <?php comments_number( '', '<i class="comment-counter fa fa-comment"> 1</i>', '<i class="comment-counter  fa fa-comment"> %</i>' ); ?>
                         <?php edit_post_link( '<i class="fa fa-pencil"></i> ' . __( 'Edit' ) ); ?>
                     </div>
+                <?php endif; ?>
                     <h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_permalink() ?>" rel="bookmark"><?php
                         the_title();
                         ?></a></h1>
