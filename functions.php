@@ -93,7 +93,14 @@ function basalstyle_scripts_styles() {
 
     // Aplica o script do template
     wp_enqueue_script( 'jquery-ui', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js', array('jquery'), '1.11.2', false  );
-    wp_enqueue_script( 'basalstyle-script', get_template_directory_uri() . '/js/script.js', array('jquery'), '0.1', false  );
+
+    wp_enqueue_script( 'basalstyle-script', get_template_directory_uri() . '/js/script.js', array('jquery'), '0.2', false  );
+
+    // Adiciona as variáveis de personalização do tema
+    wp_localize_script( 'basalstyle-script', 'basalstyle', array(
+        'HeaderFloat' => get_theme_mod( 'apply_float_menu' ),
+        )
+    );
 
     // Adiciona o Font-Awesome com ícones. Sempre útil
     wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' );
@@ -237,6 +244,12 @@ add_filter( 'comment_form_defaults', 'basalstyle_comment_form_defaults' );
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
+
+
+/**
+ * Adiciona opções do tema
+ */
+require get_template_directory() . '/inc/customizer.php';
 
 
 /**

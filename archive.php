@@ -15,7 +15,7 @@ get_header(); ?>
      *
      * @link https://developer.wordpress.org/reference/functions/get_template_part/
      */
-    get_template_part( 'template-parts/search' );
+    get_template_part( 'template-parts/content', 'search' );
 
 ?>
 
@@ -32,7 +32,17 @@ get_header(); ?>
             <header class="page-header gutter">
                 <?php
                     basalstyle_archive_title();
-                    the_archive_description( '<div class="taxonomy-description">', '</div>' );
+
+                    /**
+                     * Esse IF conserta um aparente bug no 5.3.2
+                     * onde não coloca tag <p> na descrição do autor.
+                     */
+                    if ( is_author() ) {
+                        the_archive_description( '<div class="taxonomy-description"><p>', '</p></div>' );
+                    } else {
+                        the_archive_description( '<div class="taxonomy-description">', '</div>' );
+                    }
+
                 ?>
             </header><!-- .page-header -->
         <?php endif; ?>
