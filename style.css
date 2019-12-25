@@ -41,8 +41,24 @@ a {
  * Cabeçalho (Header) do Site
  *
  */
+.header-frame {
+  min-height: 90px;
+}
+
+.header-float {
+  background: white;
+  position: fixed;
+  top: 0;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
 .header {
   text-transform: uppercase;
+  min-height: 90px;
 }
 
 .header-inline .site-logo {
@@ -69,6 +85,10 @@ a {
 }
 
 @media (max-width: 800px) {
+  .header-frame {
+    min-height: auto;
+  }
+
   .header .site-name {
     padding: 0 0;
   }
@@ -753,5 +773,3 @@ li .comment-respond .comment-notes {
 }
 
 /* Fim */
-
-/*# sourceMappingURL=style.css.map */

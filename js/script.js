@@ -6,14 +6,22 @@ $(document).ready(function(){
 
     jQuery(window).load(function() {
         jQuery("#backtotop").hide().removeAttr("href");
-        if (jQuery(window).scrollTop() != "0")
-            jQuery("#backtotop").fadeIn("slow")
+        if (jQuery(window).scrollTop() != "0") {
+            jQuery("#backtotop").fadeIn("slow");
+            if (basalstyle.HeaderFloat)
+                jQuery("#header-frame").addClass("header-float");
+        }
         var scrollDiv = jQuery("#backtotop");
         jQuery(window).scroll(function(){
-            if (jQuery(window).scrollTop() == "0")
-                jQuery(scrollDiv).fadeOut("slow")
-            else
+            if (jQuery(window).scrollTop() == "0") {
+                jQuery(scrollDiv).fadeOut("slow");
+                if (basalstyle.HeaderFloat)
+                    jQuery("#header-frame").removeClass("header-float");
+            } else {
                 jQuery(scrollDiv).fadeIn("slow")
+                if (basalstyle.HeaderFloat)
+                    jQuery("#header-frame").addClass("header-float");
+            }
         });
     });
 
