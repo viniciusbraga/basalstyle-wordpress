@@ -15,7 +15,7 @@ get_header(); ?>
      *
      * @link https://developer.wordpress.org/reference/functions/get_template_part/
      */
-    get_template_part( 'template-parts/search' );
+    get_template_part( 'template-parts/content', 'search' );
 
 ?>
 
