@@ -54,7 +54,7 @@
 
                 <?php } else { ?>
 
-                    <h1 class="site-name"><a href="/" rel="home"><?php
+                    <h1 class="site-name"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php
                         esc_attr( bloginfo( 'name' ) );
                         ?></a></h1>
                     <p class="site-description"><?php esc_attr( bloginfo( 'description' ) ); ?></p>
