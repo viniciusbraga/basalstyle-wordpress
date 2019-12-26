@@ -13,12 +13,25 @@
     </div>
     <!-- .content-frame -->
 
-    <div class="footer-frame min-h-4 padding-top-1">
+    <div class="footer-frame padding-top-1 padding-bottom-3">
         <footer id="colophon" class="footer desktop-8 container" role="contentinfo">
 
-            <div class="site-info">
+            <div class="site-info desktop-3 tablet-2 gutter">
                 <p class="copyright">&copy; <?php echo date( "Y" ); echo " "; bloginfo( 'name' ); ?>. <?php _e( 'Powered by WordPress', 'twenttwent' ); ?>.</p>
             </div>
+
+            <?php if ( has_nav_menu( 'footer-menu' ) ) { ?>
+                <div class="desktop-5 tablet-2 gutter text-align-right">
+                    <nav id="footer-menu" class="nav-inline" role="navigation"><?php
+                    // http://codex.wordpress.org/Navigation_Menus
+                    wp_nav_menu( array(
+                        'theme_location' => 'footer-menu',
+                        'container_class' => 'nav-inline' )
+                    );
+                    ?></nav>
+                    <!-- #footer-menu -->
+                </div>
+            <?php } ?>
 
         </footer>
     </div>
