@@ -36,10 +36,28 @@ function basalstyle_theme_support() {
         )
     );
 
+
+    /**
+     * Adiciona a funcionalidade de Post Thumbnails para posts e páginas.
+     * set_post_thumbnail_size( int $width, int $height, bool|array $crop = false )
+     *
+     * @link https://developer.wordpress.org/reference/functions/add_theme_support/#post-thumbnails
+     */
+    add_theme_support( 'post-thumbnails' );
+
+    // Width = 170 = Duas coluna menos duas margens.
+    // Heigth = 105 = 3.5 linhas**
+    // A metade de uma linha é o alinhamento da imagem com o topo do texto
+    set_post_thumbnail_size( 170, 105, array( 'center', 'center') );
+
+    // Add custom image size used in Cover Template.
+    add_image_size( 'basalstyle-featured', 770, 9999 );
+
+
     /*
      * Adiciona compatibilidade para Formatos de Posts
      *
-     * Veja em: https://codex.wordpress.org/Post_Formats
+     * @link https://codex.wordpress.org/Post_Formats
      */
     add_theme_support(
         'post-formats',
@@ -75,14 +93,21 @@ function basalstyle_scripts_styles() {
 
     // Aplica o script do template
     wp_enqueue_script( 'jquery-ui', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js', array('jquery'), '1.11.2', false  );
-    wp_enqueue_script( 'basalstyle-script', get_template_directory_uri() . '/js/script.js', array('jquery'), '0.1', false  );
+
+    wp_enqueue_script( 'basalstyle-script', get_template_directory_uri() . '/js/script.js', array('jquery'), '0.2', false  );
+
+    // Adiciona as variáveis de personalização do tema
+    wp_localize_script( 'basalstyle-script', 'basalstyle', array(
+        'HeaderFloat' => get_theme_mod( 'apply_float_menu' ),
+        )
+    );
 
     // Adiciona o Font-Awesome com ícones. Sempre útil
     wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' );
 
     // Carrega as folhas de estilo principais.
     // wp_enqueue_style( 'basalstyle-style', get_stylesheet_uri(), array(), '20130224' );
-    wp_enqueue_style( 'twentytwenty', get_template_directory_uri() . '/basalstyle/style.min.css', array(), '1.6.1' );
+    wp_enqueue_style( 'basalstyle', get_template_directory_uri() . '/basalstyle/style.min.css', array(), '1.6.1' );
     wp_enqueue_style( 'basalstyle-wordpress', get_template_directory_uri() . '/style.css', array(), '20191129' );
 
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -90,7 +115,7 @@ function basalstyle_scripts_styles() {
     }
 
     if (WP_DEBUG) {
-        wp_enqueue_script('live-js' , get_stylesheet_directory_uri() . '/js/_live.js'  , [], microtime(), true);
+        wp_enqueue_script('live-js' , get_template_directory_uri() . '/js/_live.js'  , [], microtime(), true);
     }
 
 }
@@ -175,10 +200,29 @@ add_filter('the_content_more_link', 'basalstyle_remove_more_jump_link');
 
 
 /**
+* Muda o excerpt para o tamanho de um 25 palavras.
+*/
+function new_excerpt_length($length) {
+    return 25;
+}
+
+add_filter('excerpt_length', 'new_excerpt_length');
+
+
+/**
+* Muda o excerpt para o tamanho de um 25 palavras.
+*/
+function new_excerpt_more($more) {
+    return '...';
+}
+
+add_filter('excerpt_more', 'new_excerpt_more');
+
+/**
  * Returns the size for avatars used in the theme.
  */
 function basalstyle_get_avatar_size() {
-	return 60;
+    return 60;
 }
 
 
@@ -186,12 +230,12 @@ function basalstyle_get_avatar_size() {
  * Modifica o campo de comentário no formulário
  */
 function basalstyle_comment_form_defaults( $defaults ) {
-	$comment_field = $defaults['comment_field'];
+    $comment_field = $defaults['comment_field'];
 
-	// Adjust height of comment form.
-	$defaults['comment_field'] = preg_replace( '/rows="\d+"/', 'rows="5"', $comment_field );
+    // Adjust height of comment form.
+    $defaults['comment_field'] = preg_replace( '/rows="\d+"/', 'rows="5"', $comment_field );
 
-	return $defaults;
+    return $defaults;
 }
 add_filter( 'comment_form_defaults', 'basalstyle_comment_form_defaults' );
 
@@ -200,6 +244,12 @@ add_filter( 'comment_form_defaults', 'basalstyle_comment_form_defaults' );
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
+
+
+/**
+ * Adiciona opções do tema
+ */
+require get_template_directory() . '/inc/customizer.php';
 
 
 /**

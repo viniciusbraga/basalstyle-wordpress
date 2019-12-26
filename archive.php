@@ -9,29 +9,40 @@
 
 get_header(); ?>
 
+<?php
+    /**
+     * Adiciona o bloco do grid de busca utilizando uma função do WordPress.
+     *
+     * @link https://developer.wordpress.org/reference/functions/get_template_part/
+     */
+    get_template_part( 'template-parts/content', 'search' );
+
+?>
+
 <div id="content" class="content desktop-12 container">
 
-    <div class="main padding-top-1 padding-bottom-2 row gutter desktop-8 container">
+    <div class="main padding-bottom-2 row desktop-8 container">
 
         <?php if ( ! have_posts() ) :
             // Caso não tenha um post referente a URL, ele aplica este conteúdo. ?>
-            <div id="post-0" class="post error404 not-found row">
-                <h1 class="entry-title"><?php _e( 'Not Found' ); ?></h1>
-                <div class="entry-content">
-                    <p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.' );
-                    ?></p>
-                </div>
-                <!-- .entry-content -->
-            </div>
-            <!-- #post-0 -->
+            <?php get_template_part( 'template-parts/content', '404' ); ?>
         <?php endif; ?>
 
         <?php if ( have_posts() ) : ?>
-
-            <header class="page-header">
+            <header class="page-header gutter">
                 <?php
-                    the_archive_title( '<h1 class="page-title">', '</h1>' );
-                    the_archive_description( '<div class="taxonomy-description">', '</div>' );
+                    basalstyle_archive_title();
+
+                    /**
+                     * Esse IF conserta um aparente bug no 5.3.2
+                     * onde não coloca tag <p> na descrição do autor.
+                     */
+                    if ( is_author() ) {
+                        the_archive_description( '<div class="taxonomy-description"><p>', '</p></div>' );
+                    } else {
+                        the_archive_description( '<div class="taxonomy-description">', '</div>' );
+                    }
+
                 ?>
             </header><!-- .page-header -->
         <?php endif; ?>
@@ -40,7 +51,7 @@ get_header(); ?>
 
             <article id="post-<?php the_ID(); ?>" <?php post_class("padding-bottom-1"); ?>>
 
-                <header>
+                <header class="gutter">
                     <div class="entry-metadata">
                         <time class="post-date"><?php
                             the_time( get_option( 'date_format' ) ); ?></time>
@@ -60,8 +71,13 @@ get_header(); ?>
                         ?></a></h1>
                 </header>
 
-                <div class="entry-content">
-                    <?php the_content( __( 'Read more...' ) ); ?>
+                <div class="entry-content row">
+                    <div class="desktop-6 tablet-2 gutter">
+                        <?php the_excerpt(); ?>
+                    </div>
+                    <div class="desktop-2 tablet-2 gutter-left">
+                        <?php basalstyle_post_thumbnail() ?>
+                    </div>
                 </div>
 
             </article>

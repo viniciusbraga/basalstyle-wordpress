@@ -40,7 +40,7 @@
 
 <body <?php body_class();?> >
 
-    <div id="header-frame" class="header-frame min-h-5">
+    <div id="header-frame" class="header-frame">
 
         <div class="row">
             <header class="header header-inline min-h-3 row desktop-8 container">
@@ -54,7 +54,7 @@
 
                 <?php } else { ?>
 
-                    <h1 class="site-name"><a href="/" rel="home"><?php
+                    <h1 class="site-name"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php
                         esc_attr( bloginfo( 'name' ) );
                         ?></a></h1>
                     <p class="site-description"><?php esc_attr( bloginfo( 'description' ) ); ?></p>

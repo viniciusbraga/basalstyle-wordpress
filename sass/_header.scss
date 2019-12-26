@@ -1,11 +1,26 @@
+.header-frame {
+    min-height: $basal-leading * 3;
+}
+
+.header-float {
+    background: rgba(255, 255, 255, 1);
+    position: fixed;
+    top: 0;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
 
 .header {
     text-transform: uppercase;
+    min-height: $basal-leading * 3;
 }
 
 .header-inline .site-logo {
     margin: $basal-leading 0 0 0;
-    left: $basal-padding;
+    padding-left: $basal-padding;
 }
 
 .site-logo h1,
@@ -28,8 +43,13 @@
 
 @media (max-width: 800px) {
 
+    .header-frame {
+        min-height: auto;
+    }
+
     .header .site-name {
         padding: 0 0;
     }
 
 }
+

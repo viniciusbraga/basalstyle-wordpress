@@ -6,19 +6,32 @@ $(document).ready(function(){
 
     jQuery(window).load(function() {
         jQuery("#backtotop").hide().removeAttr("href");
-        if (jQuery(window).scrollTop() != "0")
-            jQuery("#backtotop").fadeIn("slow")
+        if (jQuery(window).scrollTop() != "0") {
+            jQuery("#backtotop").fadeIn("slow");
+            if (basalstyle.HeaderFloat)
+                jQuery("#header-frame").addClass("header-float");
+        }
         var scrollDiv = jQuery("#backtotop");
         jQuery(window).scroll(function(){
-            if (jQuery(window).scrollTop() == "0")
-                jQuery(scrollDiv).fadeOut("slow")
-            else
+            if (jQuery(window).scrollTop() == "0") {
+                jQuery(scrollDiv).fadeOut("slow");
+                if (basalstyle.HeaderFloat)
+                    jQuery("#header-frame").removeClass("header-float");
+            } else {
                 jQuery(scrollDiv).fadeIn("slow")
+                if (basalstyle.HeaderFloat)
+                    jQuery("#header-frame").addClass("header-float");
+            }
         });
     });
 
     $('#backtotop').click(function() {
         $('body,html').animate({scrollTop:0},2500,"easeOutQuart");
+    });
+
+    $( "article figure" ).each(function() {
+        height_int = Math.ceil( $( this ).height() / 30);
+        $( this ).addClass( 'max-h-' + height_int );
     });
 
 
