@@ -1,0 +1,4 @@
+
+# Documento de compilação automática do plugin Save-AutoRun do Atom.
+
+"**/sass/*.scss": "sass ${dir}/style.scss:${dir}/../style.css --no-cache --style expanded --precision 3 --sourcemap=none;"
