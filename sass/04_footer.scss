@@ -1,0 +1,31 @@
+/**
+ * Rodapé (Footer) do Site
+ *
+ */
+
+.footer-frame {
+     background-color: #f5f5f5;
+}
+
+.copyright { font-size: 1.2em;}
+
+#backtotop {
+    color: #606066;
+    font-size: 30px;
+    line-height: 50px;
+    text-align: center;
+    height: 60px;
+    width: 60px;
+    padding: 0;
+    position: fixed;
+    right: 30px;
+    bottom: 35px;
+    outline: none;
+    cursor: pointer;
+    border-radius: 45px;
+    background: #E6E6E6;
+    -webkit-transition: -webkit-opacity 0.3s;
+    transition: opacity 0.3s;
+}
+#backtotop:visited { color: #606066; }
+#backtotop:hover { color: #000000; }
