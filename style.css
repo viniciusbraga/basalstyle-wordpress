@@ -16,7 +16,7 @@ html {
 }
 
 body {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-weight: 300;
   background-color: #ffffff;
 }
@@ -273,8 +273,8 @@ a {
   }
 
   .entry-metadata .post-date,
-  .entry-metadata .author,
-  .entry-metadata .categories {
+.entry-metadata .author,
+.entry-metadata .categories {
     display: block;
     position: relative;
   }
@@ -284,7 +284,7 @@ a {
   }
 
   .post-edit-link,
-  .post .post-edit-link {
+.post .post-edit-link {
     margin-right: 0;
     position: absolute;
     top: 0;
@@ -393,7 +393,7 @@ a {
 
 .comment-author img {
   border-radius: 49%;
-  margin: 0 0 0 -4.0em;
+  margin: 0 0 0 -4em;
   float: left;
   width: 46px;
   height: auto;
@@ -457,9 +457,9 @@ a {
 }
 
 .comment-form textarea,
-.comment-form input[type="text"],
-.comment-form input[type="email"],
-.comment-form input[type="url"] {
+.comment-form input[type=text],
+.comment-form input[type=email],
+.comment-form input[type=url] {
   color: black;
   font-size: 1.2em;
   width: 98%;
@@ -662,7 +662,7 @@ li .comment-respond .comment-notes {
   right: 0;
   background: #F2F2F2;
   -webkit-transition: -webkit-padding 0.5s ease-out, -webkit-opacity 0.5s ease-out, width 0.5s ease-out;
-  transition: padding 0.5s ease-out, opacity 0.5s ease-out,  width 0.5s ease-out;
+  transition: padding 0.5s ease-out, opacity 0.5s ease-out, width 0.5s ease-out;
 }
 
 .search-form .search-submit {
