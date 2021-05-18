@@ -114,10 +114,6 @@ function basalstyle_scripts_styles() {
         wp_enqueue_script( 'comment-reply' );
     }
 
-    if (WP_DEBUG) {
-        wp_enqueue_script('live-js' , get_template_directory_uri() . '/js/_live.js'  , [], microtime(), true);
-    }
-
 }
 
 add_action( 'wp_enqueue_scripts', 'basalstyle_scripts_styles' );
@@ -260,4 +256,3 @@ require get_template_directory() . '/inc/customizer.php';
 remove_action('wp_head', 'rsd_link');
 remove_action('wp_head', 'wlwmanifest_link');
 remove_action('wp_head', 'wp_generator');
-
