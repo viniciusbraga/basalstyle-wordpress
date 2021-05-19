@@ -589,11 +589,12 @@ li .comment-respond .comment-notes {
 #backtotop {
   color: #606066;
   font-size: 30px;
-  line-height: 50px;
+  line-height: 60px;
   text-align: center;
+  vertical-align: middle;
   height: 60px;
   width: 60px;
-  padding: 0;
+  padding: 0 0 0;
   position: fixed;
   right: 30px;
   bottom: 35px;
