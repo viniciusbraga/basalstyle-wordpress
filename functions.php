@@ -114,6 +114,16 @@ function basalstyle_scripts_styles() {
         wp_enqueue_script( 'comment-reply' );
     }
 
+    if (WP_DEBUG) {
+        /**
+        * Live.js - One script closer to designing in the browser
+        * https://livejs.com
+        */
+        if ( file_exists( get_template_directory() . '/js/_live.js' ) ) {
+            wp_enqueue_script('live-js' , get_template_directory_uri() . '/js/_live.js'  , [], microtime(), true);
+        }
+    }
+
 }
 
 add_action( 'wp_enqueue_scripts', 'basalstyle_scripts_styles' );
