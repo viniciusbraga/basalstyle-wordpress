@@ -105,9 +105,9 @@ if ( ! function_exists( 'basalstyle_post_thumbnail' ) ) :
                 // preg_match('/\sheight=\"(\d*)\"\s/', $img_thumb, $matches);
                 // $img_lines = ceil( $matches[1] /  30 );
                 // $img_h = $img_lines * 30;
-                printf( '<figure class="featured-image img-align-text">%1$s</figure>', $img_thumb );
+                printf( '<figure class="img featured-image img-align-text">%1$s</figure>', $img_thumb );
             else :
-                printf( '<figure class="featured-image img-align-text">%1$s</figure>', get_the_post_thumbnail( get_the_ID() ) );
+                printf( '<figure class="img featured-image img-align-text">%1$s</figure>', get_the_post_thumbnail( get_the_ID() ) );
             endif;
         }
     }
