@@ -21,6 +21,19 @@ p, li, dt, dd, th, td, caption { font-size: 1.9em; }
 a { text-decoration: none; }
 
 
+@media (max-width: $basal-media-tablet) {
+    h1 {
+        font-size: 2.4em;
+        line-height: 1.5em;
+        // min-height: $basal-leading * 1;
+        padding: $basal-leading 0 0;
+    }
+    p, li, dt, dd, th, td, caption {
+        font-size: 1.7em;
+        line-height: 1.5em;
+    }
+}
+
 /**
  * Classes disponíveis no tag do BODY quando na seção / página da vez.
  * .body-single
