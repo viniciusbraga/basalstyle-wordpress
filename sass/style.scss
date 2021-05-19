@@ -10,13 +10,13 @@
 @import "variables";
 
 @import "01_base";
-@import "02_header";
+@import "02_header.scss";
 @import "03_content";
-// @import "03_01_post_metadata";
-// @import "03_02_post";
-// @import "03_03_images";
-// @import "03_04_comments";
-// @import "03_05_pagination";
+// @import "03-01_post-metadata";
+// @import "03-02_post";
+@import "03-03_images";
+@import "03-04_comments";
+@import "03-05_pagination";
 @import "04_footer";
 @import "05_widgets";
 @import "06_search";

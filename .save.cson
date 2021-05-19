@@ -5,5 +5,5 @@
 # "**/sass/*.scss": "sass ${dir}/style.scss:${dir}/../style.css --no-cache --style expanded --precision 3 --sourcemap=none;"
 
 # SASS Dart
-"**/sass/*.scss": "sass ${dir}/style.scss:${dir}/../style.css --style expanded --no-source-map;"
+"**/sass/*.scss": "sass ${dir}/style.scss:${dir}/../style.css --style expanded --source-map;"
 # "**/sass/*.scss": "sass ${dir}/style.scss:${dir}/../style.css --style compressed;"

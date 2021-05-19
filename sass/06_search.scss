@@ -86,12 +86,12 @@
 
 .search-form .search-input:focus + .search-label {
     text-indent: 60px;
-    width: calc( 100% - $basal-padding );
+    width: calc( 100% - #{$basal-padding} );
     opacity: 1;
 }
 
 .search-form .search-input:focus ~ .search-submit {
-    right: 100%;
+    right: calc( 100% - #{$basal-padding} );
     margin-right: -60px;
     -webkit-transition: right 0.5s ease-out ;
     transition: right 0.5s ease-out ;

@@ -21,6 +21,13 @@ body {
   background-color: #ffffff;
 }
 
+h1 {
+  font-size: 3.6em;
+  line-height: 43.5px;
+  min-height: 30px;
+  padding: 0;
+}
+
 p, li, dt, dd, th, td, caption {
   font-size: 1.9em;
 }
@@ -98,6 +105,65 @@ a {
  * Envolve o post, sidebar e tudo que tiver entre o Cabeçalho e o Rodapé.
  *
  */
+/**
+ * Header e descrição de Categoria e similares
+ */
+.page-title {
+  font-size: 1.5em;
+  line-height: 1em;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  vertical-align: text-top;
+  padding: 0 0;
+  min-height: 60px;
+}
+
+.page-title strong {
+  font-size: 2em;
+  line-height: 1.5em;
+  display: block;
+}
+
+/**
+ * Conteúdo principal
+ * Somente a parte do Post
+ *
+ */
+.post a {
+  color: #191D33;
+  border-bottom: 1px solid #7AB1CC;
+}
+
+.post a:visited {
+  border-bottom: 1px solid #B17ACC;
+}
+
+.entry-title,
+.entry-title a {
+  color: #000000;
+  font-weight: 300;
+  border: 0;
+}
+
+.entry-title a {
+  top: -5px;
+  position: relative;
+}
+
+.entry-title {
+  max-width: 90%;
+}
+
+.entry-content {
+  color: #2E2E33;
+  font-weight: 400;
+}
+
+.screen-reader-text {
+  position: absolute;
+  visibility: hidden;
+}
+
 /**
  * Conteúdo de Metadata
  */
@@ -257,57 +323,16 @@ a {
   }
 }
 /**
- * Conteúdo principal
- * Somente a parte do Post
- *
- */
-.post a {
-  color: #191D33;
-  border-bottom: 1px solid #7AB1CC;
-}
-
-.post a:visited {
-  border-bottom: 1px solid #B17ACC;
-}
-
-.entry-title,
-.entry-title a {
-  color: #000000;
-  font-weight: 300;
-  border: 0;
-  padding: 15px 0 15px;
-}
-
-.entry-title {
-  max-width: 90%;
-}
-
-.entry-content {
-  color: #2E2E33;
-  font-weight: 400;
-}
-
-.screen-reader-text {
-  position: absolute;
-  visibility: hidden;
-}
-
-.page-title {
-  font-size: 2em;
-  line-height: 30px;
-  text-transform: uppercase;
-  vertical-align: text-top;
-  padding: 0 0;
-}
-
-.page-title strong {
-  font-size: 2em;
-  display: block;
-}
-
-/**
  * Conteúdo de Imagens
  */
+.post .featured-image {
+  padding: 30px 0;
+}
+
+.archive .post .featured-image {
+  padding: 0;
+}
+
 .wp-block-image {
   max-width: 100%;
   margin-bottom: 0;
@@ -499,9 +524,9 @@ li .comment-respond .comment-notes {
 }
 
 /**
- * Paginação do Site
- *
- */
+  * Paginação do Site
+  *
+  */
 .pagination {
   text-align: center;
 }
@@ -707,12 +732,12 @@ li .comment-respond .comment-notes {
 
 .search-form .search-input:focus + .search-label {
   text-indent: 60px;
-  width: calc( 100% - $basal-padding );
+  width: calc( 100% - 15px );
   opacity: 1;
 }
 
 .search-form .search-input:focus ~ .search-submit {
-  right: 100%;
+  right: calc( 100% - 15px );
   margin-right: -60px;
   -webkit-transition: right 0.5s ease-out;
   transition: right 0.5s ease-out;
@@ -771,5 +796,3 @@ li .comment-respond .comment-notes {
 }
 
 /* Fim */
-
-/*# sourceMappingURL=style.css.map */

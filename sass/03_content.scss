@@ -5,6 +5,66 @@
  */
 
  /**
+  * Header e descrição de Categoria e similares
+  */
+
+  .page-title {
+      font-size: 1.5em;
+      line-height: 1em;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      vertical-align: text-top;
+      padding: 0 0;
+      min-height: $basal-leading * 2;
+  }
+
+  .page-title strong {
+      font-size: 2em;
+      line-height: 1.5em;
+      display: block;
+  }
+
+
+  /**
+   * Conteúdo principal
+   * Somente a parte do Post
+   *
+   */
+
+   .post a {
+       color: #191D33;
+       border-bottom: 1px solid #7AB1CC;
+   }
+
+   .post a:visited { border-bottom: 1px solid #B17ACC; }
+
+
+   .entry-title,
+   .entry-title a {
+       color: #000000;
+       font-weight: 300;
+       border: 0;
+   }
+
+   .entry-title a {
+       top: -5px;
+       position: relative;
+   }
+
+   .entry-title { max-width: 90%; }
+
+   .entry-content {
+       color: #2E2E33 ;
+       font-weight: 400;
+   }
+
+   .screen-reader-text {
+       position: absolute;
+       visibility: hidden;
+   }
+
+
+ /**
   * Conteúdo de Metadata
   */
   .post > header {
@@ -165,296 +225,3 @@
       }
 
   }
-
-
-/**
- * Conteúdo principal
- * Somente a parte do Post
- *
- */
-
- .post a {
-     color: #191D33;
-     border-bottom: 1px solid #7AB1CC;
- }
-
- .post a:visited { border-bottom: 1px solid #B17ACC; }
-
-
- .entry-title,
- .entry-title a {
-     color: #000000;
-     font-weight: 300;
-     border: 0;
-     padding: 15px 0 15px;
- }
-
- .entry-title { max-width: 90%; }
-
- .entry-content {
-     color: #2E2E33 ;
-     font-weight: 400;
- }
-
- .screen-reader-text { position: absolute; visibility: hidden; }
-
-
- .page-title {
-     font-size: 2em;
-     line-height: $basal-leading;
-     text-transform: uppercase;
-     vertical-align: text-top;
-     padding: 0 0;
- }
-
- .page-title strong {
-     font-size: 2em;
-     display: block;
- }
-
-
-/**
- * Conteúdo de Imagens
- */
-
- .wp-block-image {
-     max-width: 100%;
-     margin-bottom: 0;
- }
-
- @media (max-width: $basal-media-tablet) {
-
-     .post > figure {
-         margin: 0 auto;
-         width: 92%;
-         padding: ($basal-leading / 2) 0;
-         display: block;
-         max-width: none;
-     }
-
-     .post figure {
-         text-align: center;
-     }
-
-     .post > figure img {
-         width: 100%;
-         height: auto;
-     }
-
- }
-
-
-/**
- * Comentários do WordPress
- *
- */
-
- .comments-counter {
-     padding: 0 0 0 2em;
- }
-
- .comments-area {
-     padding: $basal-leading * 1 0;
-     max-width: $basal-col-fixed * 7;
-     margin: 0 0 0 0;
- }
-
- .comments-title {
-     font-size: 1.13em;
-     font-weight: 800;
-     letter-spacing: 0.05em;
-     text-transform: uppercase;
-     padding: 0;
-     min-height: $basal-leading * 2;
- }
-
- .comment-list {
-     padding: 0 $basal-padding 0 60px;
-     list-style: none;
- }
-
- .comments-area .children {
-     list-style: none;
-     padding: 0 0 0 3.25em;
- }
-
- .comment-body {
-     font-size: 0.95em;
-     font-weight: 400;
-     padding: 0 0 1em 0;
-     margin: 0;
- }
-
- .comment-body .reply a,
- .comment-respond small a {
-     font-size: 0.75em;
-     font-weight: 700;
-     text-transform: uppercase;
-     letter-spacing: 0.06em;
-     border: 2px solid #ccc;
-     border-radius: 6px;
-     padding: 0.3em 1em;
- }
-
- .comment-author {
-     font-size: 1em;
-     line-height: 1em;
-     text-transform: uppercase;
-     margin: 0;
- }
-
- .comment-author img {
-     border-radius: 49%;
-     margin: 0 0 0 -4.0em;
-     float: left;
-     width: 46px;
-     height: auto;
- }
-
- .comment-author .fn {
-     font-style: normal;
-     font-weight: 800;
-     letter-spacing: 0.06em;
-     word-spacing: 0.15em;
-     padding: 0.45em 0.5em 0.1em 0.1em;
-     display: inline-block;
- }
-
- .comment-meta {
-     font-size: 0.8em;
-     font-style: normal;
-     font-weight: 700;
-     text-transform: uppercase;
-     padding: 0 0 0 0;
-     min-height: $basal-leading * 2;
- }
-
- .comment-meta .edit-link{
-     padding: 0 1em;
- }
-
- .comment-respond {
-     padding: 0 1em 1em;
-     border-radius: 6px;
-     background: rgb(255, 255, 255);
- }
-
- .comment-respond .comment-reply-title {
-     font-size: 1.8em;
-     text-transform: uppercase;
-     padding: 0;
-     min-height: $basal-leading * 1;
- }
-
- .comment-respond small {
-     float: right;
-     position: relative;
-     top: 0.6em;
- }
-
- .comment-respond .comment-notes {
-     font-size: 1.6em;
-     font-weight: 400;
- }
-
- .comment-form label {
-     color: rgba(0, 0, 0, 1);
-     font-size: 0.8em;
-     font-weight: 400;
-     letter-spacing: 0.12em;
-     text-transform: uppercase;
-     padding: 0;
-     margin: 0;
-     display: block;
- }
-
- .comment-form textarea,
- .comment-form input[type="text"],
- .comment-form input[type="email"],
- .comment-form input[type="url"] {
-     color: rgba(0, 0, 0, 1);
-     font-size: 1.2em;
-     width: 98%;
-     padding: 0 0 0.15em 0;
-     border: none;
-     border-bottom: 2px solid rgba(0, 0, 0, 0.15);
- }
-
- .comment-form textarea {
-     margin: 0 auto;
-     border: 1px solid rgba(0, 0, 0, 0.15);
-     border-bottom: 2px solid rgba(0, 0, 0, 0.15);
- }
-
- li .comment-respond .comment-reply-title,
- li .comment-respond .comment-notes {
-     font-size: 1em;
- }
-
- /* ----------------------------------------------
-  * Generated by Animista on 2019-8-19 8:57:57
-  * w: http://animista.net, t: @cssanimista
-  * ---------------------------------------------- */
-
- /**
-  * ----------------------------------------
-  * animation fade-in
-  * ----------------------------------------
-  */
-
- @keyframes fade-in {
-   0% {
-     opacity: 0;
-   }
-   100% {
-     opacity: 1;
-   }
- }
-
- .comment-respond {
-     animation: fade-in 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
- }
-
-
- /**
-  * Paginação do Site
-  *
-  */
-
- .pagination {
-     text-align: center;
- }
-
- .pagination .nav-inline li a,
- .pagination .dots,
- .pagination .current {
-     font-size: 1.6em;
-     font-weight: 700;
-     line-height: 45px;
-     display: block;
-     margin: 0;
-     padding: 0 0.6em;
-     min-width: 45px;
- }
-
- .pagination .nav-inline li {
-     margin: 0 1em 0 0;
- }
-
- .pagination .nav-inline li a:hover {
-     background-color: #E6E6E6;
- }
-
- .pagination .current {
-     font-size: 2em;
-     background-color: #f5f5f5;
- }
-
- @media (max-width: 800px) {
-
-     .pagination .nav-inline li {
-         margin: 0 0 0 0;
-         padding-left: 0;
-     }
-
- }
