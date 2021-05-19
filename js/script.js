@@ -29,7 +29,7 @@ $(document).ready(function(){
         $('body,html').animate({scrollTop:0},2500,"easeOutQuart");
     });
 
-    $( "article figure, article pre, article .table-wrapper" ).each(function() {
+    $( "article figure, article pre, article .table-wrapper, .entry-title" ).each(function() {
         height_int = Math.ceil( $( this ).outerHeight() / 30);
         $( this ).addClass( 'min-h-' + height_int );
     });

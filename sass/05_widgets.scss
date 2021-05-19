@@ -1,0 +1,44 @@
+/**
+ * Widget do Site
+ *
+ */
+
+ .widget {
+     margin: 3em 0 0;
+     min-height: 90px;
+ }
+
+ .widget + .widget {
+     margin: 0;
+ }
+
+ .widget_calendar {
+     min-height: $basal-leading * 7;
+ }
+
+ #secondary .widget {}
+
+ .widget-area .widget-title {
+     font-size: 1.6em;
+     font-weight: 400;
+     line-height: 1em;
+     text-transform: uppercase;
+     min-height: 30px;
+     padding: 1em 0 0;
+ }
+
+ .widget ul {
+     margin: 0;
+     padding: 0;
+     list-style: none;
+ }
+
+ .widget ul li {
+     line-height: 1.3em;
+     padding-bottom: $basal-leading / 3;
+ }
+
+ .widget ul li a {
+     font-weight: 400;
+     text-decoration: none;
+ }

@@ -115,7 +115,13 @@ function basalstyle_scripts_styles() {
     }
 
     if (WP_DEBUG) {
-        wp_enqueue_script('live-js' , get_template_directory_uri() . '/js/_live.js'  , [], microtime(), true);
+        /**
+        * Live.js - One script closer to designing in the browser
+        * https://livejs.com
+        */
+        if ( file_exists( get_template_directory() . '/js/_live.js' ) ) {
+            wp_enqueue_script('live-js' , get_template_directory_uri() . '/js/_live.js'  , [], microtime(), true);
+        }
     }
 
 }
@@ -260,4 +266,3 @@ require get_template_directory() . '/inc/customizer.php';
 remove_action('wp_head', 'rsd_link');
 remove_action('wp_head', 'wlwmanifest_link');
 remove_action('wp_head', 'wp_generator');
-
