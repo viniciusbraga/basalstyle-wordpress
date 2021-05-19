@@ -21,9 +21,9 @@ get_header(); ?>
 <div id="content" class="content padding-bottom-2 desktop-8 container">
 
 <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
-    <div class="main desktop-6 gutter padding-top-1">
+    <div class="main desktop-6 gutter">
 <?php else : ?>
-    <div class="main row gutter padding-top-1">
+    <div class="main row gutter">
 <?php endif;?>
 
         <?php if ( ! have_posts() ) :
