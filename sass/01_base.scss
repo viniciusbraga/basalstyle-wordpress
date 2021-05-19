@@ -1,0 +1,44 @@
+/**
+ * Tipografia
+ *
+ */
+
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic,300italic,700italic);
+
+html { background-color: #f5f5f5; }
+
+body { font-family: 'Source Sans Pro', sans-serif; font-weight: 300; background-color: #ffffff; }
+
+h1 {
+    font-size: 3.6em;
+    line-height: $basal-leading * 1.45;
+    min-height: $basal-leading * 1;
+    padding: 0;
+}
+
+p, li, dt, dd, th, td, caption { font-size: 1.9em; }
+
+a { text-decoration: none; }
+
+
+@media (max-width: $basal-media-tablet) {
+    h1 {
+        font-size: 2.4em;
+        line-height: 1.5em;
+        // min-height: $basal-leading * 1;
+        padding: $basal-leading 0 0;
+    }
+    p, li, dt, dd, th, td, caption {
+        font-size: 1.7em;
+        line-height: 1.5em;
+    }
+}
+
+/**
+ * Classes disponíveis no tag do BODY quando na seção / página da vez.
+ * .body-single
+ * .body-page
+ * .body-category
+ * .body-home
+
+ */

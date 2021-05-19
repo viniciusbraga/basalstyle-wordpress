@@ -8,4 +8,16 @@
 
 @import "functions";
 @import "variables";
-@import "base";
+
+@import "01_base";
+@import "02_header.scss";
+@import "03_content";
+// @import "03-01_post-metadata";
+// @import "03-02_post";
+@import "03-03_images";
+@import "03-04_comments";
+@import "03-05_pagination";
+@import "04_footer";
+@import "05_widgets";
+@import "06_search";
+@import "07_plugins";
