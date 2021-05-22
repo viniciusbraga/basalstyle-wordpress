@@ -60,10 +60,6 @@ a {
  * Cabeçalho (Header) do Site
  *
  */
-.header-frame {
-  min-height: 90px;
-}
-
 .header-float {
   background: white;
   position: fixed;
@@ -77,7 +73,6 @@ a {
 
 .header {
   text-transform: uppercase;
-  min-height: 90px;
 }
 
 .header-inline .site-logo {
