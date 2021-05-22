@@ -28,11 +28,16 @@
         <?php endif;?>
 
                 <div class="site-logo"><?php
+                    $wrapper_classes  = 'site-header';
+                    $wrapper_classes .= has_custom_logo() ? ' has-logo' : '';
+                    $wrapper_classes .= ( true === get_theme_mod( 'display_title_and_tagline', true ) ) ? ' has-title-and-tagline' : '';
+                    $wrapper_classes .= has_nav_menu( 'primary' ) ? ' has-menu' : '';
+
                     // Condicional que remove o link do logo do site quando na página de front-page
                     if ( is_front_page() ) { ?>
 
                     <h1 class="site-title"><?php esc_attr( bloginfo( 'name' ) ); ?></h1>
-                    <p class="site-description"><?php esc_attr( bloginfo( 'description' ) ); ?><?php echo esc_attr( $wrapper_classes ); ?></p>
+                    <p class="site-description"><?php esc_attr( bloginfo( 'description' ) ); ?></p>
 
                     <?php } else { ?>
 
