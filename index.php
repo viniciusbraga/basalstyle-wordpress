@@ -18,11 +18,12 @@ get_header(); ?>
     get_template_part( 'template-parts/content', 'search' );
 ?>
 
-<div id="content" class="content padding-bottom-2 desktop-8 container">
 
 <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
-    <div class="main desktop-6 gutter">
+<div id="content" class="content row padding-bottom-2 desktop-10 container">
+    <div class="main desktop-6 col-right-1 gutter">
 <?php else : ?>
+<div id="content" class="content row padding-bottom-2 desktop-8 container">
     <div class="main row gutter">
 <?php endif;?>
 
@@ -102,11 +103,11 @@ get_header(); ?>
          * */
         if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
 
-        ?>
-        <div class="row padding-bottom-1">
-            <?php comments_template(); ?>
-        </div>
-        <?php
+            ?>
+            <div class="row padding-bottom-1">
+                <?php comments_template(); ?>
+            </div>
+            <?php
         } ?>
 
     </div>

@@ -21,7 +21,11 @@
     <div id="header-frame" class="header-frame">
 
         <div class="row">
-            <header class="header header-inline min-h-3 row desktop-8 container">
+        <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+            <header class="header header-inline min-h-4 row desktop-10 container">
+        <?php else : ?>
+            <header class="header header-inline min-h-4 row desktop-8 container">
+        <?php endif;?>
 
                 <div class="site-logo"><?php
                     // Condicional que remove o link do logo do site quando na página de front-page

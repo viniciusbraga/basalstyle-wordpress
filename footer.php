@@ -14,7 +14,11 @@
     <!-- .content-frame -->
 
     <div class="footer-frame padding-top-1 padding-bottom-3">
-        <footer id="colophon" class="footer desktop-8 container" role="contentinfo">
+        <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+            <footer id="colophon" class="footer desktop-10 container" role="contentinfo">
+        <?php else : ?>
+            <footer id="colophon" class="footer desktop-8 container" role="contentinfo">
+        <?php endif;?>
 
             <div class="site-info desktop-3 tablet-2 gutter">
                 <p class="copyright">&copy; <?php echo date( "Y" ); echo " "; bloginfo( 'name' ); ?>. <?php _e( 'Powered by WordPress', 'twenttwent' ); ?>.</p>
