@@ -31,12 +31,12 @@
                     // Condicional que remove o link do logo do site quando na página de front-page
                     if ( is_front_page() ) { ?>
 
-                    <h1 class="site-name"><?php esc_attr( bloginfo( 'name' ) ); ?></h1>
-                    <p class="site-description"><?php esc_attr( bloginfo( 'description' ) ); ?></p>
+                    <h1 class="site-title"><?php esc_attr( bloginfo( 'name' ) ); ?></h1>
+                    <p class="site-description"><?php esc_attr( bloginfo( 'description' ) ); ?><?php echo esc_attr( $wrapper_classes ); ?></p>
 
-                <?php } else { ?>
+                    <?php } else { ?>
 
-                    <h1 class="site-name"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php
+                    <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php
                         esc_attr( bloginfo( 'name' ) );
                         ?></a></h1>
                     <p class="site-description"><?php esc_attr( bloginfo( 'description' ) ); ?></p>
