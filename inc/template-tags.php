@@ -128,3 +128,22 @@ if ( ! function_exists( 'basalstyle_archive_title' ) ) :
 
     }
 endif;
+
+if ( ! function_exists( 'basalstyle_show_search_bar' ) ) :
+    /**
+    *
+    */
+    function basalstyle_show_search_bar() {
+
+        if ( is_front_page() ) {
+            return get_theme_mod( 'search_on_frontpage', true );
+        } elseif ( is_archive() ) {
+            return get_theme_mod( 'search_on_archive', true );
+        } elseif  ( is_page() ) {
+            return get_theme_mod( 'search_on_page', true );
+        } elseif  ( is_singular() ) {
+            return get_theme_mod( 'search_on_single', true );
+        }
+        return true;
+    }
+endif;

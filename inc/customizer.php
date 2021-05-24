@@ -43,3 +43,113 @@ function customizer_apply_float_menu($wp_customize) {
 }
 
 add_action('customize_register', 'customizer_apply_float_menu');
+
+/**
+ * Adiciona opções de apresentação da Busca no site
+ */
+
+add_action('customize_register', 'customizer_search_options');
+
+function customizer_search_options($wp_customize) {
+
+    $wp_customize->add_section(
+        'basalstyle_search', array(
+            'title'       => __( 'Search Bar' ),
+            'description' => __( 'Conjunto de opções da apresentação da Busca no site' ),
+            'priority'    => 100,
+    ) );
+
+    // Título da opção - Locais de apresentação da Busca no tema
+    $wp_customize->add_setting(
+        'search_title', array(
+            'default'   => 'default_value',
+    ) );
+
+    $wp_customize->add_control(
+        'search_title', array(
+            'type'    => 'hidden',
+            'section' => 'basalstyle_search',
+            'label'   => __( 'Opções de apresentação da Barra de Busca' ),
+            'priority'=> 10,
+    ) );
+
+    // Opção: Mostra a Busca na Abertura (homepage)
+    $wp_customize->add_setting(
+        'search_on_frontpage',
+        array(
+            'default'    => 'true',
+            'type'       => 'theme_mod',
+            'capability' => 'manage_options',
+        )
+    );
+
+    $wp_customize->add_control(
+        'search_on_frontpage',
+        array(
+            'type'    => 'checkbox',
+            'default' => 'true',
+            'label'   => __( 'Mostrar na Abertura (frontpage)' ),
+            'section' => 'basalstyle_search',
+        )
+    );
+
+    // Opção: Mostra a Busca nas páginas de Índexes (Archives)
+    $wp_customize->add_setting(
+        'search_on_archive',
+        array(
+            'default'    => 'true',
+            'type'       => 'theme_mod',
+            'capability' => 'manage_options',
+        )
+    );
+
+    $wp_customize->add_control(
+        'search_on_archive',
+        array(
+            'type'    => 'checkbox',
+            'default' => 'true',
+            'label'   => __( 'Mostrar nos Índices (Archive)' ),
+            'section' => 'basalstyle_search',
+        )
+    );
+
+    // Opção: Mostra nas instâncias (Page e Post)
+    $wp_customize->add_setting(
+        'search_on_page',
+        array(
+            'default'    => 'true',
+            'type'       => 'theme_mod',
+            'capability' => 'manage_options',
+        )
+    );
+
+    $wp_customize->add_control(
+        'search_on_page',
+        array(
+            'type'    => 'checkbox',
+            'default' => 'true',
+            'label'   => __( 'Mostra nas Páginas (Page)' ),
+            'section' => 'basalstyle_search',
+        )
+    );
+    // Opção: Mostra nas instâncias (Page e Post)
+    $wp_customize->add_setting(
+        'search_on_single',
+        array(
+            'default'    => 'true',
+            'type'       => 'theme_mod',
+            'capability' => 'manage_options',
+        )
+    );
+
+    $wp_customize->add_control(
+        'search_on_single',
+        array(
+            'type'    => 'checkbox',
+            'default' => 'true',
+            'label'   => __( 'Mostra nos Artigos (Post/Post-Types)' ),
+            'section' => 'basalstyle_search',
+        )
+    );
+// Fim customizer_search_options
+}

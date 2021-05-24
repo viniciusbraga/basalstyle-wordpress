@@ -4,7 +4,7 @@
  *
  */
 ?>
-
+<?php if ( basalstyle_show_search_bar() ) : ?>
 <div class="row min-h-3">
     <div class="desktop-12 container">
         <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
@@ -16,3 +16,6 @@
         </div>
     </div>
 </div>
+<?php else: ?>
+<div class="row min-h-4"></div>
+<?php endif ?>
