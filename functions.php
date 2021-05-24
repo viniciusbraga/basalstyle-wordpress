@@ -278,10 +278,6 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/customizer.php';
 
 
-// Customizer additions.
-require get_template_directory() . '/inc/class-header-customize.php';
-new Twenty_Twenty_One_Customize();
-
 /**
  * Lista as funções carregadas no wp_header()
  *
