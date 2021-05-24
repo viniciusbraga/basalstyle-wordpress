@@ -20,33 +20,27 @@
 
     <div id="header-frame" class="header-frame">
 
-        <div class="row">
         <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
             <header class="header header-inline min-h-4 row desktop-10 container">
         <?php else : ?>
             <header class="header header-inline min-h-4 row desktop-8 container">
-        <?php endif;?>
-
-                <div class="site-logo"><?php
-                    $wrapper_classes  = 'site-header';
-                    $wrapper_classes .= has_custom_logo() ? ' has-logo' : '';
-                    $wrapper_classes .= ( true === get_theme_mod( 'display_title_and_tagline', true ) ) ? ' has-title-and-tagline' : '';
-                    $wrapper_classes .= has_nav_menu( 'primary' ) ? ' has-menu' : '';
-
-                    // Condicional que remove o link do logo do site quando na página de front-page
-                    if ( is_front_page() ) { ?>
-
-                    <h1 class="site-title"><?php esc_attr( bloginfo( 'name' ) ); ?></h1>
-                    <p class="site-description"><?php esc_attr( bloginfo( 'description' ) ); ?></p>
+        <?php endif;
+        $wrapper_classes = has_custom_logo() ? ' has-logo' : ''; ?>
+                <div class="site-logo <?php echo esc_attr( $wrapper_classes ); ?>">
+                <?php if ( has_custom_logo() ) { ?>
+                    <?php the_custom_logo(); ?>
+                <?php } else { ?>
+                    <?php if ( is_front_page() ) { ?>
+                        <h1 class="site-title"><?php esc_attr( bloginfo( 'name' ) ); ?></h1>
+                        <p class="site-description"><?php esc_attr( bloginfo( 'description' ) ); ?></p>
 
                     <?php } else { ?>
-
-                    <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php
-                        esc_attr( bloginfo( 'name' ) );
-                        ?></a></h1>
-                    <p class="site-description"><?php esc_attr( bloginfo( 'description' ) ); ?></p>
-
-                <?php } ?></div>
+                        <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+                            <?php esc_attr( bloginfo( 'name' ) ); ?></a></h1>
+                            <p class="site-description"><?php esc_attr( bloginfo( 'description' ) ); ?></p>
+                        <?php } ?>
+                <?php } ?>
+                </div>
                 <!-- .branding-frame -->
 
                 <?php if ( has_nav_menu( 'header-menu' ) ) { ?>
@@ -79,8 +73,6 @@
 
             </header>
             <!-- header -->
-        </div>
-
 
     </div>
     <!-- frame-header -->
