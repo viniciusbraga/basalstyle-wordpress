@@ -16,6 +16,6 @@
         </div>
     </div>
 </div>
-<?php else: ?>
+<?php elseif ( ! is_front_page() || 'posts' == get_option( 'show_on_front' ) ): ?>
 <div class="row min-h-4"></div>
 <?php endif ?>
