@@ -1,16 +1,25 @@
 <?php
+/**
+ * Referência de uso do código /wp-includes/class-wp-customize-manager.php
+ *
+ * Referência no Developer Wordpress
+ * https://developer.wordpress.org/themes/customize-api/customizer-objects/
+ *
+ */
 
 /**
  * Adiciona uma opção de header flutuante na personalização do tema
  */
+
+add_action('customize_register', 'customizer_apply_float_menu');
+
 function customizer_apply_float_menu($wp_customize) {
 
     $wp_customize->add_section(
         'basalstyle_menubar', array(
-            'title'       => __( 'Header Bar' ),
+            'title'       => __( 'Floating Header Menu' ),
             'description' => __( 'Adiciona customizações para o menubar' ),
-            'priority'    => 105,
-            'capability'  => 'edit_theme_options',
+            'priority'    => 100,
     ) );
 
     $wp_customize->add_setting(
@@ -22,7 +31,7 @@ function customizer_apply_float_menu($wp_customize) {
         'apply_float_menu_title', array(
             'type'    => 'hidden',
             'section' => 'basalstyle_menubar',
-            'label'   => 'Header flutuante',
+            'label'   => __( 'Header flutuante' ),
     ) );
 
     $wp_customize->add_setting(
@@ -40,9 +49,9 @@ function customizer_apply_float_menu($wp_customize) {
             'label'       => 'Flutuar',
             'description' => __( 'Permite o header flutuar quando a página fizer scroll. Inclusive no modo mobile.' ),
     ) );
+// Fim customizer_apply_float_menu
 }
 
-add_action('customize_register', 'customizer_apply_float_menu');
 
 /**
  * Adiciona opções de apresentação da Busca no site
