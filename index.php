@@ -36,6 +36,7 @@ get_header(); ?>
 
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
+            <?php if ( ! is_front_page() || 'posts' == get_option( 'show_on_front' )  ) : ?>
                 <header>
                 <?php if ( ! is_page() ) : ?>
                     <div class="entry-metadata">
@@ -57,6 +58,8 @@ get_header(); ?>
                 </header>
 
                 <?php basalstyle_post_thumbnail() ?>
+
+            <?php endif; ?>
 
                 <div class="entry-content">
                     <?php
