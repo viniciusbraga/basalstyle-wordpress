@@ -19,14 +19,13 @@ get_header(); ?>
 
 ?>
 
-<div id="content" class="content desktop-8 container">
-
-    <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
-        <div class="main desktop-6 padding-bottom-2 gutter">
-    <?php else : ?>
-        <div class="main row padding-bottom-2">
-    <?php endif;?>
-
+<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+<div id="content" class="content padding-bottom-2 desktop-10 container">
+    <div class="main desktop-6 col-right-1">
+<?php else : ?>
+<div id="content" class="content padding-bottom-2 desktop-8 container">
+    <div class="main row">
+<?php endif;?>
 
         <?php if ( ! have_posts() ) :
             // Caso não tenha um post referente a URL, ele aplica este conteúdo. ?>

@@ -60,10 +60,6 @@ a {
  * Cabeçalho (Header) do Site
  *
  */
-.header-frame {
-  min-height: 90px;
-}
-
 .header-float {
   background: white;
   position: fixed;
@@ -103,13 +99,35 @@ a {
   background-image: none;
 }
 
+.site-logo.has-logo {
+  margin: 0;
+  padding-left: 0;
+}
+
+.site-logo.has-logo .custom-logo-link {
+  margin-left: 0;
+  margin-top: 10px;
+  display: block;
+}
+
+.site-logo.has-logo img {
+  max-width: 300px;
+  max-height: 70px;
+  height: auto;
+  width: auto;
+}
+
 @media (max-width: 800px) {
   .header-frame {
     min-height: auto;
   }
 
-  .header .site-name {
+  .header .site-title {
     padding: 0 0;
+  }
+
+  .site-logo.has-logo .custom-logo-link {
+    margin-left: 0.5em;
   }
 }
 /**
@@ -587,22 +605,24 @@ li .comment-respond .comment-notes {
 }
 
 #backtotop {
-  color: #606066;
+  color: #999999;
   font-size: 30px;
-  line-height: 50px;
+  line-height: 55px;
   text-align: center;
+  vertical-align: middle;
   height: 60px;
   width: 60px;
-  padding: 0;
+  padding: 0 0 0;
   position: fixed;
   right: 30px;
   bottom: 35px;
   outline: none;
   cursor: pointer;
   border-radius: 45px;
-  background: #E6E6E6;
+  background: #ffffff;
   -webkit-transition: -webkit-opacity 0.3s;
   transition: opacity 0.3s;
+  box-shadow: 0 0 15px rgba(51, 51, 51, 0.3);
 }
 
 #backtotop:visited {

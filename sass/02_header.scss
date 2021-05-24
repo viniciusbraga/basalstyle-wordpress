@@ -4,7 +4,7 @@
  */
 
  .header-frame {
-     min-height: $basal-leading * 3;
+     // min-height: $basal-leading * 3;
  }
 
  .header-float {
@@ -46,14 +46,38 @@
      background-image: none;
  }
 
+
+.site-logo.has-logo {
+     margin: 0;
+     padding-left: 0;
+ }
+
+.site-logo.has-logo .custom-logo-link {
+     margin-left: 0;
+     margin-top: 10px;
+     display: block;
+ }
+
+.site-logo.has-logo img {
+     max-width: 300px;
+     max-height: 70px;
+     height: auto;
+     width: auto;
+ }
+
+
  @media (max-width: 800px) {
 
      .header-frame {
          min-height: auto;
      }
 
-     .header .site-name {
+     .header .site-title {
          padding: 0 0;
      }
+
+     .site-logo.has-logo .custom-logo-link {
+          margin-left: 0.5em;
+      }
 
  }
