@@ -650,15 +650,6 @@ li .comment-respond .comment-notes {
   min-height: 210px;
 }
 
-.widget-area .widget-title {
-  font-size: 1.6em;
-  font-weight: 400;
-  line-height: 1em;
-  text-transform: uppercase;
-  min-height: 30px;
-  padding: 1em 0 0;
-}
-
 .widget ul {
   margin: 0;
   padding: 0;
