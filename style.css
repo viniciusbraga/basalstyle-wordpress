@@ -78,7 +78,7 @@ a {
 
 .header-inline .site-logo {
   margin: 30px 0 0 0;
-  padding-left: 15px;
+  padding-left: 20px;
 }
 
 .site-logo h1,
@@ -131,13 +131,13 @@ a {
   }
 }
 /**
- * Corpo do Site
- * Envolve o post, sidebar e tudo que tiver entre o Cabeçalho e o Rodapé.
- *
- */
+* Corpo do Site
+* Envolve o post, sidebar e tudo que tiver entre o Cabeçalho e o Rodapé.
+*
+*/
 /**
- * Header e descrição de Categoria e similares
- */
+* Header e descrição de Categoria e similares
+*/
 .page-title {
   font-size: 1.5em;
   line-height: 1em;
@@ -155,10 +155,14 @@ a {
 }
 
 /**
- * Conteúdo principal
- * Somente a parte do Post
- *
- */
+* Conteúdo principal
+* Somente a parte do Post
+*
+*/
+.post + .post {
+  padding-top: 90px;
+}
+
 .post a {
   color: #191D33;
   border-bottom: 1px solid #7AB1CC;
@@ -195,8 +199,8 @@ a {
 }
 
 /**
- * Conteúdo de Metadata
- */
+* Conteúdo de Metadata
+*/
 .post > header {
   position: relative;
   padding-bottom: 30px;
@@ -257,14 +261,14 @@ a {
 }
 
 .author-info {
-  padding: 15px 0 0 7.5px;
+  padding: 20px 0 0 10px;
   min-height: 120px;
   border-top: 1px solid rgba(0, 0, 0, 0.2);
   display: flex;
 }
 
 .author-info-card {
-  max-width: 400px;
+  max-width: 440px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   border-right: 1px solid rgba(0, 0, 0, 0.2);
@@ -280,7 +284,7 @@ a {
 }
 
 .author-info .author-description {
-  padding: 0 15px;
+  padding: 0 20px;
 }
 
 .author-info .author-description h2 {
@@ -305,6 +309,19 @@ a {
   display: table-cell;
 }
 
+.footnotes ol {
+  padding: 0 0 0 2em;
+}
+
+.footnotes ol p {
+  line-height: 1.3em;
+  padding: 0 0 1em 0.5em;
+}
+
+.footnotes li {
+  font-size: 1.4em;
+}
+
 @media (max-width: 900px) {
   .post > header {
     position: relative;
@@ -314,7 +331,7 @@ a {
   .entry-metadata {
     font-size: 1.4em;
     line-height: 1.6em;
-    margin: 0 0 5px 15px;
+    margin: 0 0 5px 20px;
     width: 91%;
     position: absolute;
   }
@@ -396,7 +413,7 @@ a {
 
 .comments-area {
   padding: 30px 0;
-  max-width: 700px;
+  max-width: 770px;
   margin: 0 0 0 0;
 }
 
@@ -410,7 +427,7 @@ a {
 }
 
 .comment-list {
-  padding: 0 15px 0 60px;
+  padding: 0 20px 0 60px;
   list-style: none;
 }
 
@@ -755,12 +772,12 @@ li .comment-respond .comment-notes {
 
 .search-form .search-input:focus + .search-label {
   text-indent: 60px;
-  width: calc( 100% - 15px );
+  width: calc( 100% - 20px );
   opacity: 1;
 }
 
 .search-form .search-input:focus ~ .search-submit {
-  right: calc( 100% - 15px );
+  right: calc( 100% - 20px );
   margin-right: -60px;
   -webkit-transition: right 0.5s ease-out;
   transition: right 0.5s ease-out;
