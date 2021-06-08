@@ -180,8 +180,7 @@ function basalstyle_register_menus() {
   register_nav_menus(
     array(
       'header-menu' => __( 'Menu Cabeçalho' ),
-      'lang-menu'   => __( 'Menu de Línguas' ),
-      'footer-menu' => __( 'Menu Rodapé' )
+      'lang-menu'   => __( 'Menu de Línguas' )
     )
   );
 }
