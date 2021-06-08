@@ -34,5 +34,10 @@ $(document).ready(function(){
         $( this ).addClass( 'min-h-' + height_int );
     });
 
+    $("#header-frame").click(function(e) {
+        if (e.shiftKey) {
+              $("body").prepend('<label class="btnDebug" for="debug"> Grid <input type="checkbox" id="debug" onclick=\'var e=document.getElementsByTagName("body")[0],c="debug",re=new RegExp("(?:^|\\\\s)"+c+"(?!\\\\S)","g");if(e.className.match(re)){e.className=e.className.replace(re,"");}else{e.className+=" "+c;this.checked=true;}\'></label>');
+        }
+    });
 
 });
