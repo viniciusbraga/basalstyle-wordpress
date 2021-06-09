@@ -12,31 +12,45 @@
 
     </div>
     <!-- .content-frame -->
+<?php
+    if ( is_active_sidebar( 'sidebar-1' ) ) {
 
-    <div class="footer-frame padding-top-1 padding-bottom-3">
+
+    } else {
+
+    }
+?>
+    <div class="footer-frame row padding-top-1">
         <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
-            <footer id="colophon" class="footer desktop-10 container" role="contentinfo">
+            <footer id="colophon" class="footer row desktop-10 container" role="contentinfo">
         <?php else : ?>
-            <footer id="colophon" class="footer desktop-8 container" role="contentinfo">
+            <footer id="colophon" class="footer row desktop-8 container" role="contentinfo">
         <?php endif;?>
+            <div class="row">
+            <?php if ( is_active_sidebar( 'footer-first' ) ) : ?>
+                <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+                    <div class="site-info desktop-5 tablet-2 gutter-left">
+                <?php else : ?>
+                    <div class="site-info desktop-4 tablet-2 gutter-left">
+                <?php endif;?>
+                    <div class="widget-area text-small" role="complementary">
+                        <?php dynamic_sidebar( 'footer-first' ); ?>
+                    </div>
+                </div>
+            <?php endif; ?>
 
-            <div class="site-info desktop-3 tablet-2 gutter">
-                <p class="copyright">&copy; <?php echo date( "Y" ); echo " "; bloginfo( 'name' ); ?>. <?php _e( 'Powered by WordPress', 'twenttwent' ); ?>.</p>
-            </div>
-
-            <?php if ( has_nav_menu( 'footer-menu' ) ) { ?>
-                <div class="desktop-5 tablet-2 gutter text-align-right">
-                    <nav id="footer-menu" class="nav-inline" role="navigation"><?php
-                    // http://codex.wordpress.org/Navigation_Menus
-                    wp_nav_menu( array(
-                        'theme_location' => 'footer-menu',
-                        'container_class' => 'nav-inline' )
-                    );
-                    ?></nav>
-                    <!-- #footer-menu -->
+            <?php if ( is_active_sidebar( 'footer-second' ) ) { ?>
+                <div class="desktop-3 col-left-1 tablet-2 gutter">
+                    <div class="widget-area text-small" role="complementary">
+                        <?php dynamic_sidebar( 'footer-second' ); ?>
+                    </div>
                 </div>
             <?php } ?>
+            </div>
 
+            <div class="row padding-top-1">
+                <p class="copyright gutter">&copy; <?php echo date( "Y" ); echo " "; bloginfo( 'name' ); ?>. <?php _e( 'Powered by WordPress', 'twenttwent' ); ?>.</p>
+            </div>
         </footer>
     </div>
 

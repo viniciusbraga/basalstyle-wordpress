@@ -5,7 +5,7 @@
 
  .widget {
      margin: 3em 0 0;
-     min-height: 90px;
+     min-height: $basal-leading * 3;
  }
 
  .widget + .widget {
@@ -42,3 +42,33 @@
      font-weight: 400;
      text-decoration: none;
  }
+
+ .footer .widget {
+      margin: 0 0 0;
+      min-height: $basal-leading * 3;
+  }
+
+
+  .widget_recent_entries h2 {
+      line-height: 1.4em;
+      padding: 0 0;
+      min-height: $basal-leading;
+  }
+
+  .widget_recent_entries li {
+      display: block;
+  }
+
+  .widget_recent_entries li + li {
+      padding: 0.5em 0 1em;
+      border-top: 1px solid $grey-base;
+  }
+
+  .widget_recent_entries li a {
+      font-size: 1.4em;
+      line-height: 1.25em;
+      font-weight: bold;
+      display: block;
+      padding: 0.5em 0;
+      min-height: $basal-leading * 1;
+  }
