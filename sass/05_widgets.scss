@@ -4,12 +4,12 @@
  */
 
  .widget {
-     margin: 3em 0 0;
+     margin: 0;
      min-height: $basal-leading * 3;
  }
 
  .widget + .widget {
-     margin: 0;
+     margin: $basal-leading 0 0;
  }
 
  .widget_calendar {
@@ -19,24 +19,20 @@
  #secondary .widget {}
 
  .widget-area .widget-title {
-     // font-size: 1.6em;
-     // font-weight: 400;
-     // line-height: 1em;
-     // text-transform: uppercase;
-     // min-height: 30px;
-     // padding: 1em 0 0;
+     line-height: 1.4em;
+     padding: 0 0;
+     min-height: $basal-leading;
  }
 
  .widget ul {
      margin: 0;
-     padding: 0;
+     padding: ($basal-leading / 2) 0 0;
      list-style: none;
  }
 
  .widget ul li {
      line-height: 1.3em;
      padding-bottom: $basal-leading / 3;
-     position: relative;
  }
 
  .widget ul li a {
@@ -44,34 +40,28 @@
      text-decoration: none;
  }
 
- .widget ul li:hover {
-     background-color: $grey-lighter;
- }
-
- .widget ul li a:after {
-     content: "";
-     display: block;
-     position: absolute;
-     top: 0;
-     bottom: 0;
-     left: 0;
-     right: 0;
- }
-
  .footer .widget {
       margin: 0 0 0;
       min-height: $basal-leading * 3;
   }
 
-
   .widget_recent_entries h2 {
       line-height: 1.4em;
-      padding: 0 0;
+      padding: 0;
       min-height: $basal-leading;
   }
 
+  .widget_recent_entries ul {
+      padding: 0;
+  }
+
   .widget_recent_entries li {
-      display: block;
+    display: block;
+    position: relative;
+  }
+
+  .widget_recent_entries li:hover {
+      background-color: $grey-lighter;
   }
 
   .widget_recent_entries li + li {
@@ -86,4 +76,14 @@
       display: block;
       padding: 0.5em 0;
       min-height: $basal-leading * 1;
+  }
+
+  .widget_recent_entries li a:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
   }
